@@ -10,7 +10,7 @@ from datetime import datetime
 # --- CONFIGURAÇÕES ---
 GITHUB_TOKEN = os.getenv('GH_TOKEN')
 NOME_REPO = "marcioklipper/futebol-preditivo-v2" # Certifique-se que o nome do repo é este mesmo
-ARQUIVO_JOGOS = "base_europa_unificada (1).csv"
+ARQUIVO_JOGOS = "historico_jogos.csv"
 ARQUIVO_PREVISOES = "analise_preditiva.csv"
 
 urls_ligas = {
