@@ -6,11 +6,10 @@ from io import StringIO
 import requests
 from scipy.stats import poisson
 from datetime import datetime
-import urllib.parse
 
 # --- CONFIGURAÇÕES ---
 GITHUB_TOKEN = os.getenv('GH_TOKEN')
-NOME_REPO = "marcioklipper/futebol-preditivo-v2" # <--- MUDE AQUI SE USOU OUTRO NOME
+NOME_REPO = "marcioklipper/futebol-preditivo-v2" # Certifique-se que o nome do repo é este mesmo
 ARQUIVO_JOGOS = "base_europa_unificada (1).csv"
 ARQUIVO_PREVISOES = "analise_preditiva.csv"
 
@@ -172,11 +171,12 @@ def main():
 
     print("--- LENDO HISTÓRICO ---")
     try:
-        nome_arquivo_url = urllib.parse.quote(ARQUIVO_JOGOS)
-        url_raw = f"https://raw.githubusercontent.com/{NOME_REPO}/main/{nome_arquivo_url}"
-        df_historico = pd.read_csv(url_raw)
+        # Lendo de forma autenticada direto do GitHub! Adeus erro 404.
+        conteudo_arquivo = repo.get_contents(ARQUIVO_JOGOS)
+        df_historico = pd.read_csv(StringIO(conteudo_arquivo.decoded_content.decode('utf-8')))
+        print(f"Base carregada com sucesso: {len(df_historico)} linhas.")
     except Exception as e:
-        print(f"Erro ao ler CSV: {e}")
+        print(f"Erro ao ler CSV do GitHub: {e}")
         return
 
     df_novos = extrair_jogos_espn()
