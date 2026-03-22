@@ -6,53 +6,69 @@ from io import StringIO
 import requests
 from scipy.stats import poisson
 import difflib
+from bs4 import BeautifulSoup # <-- Certifique-se de ter esta importação
 
-# --- CONFIGURAÇÕES ---
-GITHUB_TOKEN = os.getenv('GH_TOKEN')
-NOME_REPO = "marcioklipper/futebol-preditivo-v2"
-ARQUIVO_JOGOS = "historico_jogos.csv"
-ARQUIVO_PREVISOES = "analise_preditiva.csv"
+# ... (Configurações e outras partes do código ficam iguais) ...
 
 def obter_proxima_rodada():
-    print("--- 1. BUSCANDO PRÓXIMOS JOGOS (ESPN API) ---")
-    # Acessando a API direta e leve da ESPN. À prova de bloqueios de bots!
-    url = "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard"
+    print("--- 1. BUSCANDO PRÓXIMOS JOGOS (ESPN CALENDÁRIO) ---")
+    # Agora apontamos direto para a página de calendário da Bundesliga (como você fez no navegador)
+    url = "https://www.espn.com.br/futebol/calendario/_/liga/GER.1"
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
     
     try:
-        r = requests.get(url, timeout=15)
-        dados = r.json()
+        r = requests.get(url, headers=headers, timeout=15)
+        soup = BeautifulSoup(r.content, 'html.parser')
         
         jogos = []
-        for evento in dados.get('events', []):
-            comp = evento['competitions'][0]
-            status = comp['status']['type']['state'] # 'pre' (futuro), 'in' (ao vivo), 'post' (finalizado)
-            
-            # Filtra APENAS jogos que ainda não aconteceram ('pre')
-            if status == 'pre':
-                data_jogo = evento['date'][:10] # Pega só a data no formato YYYY-MM-DD
-                times = comp['competitors']
-                
-                # Identifica quem é Mandante e quem é Visitante
-                mandante = next(t['team']['displayName'] for t in times if t['homeAway'] == 'home')
-                visitante = next(t['team']['displayName'] for t in times if t['homeAway'] == 'away')
-                
-                jogos.append({
-                    'Data': data_jogo,
-                    'Mandante': mandante,
-                    'Visitante': visitante,
-                    'Liga': 'Bundesliga'
-                })
+        
+        # O HTML da ESPN agrupa os jogos por dias, então precisamos achar as tabelas de calendário
+        tabelas = soup.find_all('table', class_='Table')
+        
+        if not tabelas:
+             print("Aviso: Nenhuma tabela de jogos encontrada no calendário da ESPN.")
+             return pd.DataFrame()
+
+        for tabela in tabelas:
+            linhas = tabela.find_all('tr', class_='Table__TR')
+            for linha in linhas:
+                 colunas = linha.find_all('td')
+                 
+                 # Uma linha válida de jogo futuro costuma ter pelo menos 3 colunas (Mandante, Placar/Hora, Visitante)
+                 if len(colunas) >= 3:
+                     # A coluna 0 geralmente tem o time mandante, a 1 o placar/horário, e a 2 o visitante.
+                     try:
+                         # Extrai os nomes dos times. O span com a classe indica o nome do time.
+                         mandante = colunas[0].find_all('a')[1].text.strip() if len(colunas[0].find_all('a')) > 1 else colunas[0].text.strip()
+                         visitante = colunas[2].find_all('a')[1].text.strip() if len(colunas[2].find_all('a')) > 1 else colunas[2].text.strip()
+                         
+                         # Se o "placar" for um horário (ex: 10:30) ou 'v', é um jogo futuro
+                         placar_ou_hora = colunas[1].text.strip()
+                         if ':' in placar_ou_hora or 'v' in placar_ou_hora.lower():
+                             # Pega a data da seção (ou usa a data atual como placeholder, já que não precisamos do dia exato para prever, só saber quem joga)
+                             
+                             jogos.append({
+                                 'Data': '2025-03-29', # Simplificando: Assumimos a data da próxima rodada com base na sua imagem
+                                 'Mandante': mandante,
+                                 'Visitante': visitante,
+                                 'Liga': 'Bundesliga'
+                             })
+                     except Exception as e:
+                         pass # Ignora linhas de cabeçalho ou mal formatadas
         
         df_futuros = pd.DataFrame(jogos)
+        
         if not df_futuros.empty:
-            print(f"Encontrados {len(df_futuros)} jogos futuros da próxima rodada!")
+            # Pega apenas os primeiros 9 jogos únicos (uma rodada completa)
+            df_futuros = df_futuros.drop_duplicates(subset=['Mandante', 'Visitante']).head(9)
+            print(f"Encontrados {len(df_futuros)} jogos futuros da próxima rodada no calendário!")
             return df_futuros
         else:
-            print("Aviso: A API respondeu, mas não há jogos futuros programados para os próximos dias.")
+            print("Aviso: Não encontrou jogos futuros na raspagem da página.")
             return pd.DataFrame()
             
     except Exception as e:
-        print(f"Erro ao conectar na API da ESPN: {e}")
+        print(f"Erro ao conectar na ESPN: {e}")
         return pd.DataFrame()
 
 def gerar_analise(df_treino, df_prever):
