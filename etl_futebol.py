@@ -1,15 +1,17 @@
 import pandas as pd
 import numpy as np
 import os
-from github import Github
+from github import Github, Auth
 from io import StringIO
 import requests
 from scipy.stats import poisson
 from datetime import datetime
+import urllib.parse
+import difflib # Biblioteca nova para traduzir nomes de times!
 
 # --- CONFIGURAÇÕES ---
 GITHUB_TOKEN = os.getenv('GH_TOKEN')
-NOME_REPO = "marcioklipper/futebol-preditivo-v2" # Certifique-se que o nome do repo é este mesmo
+NOME_REPO = "marcioklipper/futebol-preditivo-v2"
 ARQUIVO_JOGOS = "historico_jogos.csv"
 ARQUIVO_PREVISOES = "analise_preditiva.csv"
 
@@ -129,14 +131,32 @@ def gerar_analise_focada(df_completo):
     
     stats['Momento_Over'] = stats['Time'].apply(get_momento)
 
+    # Lista de todos os times que temos histórico válido
+    times_conhecidos = stats['Time'].unique().tolist()
+
     previsoes = []
+    print("--- 3. CALCULANDO PROBABILIDADES ---")
     for idx, row in df_para_prever.iterrows():
         try:
-            home, away = row['Mandante'], row['Visitante']
+            home_original = str(row['Mandante']).strip()
+            away_original = str(row['Visitante']).strip()
+            
+            # Tenta encontrar o time mais parecido na base histórica (corte de 45% de semelhança)
+            match_home = difflib.get_close_matches(home_original, times_conhecidos, n=1, cutoff=0.45)
+            match_away = difflib.get_close_matches(away_original, times_conhecidos, n=1, cutoff=0.45)
+            
+            home = match_home[0] if match_home else home_original
+            away = match_away[0] if match_away else away_original
+            
+            if home != home_original or away != away_original:
+                 print(f"Traduzido: [{home_original} -> {home}] | [{away_original} -> {away}]")
+
             d_home = stats[stats['Time'] == home]
             d_away = stats[stats['Time'] == away]
             
-            if d_home.empty or d_away.empty: continue
+            if d_home.empty or d_away.empty: 
+                print(f"❌ Ignorado (Sem histórico): {home} vs {away}")
+                continue
 
             lamb_home = d_home['Ataque_Casa'].values[0] * d_away['Defesa_Fora'].values[0] * m_liga_mand
             lamb_away = d_away['Ataque_Fora'].values[0] * d_home['Defesa_Casa'].values[0] * m_liga_visit
@@ -161,17 +181,21 @@ def gerar_analise_focada(df_completo):
                 'Historico_Over': round(hist_over * 100, 1),
                 'Momento_Recente': round(momento * 100, 1)
             })
-        except: continue
+            print(f"✅ Previsão gerada: {home} vs {away}")
+        except Exception as e: 
+            print(f"Erro no cálculo do jogo {row['Mandante']}: {e}")
+            continue
 
     return pd.DataFrame(previsoes)
 
 def main():
-    g = Github(GITHUB_TOKEN)
+    # Código atualizado para evitar o DeprecationWarning
+    auth = Auth.Token(GITHUB_TOKEN)
+    g = Github(auth=auth)
     repo = g.get_repo(NOME_REPO)
 
     print("--- LENDO HISTÓRICO ---")
     try:
-        # Lendo de forma autenticada direto do GitHub! Adeus erro 404.
         conteudo_arquivo = repo.get_contents(ARQUIVO_JOGOS)
         df_historico = pd.read_csv(StringIO(conteudo_arquivo.decoded_content.decode('utf-8')))
         print(f"Base carregada com sucesso: {len(df_historico)} linhas.")
