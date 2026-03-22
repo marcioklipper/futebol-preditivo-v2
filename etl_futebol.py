@@ -14,39 +14,51 @@ ARQUIVO_JOGOS = "historico_jogos.csv"
 ARQUIVO_PREVISOES = "analise_preditiva.csv"
 
 def obter_proxima_rodada():
-    print("--- 1. BUSCANDO PRÓXIMOS JOGOS (FBREF) ---")
-    # Tabela oficial e limpa do FBref
-    url = "https://fbref.com/en/comps/20/schedule/Bundesliga-Scores-and-Fixtures"
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
-    try:
-        r = requests.get(url, headers=headers)
-        dfs = pd.read_html(StringIO(r.text))
-        for df in dfs:
-            if 'Home' in df.columns and 'Away' in df.columns and 'Score' in df.columns:
-                df = df.dropna(subset=['Home', 'Away'])
-                
-                # O Pulo do Gato: Jogos que ainda não aconteceram NÃO têm Score
-                df_futuros = df[df['Score'].isna() | (df['Score'] == '')].copy()
-                
-                if not df_futuros.empty:
-                    df_futuros = df_futuros.rename(columns={'Home': 'Mandante', 'Away': 'Visitante', 'Date': 'Data'})
-                    df_futuros['Liga'] = 'Bundesliga'
-                    df_futuros = df_futuros.dropna(subset=['Data'])
-                    
-                    # Pega exatamente os próximos 9 jogos (1 rodada completa da Bundesliga)
-                    proximos = df_futuros.head(9)[['Data', 'Mandante', 'Visitante', 'Liga']]
-                    print(f"Encontrados {len(proximos)} jogos reais da próxima rodada!")
-                    return proximos
-    except Exception as e:
-        print(f"Erro ao buscar na web: {e}")
+    print("--- 1. BUSCANDO PRÓXIMOS JOGOS (ESPN API) ---")
+    # Acessando a API direta e leve da ESPN. À prova de bloqueios de bots!
+    url = "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard"
     
-    print("Aviso: Não foi possível baixar a próxima rodada.")
-    return pd.DataFrame()
+    try:
+        r = requests.get(url, timeout=15)
+        dados = r.json()
+        
+        jogos = []
+        for evento in dados.get('events', []):
+            comp = evento['competitions'][0]
+            status = comp['status']['type']['state'] # 'pre' (futuro), 'in' (ao vivo), 'post' (finalizado)
+            
+            # Filtra APENAS jogos que ainda não aconteceram ('pre')
+            if status == 'pre':
+                data_jogo = evento['date'][:10] # Pega só a data no formato YYYY-MM-DD
+                times = comp['competitors']
+                
+                # Identifica quem é Mandante e quem é Visitante
+                mandante = next(t['team']['displayName'] for t in times if t['homeAway'] == 'home')
+                visitante = next(t['team']['displayName'] for t in times if t['homeAway'] == 'away')
+                
+                jogos.append({
+                    'Data': data_jogo,
+                    'Mandante': mandante,
+                    'Visitante': visitante,
+                    'Liga': 'Bundesliga'
+                })
+        
+        df_futuros = pd.DataFrame(jogos)
+        if not df_futuros.empty:
+            print(f"Encontrados {len(df_futuros)} jogos futuros da próxima rodada!")
+            return df_futuros
+        else:
+            print("Aviso: A API respondeu, mas não há jogos futuros programados para os próximos dias.")
+            return pd.DataFrame()
+            
+    except Exception as e:
+        print(f"Erro ao conectar na API da ESPN: {e}")
+        return pd.DataFrame()
 
 def gerar_analise(df_treino, df_prever):
     print("--- 2. CÉREBRO PREDITIVO (POISSON) ---")
     
-    # Faxina: Remove os "Fantasmas" (jogos antigos sem gols que corrompiam a base)
+    # Faxina: Remove os "Fantasmas" (jogos antigos sem gols)
     df_treino['Gols_Mandante'] = pd.to_numeric(df_treino['Gols_Mandante'], errors='coerce')
     df_treino['Gols_Visitante'] = pd.to_numeric(df_treino['Gols_Visitante'], errors='coerce')
     df_treino = df_treino.dropna(subset=['Gols_Mandante', 'Gols_Visitante'])
@@ -96,7 +108,7 @@ def gerar_analise(df_treino, df_prever):
             home_original = str(row['Mandante']).strip()
             away_original = str(row['Visitante']).strip()
             
-            # Tradutor de nomes (O mesmo que salvou nossa vida no passo anterior)
+            # O Tradutor Automático de Nomes entra em ação novamente
             match_home = difflib.get_close_matches(home_original, times_conhecidos, n=1, cutoff=0.45)
             match_away = difflib.get_close_matches(away_original, times_conhecidos, n=1, cutoff=0.45)
             
@@ -107,6 +119,7 @@ def gerar_analise(df_treino, df_prever):
             d_away = stats[stats['Time'] == away]
             
             if d_home.empty or d_away.empty: 
+                print(f"❌ Ignorado (Sem histórico na base): {home} vs {away}")
                 continue
 
             lamb_home = d_home['Ataque_Casa'].values[0] * d_away['Defesa_Fora'].values[0] * m_liga_mand
@@ -152,14 +165,14 @@ def main():
         print(f"Erro ao ler CSV do GitHub: {e}")
         return
 
-    # 1. Pega os jogos do futuro
+    # 1. Pega os jogos futuros via API
     df_novos = obter_proxima_rodada()
     
-    # 2. Gera a previsão cruzando passado e futuro
+    # 2. Gera a previsão
     if not df_novos.empty:
         df_analise = gerar_analise(df_historico, df_novos)
         
-        # 3. Salva SÓ o arquivo de previsões
+        # 3. Salva
         if not df_analise.empty:
             csv_analise = df_analise.to_csv(index=False)
             try:
