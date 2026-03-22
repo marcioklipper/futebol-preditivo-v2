@@ -1,1121 +1,1123 @@
 Data,Hora,Mandante,Visitante,Gols_Mandante,Gols_Visitante,Resultado_Letra,Liga,Pais
-2025-08-15,20:00,Liverpool,Bournemouth,4,2,H,Premier League,Inglaterra
-2025-08-16,12:30,Aston Villa,Newcastle,0,0,D,Premier League,Inglaterra
-2025-08-16,15:00,Brighton,Fulham,1,1,D,Premier League,Inglaterra
-2025-08-16,15:00,Sunderland,West Ham,3,0,H,Premier League,Inglaterra
-2025-08-16,15:00,Tottenham,Burnley,3,0,H,Premier League,Inglaterra
-2025-08-16,17:30,Wolves,Man City,0,4,A,Premier League,Inglaterra
-2025-08-17,14:00,Chelsea,Crystal Palace,0,0,D,Premier League,Inglaterra
-2025-08-17,14:00,Nott'm Forest,Brentford,3,1,H,Premier League,Inglaterra
-2025-08-17,16:30,Man United,Arsenal,0,1,A,Premier League,Inglaterra
-2025-08-18,20:00,Leeds,Everton,1,0,H,Premier League,Inglaterra
-2025-08-22,20:00,West Ham,Chelsea,1,5,A,Premier League,Inglaterra
-2025-08-23,12:30,Man City,Tottenham,0,2,A,Premier League,Inglaterra
-2025-08-23,15:00,Bournemouth,Wolves,1,0,H,Premier League,Inglaterra
-2025-08-23,15:00,Brentford,Aston Villa,1,0,H,Premier League,Inglaterra
-2025-08-23,15:00,Burnley,Sunderland,2,0,H,Premier League,Inglaterra
-2025-08-23,17:30,Arsenal,Leeds,5,0,H,Premier League,Inglaterra
-2025-08-24,14:00,Crystal Palace,Nott'm Forest,1,1,D,Premier League,Inglaterra
-2025-08-24,14:00,Everton,Brighton,2,0,H,Premier League,Inglaterra
-2025-08-24,16:30,Fulham,Man United,1,1,D,Premier League,Inglaterra
-2025-08-25,20:00,Newcastle,Liverpool,2,3,A,Premier League,Inglaterra
-2025-08-30,12:30,Chelsea,Fulham,2,0,H,Premier League,Inglaterra
-2025-08-30,15:00,Man United,Burnley,3,2,H,Premier League,Inglaterra
-2025-08-30,15:00,Sunderland,Brentford,2,1,H,Premier League,Inglaterra
-2025-08-30,15:00,Tottenham,Bournemouth,0,1,A,Premier League,Inglaterra
-2025-08-30,15:00,Wolves,Everton,2,3,A,Premier League,Inglaterra
-2025-08-30,17:30,Leeds,Newcastle,0,0,D,Premier League,Inglaterra
-2025-08-31,14:00,Brighton,Man City,2,1,H,Premier League,Inglaterra
-2025-08-31,14:00,Nott'm Forest,West Ham,0,3,A,Premier League,Inglaterra
-2025-08-31,16:30,Liverpool,Arsenal,1,0,H,Premier League,Inglaterra
-2025-08-31,19:00,Aston Villa,Crystal Palace,0,3,A,Premier League,Inglaterra
-2025-09-13,12:30,Arsenal,Nott'm Forest,3,0,H,Premier League,Inglaterra
-2025-09-13,15:00,Bournemouth,Brighton,2,1,H,Premier League,Inglaterra
-2025-09-13,15:00,Crystal Palace,Sunderland,0,0,D,Premier League,Inglaterra
-2025-09-13,15:00,Everton,Aston Villa,0,0,D,Premier League,Inglaterra
-2025-09-13,15:00,Fulham,Leeds,1,0,H,Premier League,Inglaterra
-2025-09-13,15:00,Newcastle,Wolves,1,0,H,Premier League,Inglaterra
-2025-09-13,17:30,West Ham,Tottenham,0,3,A,Premier League,Inglaterra
-2025-09-13,20:00,Brentford,Chelsea,2,2,D,Premier League,Inglaterra
-2025-09-14,14:00,Burnley,Liverpool,0,1,A,Premier League,Inglaterra
-2025-09-14,16:30,Man City,Man United,3,0,H,Premier League,Inglaterra
-2025-09-20,12:30,Liverpool,Everton,2,1,H,Premier League,Inglaterra
-2025-09-20,15:00,Brighton,Tottenham,2,2,D,Premier League,Inglaterra
-2025-09-20,15:00,Burnley,Nott'm Forest,1,1,D,Premier League,Inglaterra
-2025-09-20,15:00,West Ham,Crystal Palace,1,2,A,Premier League,Inglaterra
-2025-09-20,15:00,Wolves,Leeds,1,3,A,Premier League,Inglaterra
-2025-09-20,17:30,Man United,Chelsea,2,1,H,Premier League,Inglaterra
-2025-09-20,20:00,Fulham,Brentford,3,1,H,Premier League,Inglaterra
-2025-09-21,14:00,Bournemouth,Newcastle,0,0,D,Premier League,Inglaterra
-2025-09-21,14:00,Sunderland,Aston Villa,1,1,D,Premier League,Inglaterra
-2025-09-21,16:30,Arsenal,Man City,1,1,D,Premier League,Inglaterra
-2025-09-27,12:30,Brentford,Man United,3,1,H,Premier League,Inglaterra
-2025-09-27,15:00,Chelsea,Brighton,1,3,A,Premier League,Inglaterra
-2025-09-27,15:00,Crystal Palace,Liverpool,2,1,H,Premier League,Inglaterra
-2025-09-27,15:00,Leeds,Bournemouth,2,2,D,Premier League,Inglaterra
-2025-09-27,15:00,Man City,Burnley,5,1,H,Premier League,Inglaterra
-2025-09-27,17:30,Nott'm Forest,Sunderland,0,1,A,Premier League,Inglaterra
-2025-09-27,20:00,Tottenham,Wolves,1,1,D,Premier League,Inglaterra
-2025-09-28,14:00,Aston Villa,Fulham,3,1,H,Premier League,Inglaterra
-2025-09-28,16:30,Newcastle,Arsenal,1,2,A,Premier League,Inglaterra
-2025-09-29,20:00,Everton,West Ham,1,1,D,Premier League,Inglaterra
-2025-10-03,20:00,Bournemouth,Fulham,3,1,H,Premier League,Inglaterra
-2025-10-04,12:30,Leeds,Tottenham,1,2,A,Premier League,Inglaterra
-2025-10-04,15:00,Arsenal,West Ham,2,0,H,Premier League,Inglaterra
-2025-10-04,15:00,Man United,Sunderland,2,0,H,Premier League,Inglaterra
-2025-10-04,17:30,Chelsea,Liverpool,2,1,H,Premier League,Inglaterra
-2025-10-05,14:00,Aston Villa,Burnley,2,1,H,Premier League,Inglaterra
-2025-10-05,14:00,Everton,Crystal Palace,2,1,H,Premier League,Inglaterra
-2025-10-05,14:00,Newcastle,Nott'm Forest,2,0,H,Premier League,Inglaterra
-2025-10-05,14:00,Wolves,Brighton,1,1,D,Premier League,Inglaterra
-2025-10-05,16:30,Brentford,Man City,0,1,A,Premier League,Inglaterra
-2025-10-18,12:30,Nott'm Forest,Chelsea,0,3,A,Premier League,Inglaterra
-2025-10-18,15:00,Brighton,Newcastle,2,1,H,Premier League,Inglaterra
-2025-10-18,15:00,Burnley,Leeds,2,0,H,Premier League,Inglaterra
-2025-10-18,15:00,Crystal Palace,Bournemouth,3,3,D,Premier League,Inglaterra
-2025-10-18,15:00,Man City,Everton,2,0,H,Premier League,Inglaterra
-2025-10-18,15:00,Sunderland,Wolves,2,0,H,Premier League,Inglaterra
-2025-10-18,17:30,Fulham,Arsenal,0,1,A,Premier League,Inglaterra
-2025-10-19,14:00,Tottenham,Aston Villa,1,2,A,Premier League,Inglaterra
-2025-10-19,16:30,Liverpool,Man United,1,2,A,Premier League,Inglaterra
-2025-10-20,20:00,West Ham,Brentford,0,2,A,Premier League,Inglaterra
-2025-10-24,20:00,Leeds,West Ham,2,1,H,Premier League,Inglaterra
-2025-10-25,15:00,Chelsea,Sunderland,1,2,A,Premier League,Inglaterra
-2025-10-25,15:00,Newcastle,Fulham,2,1,H,Premier League,Inglaterra
-2025-10-25,17:30,Man United,Brighton,4,2,H,Premier League,Inglaterra
-2025-10-25,20:00,Brentford,Liverpool,3,2,H,Premier League,Inglaterra
-2025-10-26,14:00,Arsenal,Crystal Palace,1,0,H,Premier League,Inglaterra
-2025-10-26,14:00,Aston Villa,Man City,1,0,H,Premier League,Inglaterra
-2025-10-26,14:00,Bournemouth,Nott'm Forest,2,0,H,Premier League,Inglaterra
-2025-10-26,14:00,Wolves,Burnley,2,3,A,Premier League,Inglaterra
-2025-10-26,16:30,Everton,Tottenham,0,3,A,Premier League,Inglaterra
-2025-11-01,15:00,Brighton,Leeds,3,0,H,Premier League,Inglaterra
-2025-11-01,15:00,Burnley,Arsenal,0,2,A,Premier League,Inglaterra
-2025-11-01,15:00,Crystal Palace,Brentford,2,0,H,Premier League,Inglaterra
-2025-11-01,15:00,Fulham,Wolves,3,0,H,Premier League,Inglaterra
-2025-11-01,15:00,Nott'm Forest,Man United,2,2,D,Premier League,Inglaterra
-2025-11-01,17:30,Tottenham,Chelsea,0,1,A,Premier League,Inglaterra
-2025-11-01,20:00,Liverpool,Aston Villa,2,0,H,Premier League,Inglaterra
-2025-11-02,14:00,West Ham,Newcastle,3,1,H,Premier League,Inglaterra
-2025-11-02,16:30,Man City,Bournemouth,3,1,H,Premier League,Inglaterra
-2025-11-03,20:00,Sunderland,Everton,1,1,D,Premier League,Inglaterra
-2025-11-08,12:30,Tottenham,Man United,2,2,D,Premier League,Inglaterra
-2025-11-08,15:00,Everton,Fulham,2,0,H,Premier League,Inglaterra
-2025-11-08,15:00,West Ham,Burnley,3,2,H,Premier League,Inglaterra
-2025-11-08,17:30,Sunderland,Arsenal,2,2,D,Premier League,Inglaterra
-2025-11-08,20:00,Chelsea,Wolves,3,0,H,Premier League,Inglaterra
-2025-11-09,14:00,Aston Villa,Bournemouth,4,0,H,Premier League,Inglaterra
-2025-11-09,14:00,Brentford,Newcastle,3,1,H,Premier League,Inglaterra
-2025-11-09,14:00,Crystal Palace,Brighton,0,0,D,Premier League,Inglaterra
-2025-11-09,14:00,Nott'm Forest,Leeds,3,1,H,Premier League,Inglaterra
-2025-11-09,16:30,Man City,Liverpool,3,0,H,Premier League,Inglaterra
-2025-11-22,12:30,Burnley,Chelsea,0,2,A,Premier League,Inglaterra
-2025-11-22,15:00,Bournemouth,West Ham,2,2,D,Premier League,Inglaterra
-2025-11-22,15:00,Brighton,Brentford,2,1,H,Premier League,Inglaterra
-2025-11-22,15:00,Fulham,Sunderland,1,0,H,Premier League,Inglaterra
-2025-11-22,15:00,Liverpool,Nott'm Forest,0,3,A,Premier League,Inglaterra
-2025-11-22,15:00,Wolves,Crystal Palace,0,2,A,Premier League,Inglaterra
-2025-11-22,17:30,Newcastle,Man City,2,1,H,Premier League,Inglaterra
-2025-11-23,14:00,Leeds,Aston Villa,1,2,A,Premier League,Inglaterra
-2025-11-23,16:30,Arsenal,Tottenham,4,1,H,Premier League,Inglaterra
-2025-11-24,20:00,Man United,Everton,0,1,A,Premier League,Inglaterra
-2025-11-29,15:00,Brentford,Burnley,3,1,H,Premier League,Inglaterra
-2025-11-29,15:00,Man City,Leeds,3,2,H,Premier League,Inglaterra
-2025-11-29,15:00,Sunderland,Bournemouth,3,2,H,Premier League,Inglaterra
-2025-11-29,17:30,Everton,Newcastle,1,4,A,Premier League,Inglaterra
-2025-11-29,20:00,Tottenham,Fulham,1,2,A,Premier League,Inglaterra
-2025-11-30,12:00,Crystal Palace,Man United,1,2,A,Premier League,Inglaterra
-2025-11-30,14:05,Aston Villa,Wolves,1,0,H,Premier League,Inglaterra
-2025-11-30,14:05,Nott'm Forest,Brighton,0,2,A,Premier League,Inglaterra
-2025-11-30,14:05,West Ham,Liverpool,0,2,A,Premier League,Inglaterra
-2025-11-30,16:30,Chelsea,Arsenal,1,1,D,Premier League,Inglaterra
-2025-12-02,19:30,Bournemouth,Everton,0,1,A,Premier League,Inglaterra
-2025-12-02,19:30,Fulham,Man City,4,5,A,Premier League,Inglaterra
-2025-12-02,20:15,Newcastle,Tottenham,2,2,D,Premier League,Inglaterra
-2025-12-03,19:30,Arsenal,Brentford,2,0,H,Premier League,Inglaterra
-2025-12-03,19:30,Brighton,Aston Villa,3,4,A,Premier League,Inglaterra
-2025-12-03,19:30,Burnley,Crystal Palace,0,1,A,Premier League,Inglaterra
-2025-12-03,19:30,Wolves,Nott'm Forest,0,1,A,Premier League,Inglaterra
-2025-12-03,20:15,Leeds,Chelsea,3,1,H,Premier League,Inglaterra
-2025-12-03,20:15,Liverpool,Sunderland,1,1,D,Premier League,Inglaterra
-2025-12-04,20:00,Man United,West Ham,1,1,D,Premier League,Inglaterra
-2025-12-06,12:30,Aston Villa,Arsenal,2,1,H,Premier League,Inglaterra
-2025-12-06,15:00,Bournemouth,Chelsea,0,0,D,Premier League,Inglaterra
-2025-12-06,15:00,Everton,Nott'm Forest,3,0,H,Premier League,Inglaterra
-2025-12-06,15:00,Man City,Sunderland,3,0,H,Premier League,Inglaterra
-2025-12-06,15:00,Newcastle,Burnley,2,1,H,Premier League,Inglaterra
-2025-12-06,15:00,Tottenham,Brentford,2,0,H,Premier League,Inglaterra
-2025-12-06,17:30,Leeds,Liverpool,3,3,D,Premier League,Inglaterra
-2025-12-07,14:00,Brighton,West Ham,1,1,D,Premier League,Inglaterra
-2025-12-07,16:30,Fulham,Crystal Palace,1,2,A,Premier League,Inglaterra
-2025-12-08,20:00,Wolves,Man United,1,4,A,Premier League,Inglaterra
-2025-12-13,15:00,Chelsea,Everton,2,0,H,Premier League,Inglaterra
-2025-12-13,15:00,Liverpool,Brighton,2,0,H,Premier League,Inglaterra
-2025-12-13,17:30,Burnley,Fulham,2,3,A,Premier League,Inglaterra
-2025-12-13,20:00,Arsenal,Wolves,2,1,H,Premier League,Inglaterra
-2025-12-14,14:00,Crystal Palace,Man City,0,3,A,Premier League,Inglaterra
-2025-12-14,14:00,Nott'm Forest,Tottenham,3,0,H,Premier League,Inglaterra
-2025-12-14,14:00,Sunderland,Newcastle,1,0,H,Premier League,Inglaterra
-2025-12-14,14:00,West Ham,Aston Villa,2,3,A,Premier League,Inglaterra
-2025-12-14,16:30,Brentford,Leeds,1,1,D,Premier League,Inglaterra
-2025-12-15,20:00,Man United,Bournemouth,4,4,D,Premier League,Inglaterra
-2025-12-20,12:30,Newcastle,Chelsea,2,2,D,Premier League,Inglaterra
-2025-12-20,15:00,Bournemouth,Burnley,1,1,D,Premier League,Inglaterra
-2025-12-20,15:00,Brighton,Sunderland,0,0,D,Premier League,Inglaterra
-2025-12-20,15:00,Man City,West Ham,3,0,H,Premier League,Inglaterra
-2025-12-20,15:00,Wolves,Brentford,0,2,A,Premier League,Inglaterra
-2025-12-20,17:30,Tottenham,Liverpool,1,2,A,Premier League,Inglaterra
-2025-12-20,20:00,Everton,Arsenal,0,1,A,Premier League,Inglaterra
-2025-12-20,20:00,Leeds,Crystal Palace,4,1,H,Premier League,Inglaterra
-2025-12-21,16:30,Aston Villa,Man United,2,1,H,Premier League,Inglaterra
-2025-12-22,20:00,Fulham,Nott'm Forest,1,0,H,Premier League,Inglaterra
-2025-12-26,20:00,Man United,Newcastle,1,0,H,Premier League,Inglaterra
-2025-12-27,12:30,Nott'm Forest,Man City,1,2,A,Premier League,Inglaterra
-2025-12-27,15:00,Arsenal,Brighton,2,1,H,Premier League,Inglaterra
-2025-12-27,15:00,Brentford,Bournemouth,4,1,H,Premier League,Inglaterra
-2025-12-27,15:00,Burnley,Everton,0,0,D,Premier League,Inglaterra
-2025-12-27,15:00,Liverpool,Wolves,2,1,H,Premier League,Inglaterra
-2025-12-27,15:00,West Ham,Fulham,0,1,A,Premier League,Inglaterra
-2025-12-27,17:30,Chelsea,Aston Villa,1,2,A,Premier League,Inglaterra
-2025-12-28,14:00,Sunderland,Leeds,1,1,D,Premier League,Inglaterra
-2025-12-28,16:30,Crystal Palace,Tottenham,0,1,A,Premier League,Inglaterra
-2025-12-30,19:30,Burnley,Newcastle,1,3,A,Premier League,Inglaterra
-2025-12-30,19:30,Chelsea,Bournemouth,2,2,D,Premier League,Inglaterra
-2025-12-30,19:30,Nott'm Forest,Everton,0,2,A,Premier League,Inglaterra
-2025-12-30,19:30,West Ham,Brighton,2,2,D,Premier League,Inglaterra
-2025-12-30,20:15,Arsenal,Aston Villa,4,1,H,Premier League,Inglaterra
-2025-12-30,20:15,Man United,Wolves,1,1,D,Premier League,Inglaterra
-2026-01-01,17:30,Crystal Palace,Fulham,1,1,D,Premier League,Inglaterra
-2026-01-01,17:30,Liverpool,Leeds,0,0,D,Premier League,Inglaterra
-2026-01-01,20:00,Brentford,Tottenham,0,0,D,Premier League,Inglaterra
-2026-01-01,20:00,Sunderland,Man City,0,0,D,Premier League,Inglaterra
-2026-01-03,12:30,Aston Villa,Nott'm Forest,3,1,H,Premier League,Inglaterra
-2026-01-03,15:00,Brighton,Burnley,2,0,H,Premier League,Inglaterra
-2026-01-03,15:00,Wolves,West Ham,3,0,H,Premier League,Inglaterra
-2026-01-03,17:30,Bournemouth,Arsenal,2,3,A,Premier League,Inglaterra
-2026-01-04,12:30,Leeds,Man United,1,1,D,Premier League,Inglaterra
-2026-01-04,15:00,Everton,Brentford,2,4,A,Premier League,Inglaterra
-2026-01-04,15:00,Newcastle,Crystal Palace,2,0,H,Premier League,Inglaterra
-2026-01-04,15:00,Tottenham,Sunderland,1,1,D,Premier League,Inglaterra
-2026-01-04,15:15,Fulham,Liverpool,2,2,D,Premier League,Inglaterra
-2026-01-04,17:30,Man City,Chelsea,1,1,D,Premier League,Inglaterra
-2026-01-06,20:00,West Ham,Nott'm Forest,1,2,A,Premier League,Inglaterra
-2026-01-07,19:30,Bournemouth,Tottenham,3,2,H,Premier League,Inglaterra
-2026-01-07,19:30,Brentford,Sunderland,3,0,H,Premier League,Inglaterra
-2026-01-07,19:30,Crystal Palace,Aston Villa,0,0,D,Premier League,Inglaterra
-2026-01-07,19:30,Everton,Wolves,1,1,D,Premier League,Inglaterra
-2026-01-07,19:30,Fulham,Chelsea,2,1,H,Premier League,Inglaterra
-2026-01-07,19:30,Man City,Brighton,1,1,D,Premier League,Inglaterra
-2026-01-07,20:15,Burnley,Man United,2,2,D,Premier League,Inglaterra
-2026-01-07,20:15,Newcastle,Leeds,4,3,H,Premier League,Inglaterra
-2026-01-08,20:00,Arsenal,Liverpool,0,0,D,Premier League,Inglaterra
-2026-01-17,12:30,Man United,Man City,2,0,H,Premier League,Inglaterra
-2026-01-17,15:00,Chelsea,Brentford,2,0,H,Premier League,Inglaterra
-2026-01-17,15:00,Leeds,Fulham,1,0,H,Premier League,Inglaterra
-2026-01-17,15:00,Liverpool,Burnley,1,1,D,Premier League,Inglaterra
-2026-01-17,15:00,Sunderland,Crystal Palace,2,1,H,Premier League,Inglaterra
-2026-01-17,15:00,Tottenham,West Ham,1,2,A,Premier League,Inglaterra
-2026-01-17,17:30,Nott'm Forest,Arsenal,0,0,D,Premier League,Inglaterra
-2026-01-18,14:00,Wolves,Newcastle,0,0,D,Premier League,Inglaterra
-2026-01-18,16:30,Aston Villa,Everton,0,1,A,Premier League,Inglaterra
-2026-01-19,20:00,Brighton,Bournemouth,1,1,D,Premier League,Inglaterra
-2025-08-15,18:00,Girona,Vallecano,1,3,A,La Liga,Espanha
-2025-08-15,20:30,Villarreal,Oviedo,2,0,H,La Liga,Espanha
-2025-08-16,18:30,Mallorca,Barcelona,0,3,A,La Liga,Espanha
-2025-08-16,20:30,Alaves,Levante,2,1,H,La Liga,Espanha
-2025-08-16,20:30,Valencia,Sociedad,1,1,D,La Liga,Espanha
-2025-08-17,16:00,Celta,Getafe,0,2,A,La Liga,Espanha
-2025-08-17,18:30,Ath Bilbao,Sevilla,3,2,H,La Liga,Espanha
-2025-08-17,20:30,Espanol,Ath Madrid,2,1,H,La Liga,Espanha
-2025-08-18,20:00,Elche,Betis,1,1,D,La Liga,Espanha
-2025-08-19,20:00,Real Madrid,Osasuna,1,0,H,La Liga,Espanha
-2025-08-22,20:30,Betis,Alaves,1,0,H,La Liga,Espanha
-2025-08-23,16:00,Mallorca,Celta,1,1,D,La Liga,Espanha
-2025-08-23,18:30,Ath Madrid,Elche,1,1,D,La Liga,Espanha
-2025-08-23,20:30,Levante,Barcelona,2,3,A,La Liga,Espanha
-2025-08-24,16:00,Osasuna,Valencia,1,0,H,La Liga,Espanha
-2025-08-24,18:30,Sociedad,Espanol,2,2,D,La Liga,Espanha
-2025-08-24,18:30,Villarreal,Girona,5,0,H,La Liga,Espanha
-2025-08-24,20:30,Oviedo,Real Madrid,0,3,A,La Liga,Espanha
-2025-08-25,18:30,Ath Bilbao,Vallecano,1,0,H,La Liga,Espanha
-2025-08-25,20:30,Sevilla,Getafe,1,2,A,La Liga,Espanha
-2025-08-27,20:00,Celta,Betis,1,1,D,La Liga,Espanha
-2025-08-29,18:30,Elche,Levante,2,0,H,La Liga,Espanha
-2025-08-29,20:30,Valencia,Getafe,3,0,H,La Liga,Espanha
-2025-08-30,16:00,Alaves,Ath Madrid,1,1,D,La Liga,Espanha
-2025-08-30,18:00,Oviedo,Sociedad,1,0,H,La Liga,Espanha
-2025-08-30,18:30,Girona,Sevilla,0,2,A,La Liga,Espanha
-2025-08-30,20:30,Real Madrid,Mallorca,2,1,H,La Liga,Espanha
-2025-08-31,16:00,Celta,Villarreal,1,1,D,La Liga,Espanha
-2025-08-31,18:00,Betis,Ath Bilbao,1,2,A,La Liga,Espanha
-2025-08-31,18:30,Espanol,Osasuna,1,0,H,La Liga,Espanha
-2025-08-31,20:30,Vallecano,Barcelona,1,1,D,La Liga,Espanha
-2025-09-12,20:00,Sevilla,Elche,2,2,D,La Liga,Espanha
-2025-09-13,13:00,Getafe,Oviedo,2,0,H,La Liga,Espanha
-2025-09-13,15:15,Sociedad,Real Madrid,1,2,A,La Liga,Espanha
-2025-09-13,17:30,Ath Bilbao,Alaves,0,1,A,La Liga,Espanha
-2025-09-13,20:00,Ath Madrid,Villarreal,2,0,H,La Liga,Espanha
-2025-09-14,13:00,Celta,Girona,1,1,D,La Liga,Espanha
-2025-09-14,15:15,Levante,Betis,2,2,D,La Liga,Espanha
-2025-09-14,17:30,Osasuna,Vallecano,2,0,H,La Liga,Espanha
-2025-09-14,20:00,Barcelona,Valencia,6,0,H,La Liga,Espanha
-2025-09-15,20:00,Espanol,Mallorca,3,2,H,La Liga,Espanha
-2025-09-19,20:00,Betis,Sociedad,3,1,H,La Liga,Espanha
-2025-09-20,13:00,Girona,Levante,0,4,A,La Liga,Espanha
-2025-09-20,15:15,Real Madrid,Espanol,2,0,H,La Liga,Espanha
-2025-09-20,17:30,Alaves,Sevilla,1,2,A,La Liga,Espanha
-2025-09-20,17:30,Villarreal,Osasuna,2,1,H,La Liga,Espanha
-2025-09-20,20:00,Valencia,Ath Bilbao,2,0,H,La Liga,Espanha
-2025-09-21,13:00,Vallecano,Celta,1,1,D,La Liga,Espanha
-2025-09-21,15:15,Mallorca,Ath Madrid,1,1,D,La Liga,Espanha
-2025-09-21,17:30,Elche,Oviedo,1,0,H,La Liga,Espanha
-2025-09-21,20:00,Barcelona,Getafe,3,0,H,La Liga,Espanha
-2025-09-23,18:00,Ath Bilbao,Girona,1,1,D,La Liga,Espanha
-2025-09-23,18:00,Espanol,Valencia,2,2,D,La Liga,Espanha
-2025-09-23,20:30,Levante,Real Madrid,1,4,A,La Liga,Espanha
-2025-09-23,20:30,Sevilla,Villarreal,1,2,A,La Liga,Espanha
-2025-09-24,18:00,Getafe,Alaves,1,1,D,La Liga,Espanha
-2025-09-24,20:30,Ath Madrid,Vallecano,3,2,H,La Liga,Espanha
-2025-09-24,20:30,Sociedad,Mallorca,1,0,H,La Liga,Espanha
-2025-09-25,18:30,Osasuna,Elche,1,1,D,La Liga,Espanha
-2025-09-25,20:30,Oviedo,Barcelona,1,3,A,La Liga,Espanha
-2025-09-26,20:00,Girona,Espanol,0,0,D,La Liga,Espanha
-2025-09-27,13:00,Getafe,Levante,1,1,D,La Liga,Espanha
-2025-09-27,15:15,Ath Madrid,Real Madrid,5,2,H,La Liga,Espanha
-2025-09-27,17:30,Mallorca,Alaves,1,0,H,La Liga,Espanha
-2025-09-27,20:00,Villarreal,Ath Bilbao,1,0,H,La Liga,Espanha
-2025-09-28,13:00,Vallecano,Sevilla,0,1,A,La Liga,Espanha
-2025-09-28,15:15,Elche,Celta,2,1,H,La Liga,Espanha
-2025-09-28,17:30,Barcelona,Sociedad,2,1,H,La Liga,Espanha
-2025-09-28,20:00,Betis,Osasuna,2,0,H,La Liga,Espanha
-2025-09-30,19:00,Valencia,Oviedo,1,2,A,La Liga,Espanha
-2025-10-03,20:00,Osasuna,Getafe,2,1,H,La Liga,Espanha
-2025-10-04,13:00,Oviedo,Levante,0,2,A,La Liga,Espanha
-2025-10-04,15:15,Girona,Valencia,2,1,H,La Liga,Espanha
-2025-10-04,17:30,Ath Bilbao,Mallorca,2,1,H,La Liga,Espanha
-2025-10-04,20:00,Real Madrid,Villarreal,3,1,H,La Liga,Espanha
-2025-10-05,13:00,Alaves,Elche,3,1,H,La Liga,Espanha
-2025-10-05,15:15,Sevilla,Barcelona,4,1,H,La Liga,Espanha
-2025-10-05,17:30,Espanol,Betis,1,2,A,La Liga,Espanha
-2025-10-05,17:30,Sociedad,Vallecano,0,1,A,La Liga,Espanha
-2025-10-05,20:00,Celta,Ath Madrid,1,1,D,La Liga,Espanha
-2025-10-17,20:00,Oviedo,Espanol,0,2,A,La Liga,Espanha
-2025-10-18,13:00,Sevilla,Mallorca,1,3,A,La Liga,Espanha
-2025-10-18,15:15,Barcelona,Girona,2,1,H,La Liga,Espanha
-2025-10-18,17:30,Villarreal,Betis,2,2,D,La Liga,Espanha
-2025-10-18,20:00,Ath Madrid,Osasuna,1,0,H,La Liga,Espanha
-2025-10-19,13:00,Elche,Ath Bilbao,0,0,D,La Liga,Espanha
-2025-10-19,15:15,Celta,Sociedad,1,1,D,La Liga,Espanha
-2025-10-19,17:30,Levante,Vallecano,0,3,A,La Liga,Espanha
-2025-10-19,20:00,Getafe,Real Madrid,0,1,A,La Liga,Espanha
-2025-10-20,20:00,Alaves,Valencia,0,0,D,La Liga,Espanha
-2025-10-24,20:00,Sociedad,Sevilla,2,1,H,La Liga,Espanha
-2025-10-25,13:00,Girona,Oviedo,3,3,D,La Liga,Espanha
-2025-10-25,15:15,Espanol,Elche,1,0,H,La Liga,Espanha
-2025-10-25,17:30,Ath Bilbao,Getafe,0,1,A,La Liga,Espanha
-2025-10-25,20:00,Valencia,Villarreal,0,2,A,La Liga,Espanha
-2025-10-26,13:00,Mallorca,Levante,1,1,D,La Liga,Espanha
-2025-10-26,15:15,Real Madrid,Barcelona,2,1,H,La Liga,Espanha
-2025-10-26,17:30,Osasuna,Celta,2,3,A,La Liga,Espanha
-2025-10-26,20:00,Vallecano,Alaves,1,0,H,La Liga,Espanha
-2025-10-27,20:00,Betis,Ath Madrid,0,2,A,La Liga,Espanha
-2025-10-31,20:00,Getafe,Girona,2,1,H,La Liga,Espanha
-2025-11-01,13:00,Villarreal,Vallecano,4,0,H,La Liga,Espanha
-2025-11-01,15:15,Ath Madrid,Sevilla,3,0,H,La Liga,Espanha
-2025-11-01,17:30,Sociedad,Ath Bilbao,3,2,H,La Liga,Espanha
-2025-11-01,20:00,Real Madrid,Valencia,4,0,H,La Liga,Espanha
-2025-11-02,13:00,Levante,Celta,1,2,A,La Liga,Espanha
-2025-11-02,15:15,Alaves,Espanol,2,1,H,La Liga,Espanha
-2025-11-02,17:30,Barcelona,Elche,3,1,H,La Liga,Espanha
-2025-11-02,20:00,Betis,Mallorca,3,0,H,La Liga,Espanha
-2025-11-03,20:00,Oviedo,Osasuna,0,0,D,La Liga,Espanha
-2025-11-07,20:00,Elche,Sociedad,1,1,D,La Liga,Espanha
-2025-11-08,13:00,Girona,Alaves,1,0,H,La Liga,Espanha
-2025-11-08,15:15,Sevilla,Osasuna,1,0,H,La Liga,Espanha
-2025-11-08,17:30,Ath Madrid,Levante,3,1,H,La Liga,Espanha
-2025-11-08,20:00,Espanol,Villarreal,0,2,A,La Liga,Espanha
-2025-11-09,13:00,Ath Bilbao,Oviedo,1,0,H,La Liga,Espanha
-2025-11-09,15:15,Vallecano,Real Madrid,0,0,D,La Liga,Espanha
-2025-11-09,17:30,Mallorca,Getafe,1,0,H,La Liga,Espanha
-2025-11-09,17:30,Valencia,Betis,1,1,D,La Liga,Espanha
-2025-11-09,20:00,Celta,Barcelona,2,4,A,La Liga,Espanha
-2025-11-21,20:00,Valencia,Levante,1,0,H,La Liga,Espanha
-2025-11-22,13:00,Alaves,Celta,0,1,A,La Liga,Espanha
-2025-11-22,15:15,Barcelona,Ath Bilbao,4,0,H,La Liga,Espanha
-2025-11-22,17:30,Osasuna,Sociedad,1,3,A,La Liga,Espanha
-2025-11-22,20:00,Villarreal,Mallorca,2,1,H,La Liga,Espanha
-2025-11-23,13:00,Oviedo,Vallecano,0,0,D,La Liga,Espanha
-2025-11-23,15:15,Betis,Girona,1,1,D,La Liga,Espanha
-2025-11-23,17:30,Getafe,Ath Madrid,0,1,A,La Liga,Espanha
-2025-11-23,20:00,Elche,Real Madrid,2,2,D,La Liga,Espanha
-2025-11-24,20:00,Espanol,Sevilla,2,1,H,La Liga,Espanha
-2025-11-28,20:00,Getafe,Elche,1,0,H,La Liga,Espanha
-2025-11-29,13:00,Mallorca,Osasuna,2,2,D,La Liga,Espanha
-2025-11-29,15:15,Barcelona,Alaves,3,1,H,La Liga,Espanha
-2025-11-29,17:30,Levante,Ath Bilbao,0,2,A,La Liga,Espanha
-2025-11-29,20:00,Ath Madrid,Oviedo,2,0,H,La Liga,Espanha
-2025-11-30,13:00,Sociedad,Villarreal,2,3,A,La Liga,Espanha
-2025-11-30,15:15,Sevilla,Betis,0,2,A,La Liga,Espanha
-2025-11-30,17:30,Celta,Espanol,0,1,A,La Liga,Espanha
-2025-11-30,20:00,Girona,Real Madrid,1,1,D,La Liga,Espanha
-2025-12-01,20:00,Vallecano,Valencia,1,1,D,La Liga,Espanha
-2025-12-02,20:00,Barcelona,Ath Madrid,3,1,H,La Liga,Espanha
-2025-12-03,18:00,Ath Bilbao,Real Madrid,0,3,A,La Liga,Espanha
-2025-12-05,20:00,Oviedo,Mallorca,0,0,D,La Liga,Espanha
-2025-12-06,13:00,Villarreal,Getafe,2,0,H,La Liga,Espanha
-2025-12-06,15:15,Alaves,Sociedad,1,0,H,La Liga,Espanha
-2025-12-06,17:30,Betis,Barcelona,3,5,A,La Liga,Espanha
-2025-12-06,20:00,Ath Bilbao,Ath Madrid,1,0,H,La Liga,Espanha
-2025-12-07,13:00,Elche,Girona,3,0,H,La Liga,Espanha
-2025-12-07,15:15,Valencia,Sevilla,1,1,D,La Liga,Espanha
-2025-12-07,17:30,Espanol,Vallecano,1,0,H,La Liga,Espanha
-2025-12-07,20:00,Real Madrid,Celta,0,2,A,La Liga,Espanha
-2025-12-08,20:00,Osasuna,Levante,2,0,H,La Liga,Espanha
-2025-12-12,20:00,Sociedad,Girona,1,2,A,La Liga,Espanha
-2025-12-13,13:00,Ath Madrid,Valencia,2,1,H,La Liga,Espanha
-2025-12-13,15:15,Mallorca,Elche,3,1,H,La Liga,Espanha
-2025-12-13,17:30,Barcelona,Osasuna,2,0,H,La Liga,Espanha
-2025-12-13,20:00,Getafe,Espanol,0,1,A,La Liga,Espanha
-2025-12-14,13:00,Sevilla,Oviedo,4,0,H,La Liga,Espanha
-2025-12-14,15:15,Celta,Ath Bilbao,2,0,H,La Liga,Espanha
-2025-12-14,20:00,Alaves,Real Madrid,1,2,A,La Liga,Espanha
-2025-12-15,20:00,Vallecano,Betis,0,0,D,La Liga,Espanha
-2025-12-19,20:00,Valencia,Mallorca,1,1,D,La Liga,Espanha
-2025-12-20,13:00,Oviedo,Celta,0,0,D,La Liga,Espanha
-2025-12-20,15:15,Levante,Sociedad,1,1,D,La Liga,Espanha
-2025-12-20,17:30,Osasuna,Alaves,3,0,H,La Liga,Espanha
-2025-12-20,20:00,Real Madrid,Sevilla,2,0,H,La Liga,Espanha
-2025-12-21,13:00,Girona,Ath Madrid,0,3,A,La Liga,Espanha
-2025-12-21,15:15,Villarreal,Barcelona,0,2,A,La Liga,Espanha
-2025-12-21,17:30,Elche,Vallecano,4,0,H,La Liga,Espanha
-2025-12-21,20:00,Betis,Getafe,4,0,H,La Liga,Espanha
-2025-12-22,20:00,Ath Bilbao,Espanol,1,2,A,La Liga,Espanha
-2026-01-02,20:00,Vallecano,Getafe,1,1,D,La Liga,Espanha
-2026-01-03,13:00,Celta,Valencia,4,1,H,La Liga,Espanha
-2026-01-03,15:15,Osasuna,Ath Bilbao,1,1,D,La Liga,Espanha
-2026-01-03,17:30,Elche,Villarreal,1,3,A,La Liga,Espanha
-2026-01-03,20:00,Espanol,Barcelona,0,2,A,La Liga,Espanha
-2026-01-04,13:00,Sevilla,Levante,0,3,A,La Liga,Espanha
-2026-01-04,15:15,Real Madrid,Betis,5,1,H,La Liga,Espanha
-2026-01-04,17:30,Alaves,Oviedo,1,1,D,La Liga,Espanha
-2026-01-04,17:30,Mallorca,Girona,1,2,A,La Liga,Espanha
-2026-01-04,20:00,Sociedad,Ath Madrid,1,1,D,La Liga,Espanha
-2026-01-09,20:00,Getafe,Sociedad,1,2,A,La Liga,Espanha
-2026-01-10,13:00,Oviedo,Betis,1,1,D,La Liga,Espanha
-2026-01-10,15:15,Villarreal,Alaves,3,1,H,La Liga,Espanha
-2026-01-10,17:30,Girona,Osasuna,1,0,H,La Liga,Espanha
-2026-01-10,20:00,Valencia,Elche,1,1,D,La Liga,Espanha
-2026-01-11,13:00,Vallecano,Mallorca,2,1,H,La Liga,Espanha
-2026-01-11,15:15,Levante,Espanol,1,1,D,La Liga,Espanha
-2026-01-12,20:00,Sevilla,Celta,0,1,A,La Liga,Espanha
-2026-01-16,20:00,Espanol,Girona,0,2,A,La Liga,Espanha
-2026-01-17,13:00,Real Madrid,Levante,2,0,H,La Liga,Espanha
-2026-01-17,15:15,Mallorca,Ath Bilbao,3,2,H,La Liga,Espanha
-2026-01-17,17:30,Osasuna,Oviedo,3,2,H,La Liga,Espanha
-2026-01-17,20:00,Betis,Villarreal,2,0,H,La Liga,Espanha
-2026-01-18,13:00,Getafe,Valencia,0,1,A,La Liga,Espanha
-2026-01-18,15:15,Ath Madrid,Alaves,1,0,H,La Liga,Espanha
-2026-01-18,17:30,Celta,Vallecano,3,0,H,La Liga,Espanha
-2026-01-18,20:00,Sociedad,Barcelona,2,1,H,La Liga,Espanha
-2026-01-19,20:00,Elche,Sevilla,2,2,D,La Liga,Espanha
-2025-08-08,19:00,For Sittard,Go Ahead Eagles,2,2,D,Eredivisie,Holanda
-2025-08-09,15:30,Nijmegen,Excelsior,5,0,H,Eredivisie,Holanda
-2025-08-09,17:45,Feyenoord,NAC Breda,2,0,H,Eredivisie,Holanda
-2025-08-09,19:00,Heerenveen,Volendam,1,1,D,Eredivisie,Holanda
-2025-08-09,20:00,PSV Eindhoven,Sparta Rotterdam,6,1,H,Eredivisie,Holanda
-2025-08-10,11:15,Zwolle,Twente,1,0,H,Eredivisie,Holanda
-2025-08-10,13:30,Ajax,Telstar,2,0,H,Eredivisie,Holanda
-2025-08-10,13:30,AZ Alkmaar,Groningen,4,1,H,Eredivisie,Holanda
-2025-08-10,15:45,Utrecht,Heracles,4,0,H,Eredivisie,Holanda
-2025-08-15,19:00,Telstar,Zwolle,0,2,A,Eredivisie,Holanda
-2025-08-16,17:45,Excelsior,Feyenoord,1,2,A,Eredivisie,Holanda
-2025-08-16,19:00,Heracles,Nijmegen,1,4,A,Eredivisie,Holanda
-2025-08-16,20:00,Groningen,Heerenveen,2,1,H,Eredivisie,Holanda
-2025-08-17,11:15,Go Ahead Eagles,Ajax,2,2,D,Eredivisie,Holanda
-2025-08-17,13:30,Sparta Rotterdam,Utrecht,2,1,H,Eredivisie,Holanda
-2025-08-17,13:30,Twente,PSV Eindhoven,0,2,A,Eredivisie,Holanda
-2025-08-17,15:45,Volendam,AZ Alkmaar,2,2,D,Eredivisie,Holanda
-2025-08-17,19:00,NAC Breda,For Sittard,2,1,H,Eredivisie,Holanda
-2025-08-23,15:30,Go Ahead Eagles,Sparta Rotterdam,0,3,A,Eredivisie,Holanda
-2025-08-23,17:45,PSV Eindhoven,Groningen,4,2,H,Eredivisie,Holanda
-2025-08-23,20:00,Telstar,Volendam,2,2,D,Eredivisie,Holanda
-2025-08-24,11:15,Heerenveen,Twente,1,2,A,Eredivisie,Holanda
-2025-08-24,13:30,Nijmegen,NAC Breda,3,0,H,Eredivisie,Holanda
-2025-08-24,13:30,Utrecht,Excelsior,4,1,H,Eredivisie,Holanda
-2025-08-24,15:45,Ajax,Heracles,2,0,H,Eredivisie,Holanda
-2025-08-29,19:00,Groningen,Heracles,4,0,H,Eredivisie,Holanda
-2025-08-30,15:30,Volendam,Ajax,1,1,D,Eredivisie,Holanda
-2025-08-30,17:45,Heerenveen,Go Ahead Eagles,2,2,D,Eredivisie,Holanda
-2025-08-30,19:00,PSV Eindhoven,Telstar,0,2,A,Eredivisie,Holanda
-2025-08-30,20:00,Excelsior,Twente,1,0,H,Eredivisie,Holanda
-2025-08-31,11:15,For Sittard,Nijmegen,3,2,H,Eredivisie,Holanda
-2025-08-31,13:30,Sparta Rotterdam,Feyenoord,0,4,A,Eredivisie,Holanda
-2025-08-31,13:30,Zwolle,Utrecht,0,2,A,Eredivisie,Holanda
-2025-08-31,15:45,NAC Breda,AZ Alkmaar,0,1,A,Eredivisie,Holanda
-2025-09-13,15:30,Ajax,Zwolle,3,1,H,Eredivisie,Holanda
-2025-09-13,17:45,Go Ahead Eagles,Volendam,3,0,H,Eredivisie,Holanda
-2025-09-13,17:45,Nijmegen,PSV Eindhoven,3,5,A,Eredivisie,Holanda
-2025-09-13,20:00,Feyenoord,Heerenveen,1,0,H,Eredivisie,Holanda
-2025-09-13,20:00,Twente,NAC Breda,2,2,D,Eredivisie,Holanda
-2025-09-14,11:15,Excelsior,Sparta Rotterdam,0,1,A,Eredivisie,Holanda
-2025-09-14,13:30,Heracles,AZ Alkmaar,1,2,A,Eredivisie,Holanda
-2025-09-14,13:30,Utrecht,Groningen,0,1,A,Eredivisie,Holanda
-2025-09-14,15:45,Telstar,For Sittard,1,3,A,Eredivisie,Holanda
-2025-09-17,19:00,Feyenoord,For Sittard,2,0,H,Eredivisie,Holanda
-2025-09-19,19:00,Sparta Rotterdam,Twente,1,5,A,Eredivisie,Holanda
-2025-09-20,15:30,Volendam,Excelsior,1,2,A,Eredivisie,Holanda
-2025-09-20,17:45,Groningen,Telstar,2,0,H,Eredivisie,Holanda
-2025-09-20,19:00,For Sittard,Utrecht,1,0,H,Eredivisie,Holanda
-2025-09-20,20:00,NAC Breda,Heracles,2,1,H,Eredivisie,Holanda
-2025-09-21,11:15,Zwolle,Go Ahead Eagles,0,2,A,Eredivisie,Holanda
-2025-09-21,13:30,Heerenveen,Nijmegen,3,2,H,Eredivisie,Holanda
-2025-09-21,13:30,PSV Eindhoven,Ajax,2,2,D,Eredivisie,Holanda
-2025-09-21,15:45,AZ Alkmaar,Feyenoord,3,3,D,Eredivisie,Holanda
-2025-09-24,19:00,AZ Alkmaar,Zwolle,2,2,D,Eredivisie,Holanda
-2025-09-26,19:00,Twente,For Sittard,3,2,H,Eredivisie,Holanda
-2025-09-27,15:30,Ajax,NAC Breda,2,1,H,Eredivisie,Holanda
-2025-09-27,17:45,Volendam,Zwolle,2,1,H,Eredivisie,Holanda
-2025-09-27,19:00,Excelsior,PSV Eindhoven,1,2,A,Eredivisie,Holanda
-2025-09-27,20:00,Heracles,Sparta Rotterdam,3,0,H,Eredivisie,Holanda
-2025-09-28,11:15,Nijmegen,AZ Alkmaar,2,1,H,Eredivisie,Holanda
-2025-09-28,13:30,Groningen,Feyenoord,0,1,A,Eredivisie,Holanda
-2025-09-28,13:30,Utrecht,Heerenveen,2,2,D,Eredivisie,Holanda
-2025-09-28,15:45,Telstar,Go Ahead Eagles,4,2,H,Eredivisie,Holanda
-2025-10-03,19:00,NAC Breda,Groningen,1,2,A,Eredivisie,Holanda
-2025-10-04,15:30,Sparta Rotterdam,Ajax,3,3,D,Eredivisie,Holanda
-2025-10-04,17:45,For Sittard,Volendam,1,0,H,Eredivisie,Holanda
-2025-10-04,19:00,Zwolle,PSV Eindhoven,0,4,A,Eredivisie,Holanda
-2025-10-04,20:00,Heerenveen,Excelsior,2,1,H,Eredivisie,Holanda
-2025-10-05,11:15,Twente,Heracles,2,1,H,Eredivisie,Holanda
-2025-10-05,13:30,Feyenoord,Utrecht,3,2,H,Eredivisie,Holanda
-2025-10-05,15:45,AZ Alkmaar,Telstar,2,1,H,Eredivisie,Holanda
-2025-10-05,19:00,Go Ahead Eagles,Nijmegen,1,1,D,Eredivisie,Holanda
-2025-10-18,15:30,Nijmegen,Twente,3,3,D,Eredivisie,Holanda
-2025-10-18,17:45,PSV Eindhoven,Go Ahead Eagles,2,1,H,Eredivisie,Holanda
-2025-10-18,17:45,Utrecht,Volendam,3,1,H,Eredivisie,Holanda
-2025-10-18,20:00,Ajax,AZ Alkmaar,0,2,A,Eredivisie,Holanda
-2025-10-18,20:00,NAC Breda,Zwolle,2,2,D,Eredivisie,Holanda
-2025-10-19,11:15,Telstar,Heerenveen,2,3,A,Eredivisie,Holanda
-2025-10-19,13:30,Excelsior,For Sittard,1,0,H,Eredivisie,Holanda
-2025-10-19,13:30,Groningen,Sparta Rotterdam,0,2,A,Eredivisie,Holanda
-2025-10-19,15:45,Heracles,Feyenoord,0,7,A,Eredivisie,Holanda
-2025-10-24,19:00,Heerenveen,NAC Breda,3,3,D,Eredivisie,Holanda
-2025-10-25,15:30,For Sittard,Groningen,1,2,A,Eredivisie,Holanda
-2025-10-25,17:45,Sparta Rotterdam,Telstar,1,0,H,Eredivisie,Holanda
-2025-10-25,19:00,Volendam,Heracles,3,0,H,Eredivisie,Holanda
-2025-10-25,20:00,Zwolle,Nijmegen,2,2,D,Eredivisie,Holanda
-2025-10-26,11:15,Twente,Ajax,2,3,A,Eredivisie,Holanda
-2025-10-26,13:30,Feyenoord,PSV Eindhoven,2,3,A,Eredivisie,Holanda
-2025-10-26,15:45,AZ Alkmaar,Utrecht,4,1,H,Eredivisie,Holanda
-2025-10-26,19:00,Go Ahead Eagles,Excelsior,2,0,H,Eredivisie,Holanda
-2025-10-31,19:00,PSV Eindhoven,For Sittard,5,2,H,Eredivisie,Holanda
-2025-11-01,15:30,Ajax,Heerenveen,1,1,D,Eredivisie,Holanda
-2025-11-01,17:45,NAC Breda,Go Ahead Eagles,1,0,H,Eredivisie,Holanda
-2025-11-01,19:00,Feyenoord,Volendam,3,1,H,Eredivisie,Holanda
-2025-11-01,20:00,Telstar,Excelsior,2,2,D,Eredivisie,Holanda
-2025-11-02,11:15,Heracles,Zwolle,8,2,H,Eredivisie,Holanda
-2025-11-02,13:30,Groningen,Twente,1,1,D,Eredivisie,Holanda
-2025-11-02,13:30,Sparta Rotterdam,AZ Alkmaar,0,1,A,Eredivisie,Holanda
-2025-11-02,15:45,Utrecht,Nijmegen,1,0,H,Eredivisie,Holanda
-2025-11-07,19:00,Twente,Telstar,0,0,D,Eredivisie,Holanda
-2025-11-08,15:30,Excelsior,Heracles,1,2,A,Eredivisie,Holanda
-2025-11-08,17:45,Volendam,NAC Breda,2,1,H,Eredivisie,Holanda
-2025-11-08,19:00,For Sittard,Heerenveen,2,0,H,Eredivisie,Holanda
-2025-11-08,20:00,Zwolle,Sparta Rotterdam,1,0,H,Eredivisie,Holanda
-2025-11-09,11:15,Utrecht,Ajax,2,1,H,Eredivisie,Holanda
-2025-11-09,13:30,Nijmegen,Groningen,2,0,H,Eredivisie,Holanda
-2025-11-09,15:45,AZ Alkmaar,PSV Eindhoven,1,5,A,Eredivisie,Holanda
-2025-11-09,19:00,Go Ahead Eagles,Feyenoord,2,1,H,Eredivisie,Holanda
-2025-11-22,15:30,NAC Breda,PSV Eindhoven,0,1,A,Eredivisie,Holanda
-2025-11-22,17:45,Ajax,Excelsior,1,2,A,Eredivisie,Holanda
-2025-11-22,17:45,Volendam,Twente,1,1,D,Eredivisie,Holanda
-2025-11-22,20:00,Heracles,Go Ahead Eagles,4,2,H,Eredivisie,Holanda
-2025-11-22,20:00,Sparta Rotterdam,For Sittard,1,1,D,Eredivisie,Holanda
-2025-11-23,11:15,Heerenveen,AZ Alkmaar,3,1,H,Eredivisie,Holanda
-2025-11-23,13:30,Feyenoord,Nijmegen,2,4,A,Eredivisie,Holanda
-2025-11-23,13:30,Telstar,Utrecht,1,1,D,Eredivisie,Holanda
-2025-11-23,15:45,Groningen,Zwolle,2,2,D,Eredivisie,Holanda
-2025-11-28,19:00,Zwolle,Heerenveen,2,1,H,Eredivisie,Holanda
-2025-11-29,15:30,Excelsior,NAC Breda,1,0,H,Eredivisie,Holanda
-2025-11-29,17:45,For Sittard,Heracles,1,1,D,Eredivisie,Holanda
-2025-11-29,20:00,Nijmegen,Sparta Rotterdam,3,1,H,Eredivisie,Holanda
-2025-11-30,11:15,PSV Eindhoven,Volendam,3,0,H,Eredivisie,Holanda
-2025-11-30,13:30,Go Ahead Eagles,Utrecht,2,2,D,Eredivisie,Holanda
-2025-11-30,13:30,Telstar,Feyenoord,1,2,A,Eredivisie,Holanda
-2025-11-30,15:45,Twente,AZ Alkmaar,1,0,H,Eredivisie,Holanda
-2025-12-02,13:30,Ajax,Groningen,2,0,H,Eredivisie,Holanda
-2025-12-05,19:00,Excelsior,Groningen,0,2,A,Eredivisie,Holanda
-2025-12-06,15:30,Heerenveen,PSV Eindhoven,0,2,A,Eredivisie,Holanda
-2025-12-06,17:45,For Sittard,Ajax,1,3,A,Eredivisie,Holanda
-2025-12-06,19:00,Heracles,Telstar,1,1,D,Eredivisie,Holanda
-2025-12-06,20:00,Feyenoord,Zwolle,6,1,H,Eredivisie,Holanda
-2025-12-07,11:15,Utrecht,Twente,1,1,D,Eredivisie,Holanda
-2025-12-07,13:30,AZ Alkmaar,Go Ahead Eagles,2,2,D,Eredivisie,Holanda
-2025-12-07,13:30,Volendam,Nijmegen,2,3,A,Eredivisie,Holanda
-2025-12-07,15:45,Sparta Rotterdam,NAC Breda,1,0,H,Eredivisie,Holanda
-2025-12-13,15:30,Telstar,Nijmegen,2,2,D,Eredivisie,Holanda
-2025-12-13,17:45,Groningen,Volendam,3,0,H,Eredivisie,Holanda
-2025-12-13,19:00,PSV Eindhoven,Heracles,4,3,H,Eredivisie,Holanda
-2025-12-13,20:00,Zwolle,For Sittard,1,0,H,Eredivisie,Holanda
-2025-12-14,11:15,Sparta Rotterdam,Heerenveen,0,3,A,Eredivisie,Holanda
-2025-12-14,13:30,Ajax,Feyenoord,2,0,H,Eredivisie,Holanda
-2025-12-14,13:30,Twente,Go Ahead Eagles,2,0,H,Eredivisie,Holanda
-2025-12-14,15:45,NAC Breda,Utrecht,1,1,D,Eredivisie,Holanda
-2025-12-20,15:30,Heracles,Heerenveen,0,3,A,Eredivisie,Holanda
-2025-12-20,17:45,Excelsior,Zwolle,2,1,H,Eredivisie,Holanda
-2025-12-20,19:00,Nijmegen,Ajax,2,2,D,Eredivisie,Holanda
-2025-12-20,20:00,NAC Breda,Telstar,0,1,A,Eredivisie,Holanda
-2025-12-21,11:15,Utrecht,PSV Eindhoven,1,2,A,Eredivisie,Holanda
-2025-12-21,13:30,Feyenoord,Twente,1,1,D,Eredivisie,Holanda
-2025-12-21,13:30,Go Ahead Eagles,Groningen,1,1,D,Eredivisie,Holanda
-2025-12-21,15:45,For Sittard,AZ Alkmaar,4,3,H,Eredivisie,Holanda
-2025-12-21,15:45,Volendam,Sparta Rotterdam,0,1,A,Eredivisie,Holanda
-2026-01-10,15:30,AZ Alkmaar,Volendam,1,0,H,Eredivisie,Holanda
-2026-01-10,17:45,Twente,Zwolle,1,1,D,Eredivisie,Holanda
-2026-01-10,19:00,PSV Eindhoven,Excelsior,5,1,H,Eredivisie,Holanda
-2026-01-10,20:00,Groningen,NAC Breda,0,0,D,Eredivisie,Holanda
-2026-01-11,11:15,Heerenveen,Feyenoord,2,2,D,Eredivisie,Holanda
-2026-01-11,13:30,Go Ahead Eagles,For Sittard,2,2,D,Eredivisie,Holanda
-2026-01-11,13:30,Telstar,Ajax,2,3,A,Eredivisie,Holanda
-2026-01-11,15:45,Sparta Rotterdam,Heracles,2,0,H,Eredivisie,Holanda
-2026-01-17,15:30,Ajax,Go Ahead Eagles,2,2,D,Eredivisie,Holanda
-2026-01-17,17:45,Zwolle,AZ Alkmaar,3,1,H,Eredivisie,Holanda
-2026-01-17,19:00,Excelsior,Telstar,2,2,D,Eredivisie,Holanda
-2026-01-17,19:00,For Sittard,PSV Eindhoven,1,2,A,Eredivisie,Holanda
-2026-01-17,20:00,NAC Breda,Nijmegen,3,4,A,Eredivisie,Holanda
-2026-01-18,11:15,Heerenveen,Groningen,0,2,A,Eredivisie,Holanda
-2026-01-18,13:30,Heracles,Twente,0,2,A,Eredivisie,Holanda
-2026-01-18,13:30,Volendam,Utrecht,2,1,H,Eredivisie,Holanda
-2026-01-18,15:45,Feyenoord,Sparta Rotterdam,3,4,A,Eredivisie,Holanda
-2026-01-21,17:45,AZ Alkmaar,Excelsior,1,1,D,Eredivisie,Holanda
-2025-08-23,17:30,Genoa,Lecce,0,0,D,Serie A,Italia
-2025-08-23,17:30,Sassuolo,Napoli,0,2,A,Serie A,Italia
-2025-08-23,19:45,Milan,Cremonese,1,2,A,Serie A,Italia
-2025-08-23,19:45,Roma,Bologna,1,0,H,Serie A,Italia
-2025-08-24,17:30,Cagliari,Fiorentina,1,1,D,Serie A,Italia
-2025-08-24,17:30,Como,Lazio,2,0,H,Serie A,Italia
-2025-08-24,19:45,Atalanta,Pisa,1,1,D,Serie A,Italia
-2025-08-24,19:45,Juventus,Parma,2,0,H,Serie A,Italia
-2025-08-25,17:30,Udinese,Verona,1,1,D,Serie A,Italia
-2025-08-25,19:45,Inter,Torino,5,0,H,Serie A,Italia
-2025-08-29,17:30,Cremonese,Sassuolo,3,2,H,Serie A,Italia
-2025-08-29,19:45,Lecce,Milan,0,2,A,Serie A,Italia
-2025-08-30,17:30,Bologna,Como,1,0,H,Serie A,Italia
-2025-08-30,17:30,Parma,Atalanta,1,1,D,Serie A,Italia
-2025-08-30,19:45,Napoli,Cagliari,1,0,H,Serie A,Italia
-2025-08-30,19:45,Pisa,Roma,0,1,A,Serie A,Italia
-2025-08-31,17:30,Genoa,Juventus,0,1,A,Serie A,Italia
-2025-08-31,17:30,Torino,Fiorentina,0,0,D,Serie A,Italia
-2025-08-31,19:45,Inter,Udinese,1,2,A,Serie A,Italia
-2025-08-31,19:45,Lazio,Verona,4,0,H,Serie A,Italia
-2025-09-13,14:00,Cagliari,Parma,2,0,H,Serie A,Italia
-2025-09-13,17:00,Juventus,Inter,4,3,H,Serie A,Italia
-2025-09-13,19:45,Fiorentina,Napoli,1,3,A,Serie A,Italia
-2025-09-14,11:30,Roma,Torino,0,1,A,Serie A,Italia
-2025-09-14,14:00,Atalanta,Lecce,4,1,H,Serie A,Italia
-2025-09-14,14:00,Pisa,Udinese,0,1,A,Serie A,Italia
-2025-09-14,17:00,Sassuolo,Lazio,1,0,H,Serie A,Italia
-2025-09-14,19:45,Milan,Bologna,1,0,H,Serie A,Italia
-2025-09-15,17:30,Verona,Cremonese,0,0,D,Serie A,Italia
-2025-09-15,19:45,Como,Genoa,1,1,D,Serie A,Italia
-2025-09-19,19:45,Lecce,Cagliari,1,2,A,Serie A,Italia
-2025-09-20,14:00,Bologna,Genoa,2,1,H,Serie A,Italia
-2025-09-20,17:00,Verona,Juventus,1,1,D,Serie A,Italia
-2025-09-20,19:45,Udinese,Milan,0,3,A,Serie A,Italia
-2025-09-21,11:30,Lazio,Roma,0,1,A,Serie A,Italia
-2025-09-21,14:00,Cremonese,Parma,0,0,D,Serie A,Italia
-2025-09-21,14:00,Torino,Atalanta,0,3,A,Serie A,Italia
-2025-09-21,17:00,Fiorentina,Como,1,2,A,Serie A,Italia
-2025-09-21,19:45,Inter,Sassuolo,2,1,H,Serie A,Italia
-2025-09-22,19:45,Napoli,Pisa,3,2,H,Serie A,Italia
-2025-09-27,14:00,Como,Cremonese,1,1,D,Serie A,Italia
-2025-09-27,17:00,Juventus,Atalanta,1,1,D,Serie A,Italia
-2025-09-27,19:45,Cagliari,Inter,0,2,A,Serie A,Italia
-2025-09-28,11:30,Sassuolo,Udinese,3,1,H,Serie A,Italia
-2025-09-28,14:00,Pisa,Fiorentina,0,0,D,Serie A,Italia
-2025-09-28,14:00,Roma,Verona,2,0,H,Serie A,Italia
-2025-09-28,17:00,Lecce,Bologna,2,2,D,Serie A,Italia
-2025-09-28,19:45,Milan,Napoli,2,1,H,Serie A,Italia
-2025-09-29,17:30,Parma,Torino,2,1,H,Serie A,Italia
-2025-09-29,19:45,Genoa,Lazio,0,3,A,Serie A,Italia
-2025-10-03,19:45,Verona,Sassuolo,0,1,A,Serie A,Italia
-2025-10-04,14:00,Lazio,Torino,3,3,D,Serie A,Italia
-2025-10-04,14:00,Parma,Lecce,0,1,A,Serie A,Italia
-2025-10-04,17:00,Inter,Cremonese,4,1,H,Serie A,Italia
-2025-10-04,19:45,Atalanta,Como,1,1,D,Serie A,Italia
-2025-10-05,11:30,Udinese,Cagliari,1,1,D,Serie A,Italia
-2025-10-05,14:00,Bologna,Pisa,4,0,H,Serie A,Italia
-2025-10-05,14:00,Fiorentina,Roma,1,2,A,Serie A,Italia
-2025-10-05,17:00,Napoli,Genoa,2,1,H,Serie A,Italia
-2025-10-05,19:45,Juventus,Milan,0,0,D,Serie A,Italia
-2025-10-18,14:00,Lecce,Sassuolo,0,0,D,Serie A,Italia
-2025-10-18,14:00,Pisa,Verona,0,0,D,Serie A,Italia
-2025-10-18,17:00,Torino,Napoli,1,0,H,Serie A,Italia
-2025-10-18,19:45,Roma,Inter,0,1,A,Serie A,Italia
-2025-10-19,11:30,Como,Juventus,2,0,H,Serie A,Italia
-2025-10-19,14:00,Cagliari,Bologna,0,2,A,Serie A,Italia
-2025-10-19,14:00,Genoa,Parma,0,0,D,Serie A,Italia
-2025-10-19,17:00,Atalanta,Lazio,0,0,D,Serie A,Italia
-2025-10-19,19:45,Milan,Fiorentina,2,1,H,Serie A,Italia
-2025-10-20,19:45,Cremonese,Udinese,1,1,D,Serie A,Italia
-2025-10-24,19:45,Milan,Pisa,2,2,D,Serie A,Italia
-2025-10-25,14:00,Parma,Como,0,0,D,Serie A,Italia
-2025-10-25,14:00,Udinese,Lecce,3,2,H,Serie A,Italia
-2025-10-25,17:00,Napoli,Inter,3,1,H,Serie A,Italia
-2025-10-25,19:45,Cremonese,Atalanta,1,1,D,Serie A,Italia
-2025-10-26,11:30,Torino,Genoa,2,1,H,Serie A,Italia
-2025-10-26,14:00,Sassuolo,Roma,0,1,A,Serie A,Italia
-2025-10-26,14:00,Verona,Cagliari,2,2,D,Serie A,Italia
-2025-10-26,17:00,Fiorentina,Bologna,2,2,D,Serie A,Italia
-2025-10-26,19:45,Lazio,Juventus,1,0,H,Serie A,Italia
-2025-10-28,17:30,Lecce,Napoli,0,1,A,Serie A,Italia
-2025-10-28,19:45,Atalanta,Milan,1,1,D,Serie A,Italia
-2025-10-29,17:30,Como,Verona,3,1,H,Serie A,Italia
-2025-10-29,17:30,Juventus,Udinese,3,1,H,Serie A,Italia
-2025-10-29,17:30,Roma,Parma,2,1,H,Serie A,Italia
-2025-10-29,19:45,Bologna,Torino,0,0,D,Serie A,Italia
-2025-10-29,19:45,Genoa,Cremonese,0,2,A,Serie A,Italia
-2025-10-29,19:45,Inter,Fiorentina,3,0,H,Serie A,Italia
-2025-10-30,17:30,Cagliari,Sassuolo,1,2,A,Serie A,Italia
-2025-10-30,19:45,Pisa,Lazio,0,0,D,Serie A,Italia
-2025-11-01,14:00,Udinese,Atalanta,1,0,H,Serie A,Italia
-2025-11-01,17:00,Napoli,Como,0,0,D,Serie A,Italia
-2025-11-01,19:45,Cremonese,Juventus,1,2,A,Serie A,Italia
-2025-11-02,11:30,Verona,Inter,1,2,A,Serie A,Italia
-2025-11-02,14:00,Fiorentina,Lecce,0,1,A,Serie A,Italia
-2025-11-02,14:00,Torino,Pisa,2,2,D,Serie A,Italia
-2025-11-02,17:00,Parma,Bologna,1,3,A,Serie A,Italia
-2025-11-02,19:45,Milan,Roma,1,0,H,Serie A,Italia
-2025-11-03,17:30,Sassuolo,Genoa,1,2,A,Serie A,Italia
-2025-11-03,19:45,Lazio,Cagliari,2,0,H,Serie A,Italia
-2025-11-07,19:45,Pisa,Cremonese,1,0,H,Serie A,Italia
-2025-11-08,14:00,Como,Cagliari,0,0,D,Serie A,Italia
-2025-11-08,14:00,Lecce,Verona,0,0,D,Serie A,Italia
-2025-11-08,17:00,Juventus,Torino,0,0,D,Serie A,Italia
-2025-11-08,19:45,Parma,Milan,2,2,D,Serie A,Italia
-2025-11-09,11:30,Atalanta,Sassuolo,0,3,A,Serie A,Italia
-2025-11-09,14:00,Bologna,Napoli,2,0,H,Serie A,Italia
-2025-11-09,14:00,Genoa,Fiorentina,2,2,D,Serie A,Italia
-2025-11-09,17:00,Roma,Udinese,2,0,H,Serie A,Italia
-2025-11-09,19:45,Inter,Lazio,2,0,H,Serie A,Italia
-2025-11-22,14:00,Cagliari,Genoa,3,3,D,Serie A,Italia
-2025-11-22,14:00,Udinese,Bologna,0,3,A,Serie A,Italia
-2025-11-22,17:00,Fiorentina,Juventus,1,1,D,Serie A,Italia
-2025-11-22,19:45,Napoli,Atalanta,3,1,H,Serie A,Italia
-2025-11-23,11:30,Verona,Parma,1,2,A,Serie A,Italia
-2025-11-23,14:00,Cremonese,Roma,1,3,A,Serie A,Italia
-2025-11-23,17:00,Lazio,Lecce,2,0,H,Serie A,Italia
-2025-11-23,19:45,Inter,Milan,0,1,A,Serie A,Italia
-2025-11-24,17:30,Torino,Como,1,5,A,Serie A,Italia
-2025-11-24,19:45,Sassuolo,Pisa,2,2,D,Serie A,Italia
-2025-11-28,19:45,Como,Sassuolo,2,0,H,Serie A,Italia
-2025-11-29,14:00,Genoa,Verona,2,1,H,Serie A,Italia
-2025-11-29,14:00,Parma,Udinese,0,2,A,Serie A,Italia
-2025-11-29,17:00,Juventus,Cagliari,2,1,H,Serie A,Italia
-2025-11-29,19:45,Milan,Lazio,1,0,H,Serie A,Italia
-2025-11-30,11:30,Lecce,Torino,2,1,H,Serie A,Italia
-2025-11-30,14:00,Pisa,Inter,0,2,A,Serie A,Italia
-2025-11-30,17:00,Atalanta,Fiorentina,2,0,H,Serie A,Italia
-2025-11-30,19:45,Roma,Napoli,0,1,A,Serie A,Italia
-2025-12-01,19:45,Bologna,Cremonese,1,3,A,Serie A,Italia
-2025-12-06,14:00,Sassuolo,Fiorentina,3,1,H,Serie A,Italia
-2025-12-06,17:00,Inter,Como,4,0,H,Serie A,Italia
-2025-12-06,19:45,Verona,Atalanta,3,1,H,Serie A,Italia
-2025-12-07,11:30,Cremonese,Lecce,2,0,H,Serie A,Italia
-2025-12-07,14:00,Cagliari,Roma,1,0,H,Serie A,Italia
-2025-12-07,17:00,Lazio,Bologna,1,1,D,Serie A,Italia
-2025-12-07,19:45,Napoli,Juventus,2,1,H,Serie A,Italia
-2025-12-08,14:00,Pisa,Parma,0,1,A,Serie A,Italia
-2025-12-08,17:00,Udinese,Genoa,1,2,A,Serie A,Italia
-2025-12-08,19:45,Torino,Milan,2,3,A,Serie A,Italia
-2025-12-12,19:45,Lecce,Pisa,1,0,H,Serie A,Italia
-2025-12-13,14:00,Torino,Cremonese,1,0,H,Serie A,Italia
-2025-12-13,17:00,Parma,Lazio,0,1,A,Serie A,Italia
-2025-12-13,19:45,Atalanta,Cagliari,2,1,H,Serie A,Italia
-2025-12-14,11:30,Milan,Sassuolo,2,2,D,Serie A,Italia
-2025-12-14,14:00,Fiorentina,Verona,1,2,A,Serie A,Italia
-2025-12-14,14:00,Udinese,Napoli,1,0,H,Serie A,Italia
-2025-12-14,17:00,Genoa,Inter,1,2,A,Serie A,Italia
-2025-12-14,19:45,Bologna,Juventus,0,1,A,Serie A,Italia
-2025-12-15,19:45,Roma,Como,1,0,H,Serie A,Italia
-2025-12-20,17:00,Lazio,Cremonese,0,0,D,Serie A,Italia
-2025-12-20,19:45,Juventus,Roma,2,1,H,Serie A,Italia
-2025-12-21,11:30,Cagliari,Pisa,2,2,D,Serie A,Italia
-2025-12-21,14:00,Sassuolo,Torino,0,1,A,Serie A,Italia
-2025-12-21,17:00,Fiorentina,Udinese,5,1,H,Serie A,Italia
-2025-12-21,19:45,Genoa,Atalanta,0,1,A,Serie A,Italia
-2025-12-27,11:30,Parma,Fiorentina,1,0,H,Serie A,Italia
-2025-12-27,14:00,Lecce,Como,0,3,A,Serie A,Italia
-2025-12-27,14:00,Torino,Cagliari,1,2,A,Serie A,Italia
-2025-12-27,17:00,Udinese,Lazio,1,1,D,Serie A,Italia
-2025-12-27,19:45,Pisa,Juventus,0,2,A,Serie A,Italia
-2025-12-28,11:30,Milan,Verona,3,0,H,Serie A,Italia
-2025-12-28,14:00,Cremonese,Napoli,0,2,A,Serie A,Italia
-2025-12-28,17:00,Bologna,Sassuolo,1,1,D,Serie A,Italia
-2025-12-28,19:45,Atalanta,Inter,0,1,A,Serie A,Italia
-2025-12-29,19:45,Roma,Genoa,3,1,H,Serie A,Italia
-2026-01-02,19:45,Cagliari,Milan,0,1,A,Serie A,Italia
-2026-01-03,11:30,Como,Udinese,1,0,H,Serie A,Italia
-2026-01-03,14:00,Genoa,Pisa,1,1,D,Serie A,Italia
-2026-01-03,14:00,Sassuolo,Parma,1,1,D,Serie A,Italia
-2026-01-03,17:00,Juventus,Lecce,1,1,D,Serie A,Italia
-2026-01-03,19:45,Atalanta,Roma,1,0,H,Serie A,Italia
-2026-01-04,11:30,Lazio,Napoli,0,2,A,Serie A,Italia
-2026-01-04,14:00,Fiorentina,Cremonese,1,0,H,Serie A,Italia
-2026-01-04,17:00,Verona,Torino,0,3,A,Serie A,Italia
-2026-01-04,19:45,Inter,Bologna,3,1,H,Serie A,Italia
-2026-01-06,14:00,Pisa,Como,0,3,A,Serie A,Italia
-2026-01-06,17:00,Lecce,Roma,0,2,A,Serie A,Italia
-2026-01-06,19:45,Sassuolo,Juventus,0,3,A,Serie A,Italia
-2026-01-07,17:30,Bologna,Atalanta,0,2,A,Serie A,Italia
-2026-01-07,17:30,Napoli,Verona,2,2,D,Serie A,Italia
-2026-01-07,19:45,Lazio,Fiorentina,2,2,D,Serie A,Italia
-2026-01-07,19:45,Parma,Inter,0,2,A,Serie A,Italia
-2026-01-07,19:45,Torino,Udinese,1,2,A,Serie A,Italia
-2026-01-08,17:30,Cremonese,Cagliari,2,2,D,Serie A,Italia
-2026-01-08,19:45,Milan,Genoa,1,1,D,Serie A,Italia
-2026-01-10,14:00,Como,Bologna,1,1,D,Serie A,Italia
-2026-01-10,14:00,Udinese,Pisa,2,2,D,Serie A,Italia
-2026-01-10,17:00,Roma,Sassuolo,2,0,H,Serie A,Italia
-2026-01-10,19:45,Atalanta,Torino,2,0,H,Serie A,Italia
-2026-01-11,11:30,Lecce,Parma,1,2,A,Serie A,Italia
-2026-01-11,14:00,Fiorentina,Milan,1,1,D,Serie A,Italia
-2026-01-11,17:00,Verona,Lazio,0,1,A,Serie A,Italia
-2026-01-11,19:45,Inter,Napoli,2,2,D,Serie A,Italia
-2026-01-12,17:30,Genoa,Cagliari,3,0,H,Serie A,Italia
-2026-01-12,19:45,Juventus,Cremonese,5,0,H,Serie A,Italia
-2026-01-14,17:30,Napoli,Parma,0,0,D,Serie A,Italia
-2026-01-14,19:45,Inter,Lecce,1,0,H,Serie A,Italia
-2026-01-15,17:30,Verona,Bologna,2,3,A,Serie A,Italia
-2026-01-15,19:45,Como,Milan,1,3,A,Serie A,Italia
-2026-01-16,19:45,Pisa,Atalanta,1,1,D,Serie A,Italia
-2026-01-17,14:00,Udinese,Inter,0,1,A,Serie A,Italia
-2026-01-17,17:00,Napoli,Sassuolo,1,0,H,Serie A,Italia
-2026-01-17,19:45,Cagliari,Juventus,1,0,H,Serie A,Italia
-2026-01-18,11:30,Parma,Genoa,0,0,D,Serie A,Italia
-2026-01-18,14:00,Bologna,Fiorentina,1,2,A,Serie A,Italia
-2026-01-18,17:00,Torino,Roma,0,2,A,Serie A,Italia
-2026-01-18,19:45,Milan,Lecce,1,0,H,Serie A,Italia
-2026-01-19,17:30,Cremonese,Verona,0,0,D,Serie A,Italia
-2026-01-19,19:45,Lazio,Como,0,3,A,Serie A,Italia
-2025-08-22,19:30,Bayern Munich,RB Leipzig,6,0,H,Bundesliga,Alemanha
-2025-08-23,14:30,Ein Frankfurt,Werder Bremen,4,1,H,Bundesliga,Alemanha
-2025-08-23,14:30,Freiburg,Augsburg,1,3,A,Bundesliga,Alemanha
-2025-08-23,14:30,Heidenheim,Wolfsburg,1,3,A,Bundesliga,Alemanha
-2025-08-23,14:30,Leverkusen,Hoffenheim,1,2,A,Bundesliga,Alemanha
-2025-08-23,14:30,Union Berlin,Stuttgart,2,1,H,Bundesliga,Alemanha
-2025-08-23,17:30,St Pauli,Dortmund,3,3,D,Bundesliga,Alemanha
-2025-08-24,14:30,Mainz,FC Koln,0,1,A,Bundesliga,Alemanha
-2025-08-24,16:30,M'gladbach,Hamburg,0,0,D,Bundesliga,Alemanha
-2025-08-29,19:30,Hamburg,St Pauli,0,2,A,Bundesliga,Alemanha
-2025-08-30,14:30,Hoffenheim,Ein Frankfurt,1,3,A,Bundesliga,Alemanha
-2025-08-30,14:30,RB Leipzig,Heidenheim,2,0,H,Bundesliga,Alemanha
-2025-08-30,14:30,Stuttgart,M'gladbach,1,0,H,Bundesliga,Alemanha
-2025-08-30,14:30,Werder Bremen,Leverkusen,3,3,D,Bundesliga,Alemanha
-2025-08-30,17:30,Augsburg,Bayern Munich,2,3,A,Bundesliga,Alemanha
-2025-08-31,14:30,Wolfsburg,Mainz,1,1,D,Bundesliga,Alemanha
-2025-08-31,16:30,Dortmund,Union Berlin,3,0,H,Bundesliga,Alemanha
-2025-08-31,18:30,FC Koln,Freiburg,4,1,H,Bundesliga,Alemanha
-2025-09-12,19:30,Leverkusen,Ein Frankfurt,3,1,H,Bundesliga,Alemanha
-2025-09-13,14:30,Freiburg,Stuttgart,3,1,H,Bundesliga,Alemanha
-2025-09-13,14:30,Heidenheim,Dortmund,0,2,A,Bundesliga,Alemanha
-2025-09-13,14:30,Mainz,RB Leipzig,0,1,A,Bundesliga,Alemanha
-2025-09-13,14:30,Union Berlin,Hoffenheim,2,4,A,Bundesliga,Alemanha
-2025-09-13,14:30,Wolfsburg,FC Koln,3,3,D,Bundesliga,Alemanha
-2025-09-13,17:30,Bayern Munich,Hamburg,5,0,H,Bundesliga,Alemanha
-2025-09-14,14:30,St Pauli,Augsburg,2,1,H,Bundesliga,Alemanha
-2025-09-14,16:30,M'gladbach,Werder Bremen,0,4,A,Bundesliga,Alemanha
-2025-09-19,19:30,Stuttgart,St Pauli,2,0,H,Bundesliga,Alemanha
-2025-09-20,14:30,Augsburg,Mainz,1,4,A,Bundesliga,Alemanha
-2025-09-20,14:30,Hamburg,Heidenheim,2,1,H,Bundesliga,Alemanha
-2025-09-20,14:30,Hoffenheim,Bayern Munich,1,4,A,Bundesliga,Alemanha
-2025-09-20,14:30,Werder Bremen,Freiburg,0,3,A,Bundesliga,Alemanha
-2025-09-20,17:30,RB Leipzig,FC Koln,3,1,H,Bundesliga,Alemanha
-2025-09-21,14:30,Ein Frankfurt,Union Berlin,3,4,A,Bundesliga,Alemanha
-2025-09-21,16:30,Leverkusen,M'gladbach,1,1,D,Bundesliga,Alemanha
-2025-09-21,18:30,Dortmund,Wolfsburg,1,0,H,Bundesliga,Alemanha
-2025-09-26,19:30,Bayern Munich,Werder Bremen,4,0,H,Bundesliga,Alemanha
-2025-09-27,14:30,Heidenheim,Augsburg,2,1,H,Bundesliga,Alemanha
-2025-09-27,14:30,Mainz,Dortmund,0,2,A,Bundesliga,Alemanha
-2025-09-27,14:30,St Pauli,Leverkusen,1,2,A,Bundesliga,Alemanha
-2025-09-27,14:30,Wolfsburg,RB Leipzig,0,1,A,Bundesliga,Alemanha
-2025-09-27,17:30,M'gladbach,Ein Frankfurt,4,6,A,Bundesliga,Alemanha
-2025-09-28,14:30,Freiburg,Hoffenheim,1,1,D,Bundesliga,Alemanha
-2025-09-28,16:30,FC Koln,Stuttgart,1,2,A,Bundesliga,Alemanha
-2025-09-28,18:30,Union Berlin,Hamburg,0,0,D,Bundesliga,Alemanha
-2025-10-03,19:30,Hoffenheim,FC Koln,0,1,A,Bundesliga,Alemanha
-2025-10-04,14:30,Augsburg,Wolfsburg,3,1,H,Bundesliga,Alemanha
-2025-10-04,14:30,Dortmund,RB Leipzig,1,1,D,Bundesliga,Alemanha
-2025-10-04,14:30,Leverkusen,Union Berlin,2,0,H,Bundesliga,Alemanha
-2025-10-04,14:30,Werder Bremen,St Pauli,1,0,H,Bundesliga,Alemanha
-2025-10-04,17:30,Ein Frankfurt,Bayern Munich,0,3,A,Bundesliga,Alemanha
-2025-10-05,14:30,Stuttgart,Heidenheim,1,0,H,Bundesliga,Alemanha
-2025-10-05,16:30,Hamburg,Mainz,4,0,H,Bundesliga,Alemanha
-2025-10-05,18:30,M'gladbach,Freiburg,0,0,D,Bundesliga,Alemanha
-2025-10-17,19:30,Union Berlin,M'gladbach,3,1,H,Bundesliga,Alemanha
-2025-10-18,14:30,FC Koln,Augsburg,1,1,D,Bundesliga,Alemanha
-2025-10-18,14:30,Heidenheim,Werder Bremen,2,2,D,Bundesliga,Alemanha
-2025-10-18,14:30,Mainz,Leverkusen,3,4,A,Bundesliga,Alemanha
-2025-10-18,14:30,RB Leipzig,Hamburg,2,1,H,Bundesliga,Alemanha
-2025-10-18,14:30,Wolfsburg,Stuttgart,0,3,A,Bundesliga,Alemanha
-2025-10-18,17:30,Bayern Munich,Dortmund,2,1,H,Bundesliga,Alemanha
-2025-10-19,14:30,Freiburg,Ein Frankfurt,2,2,D,Bundesliga,Alemanha
-2025-10-19,16:30,St Pauli,Hoffenheim,0,3,A,Bundesliga,Alemanha
-2025-10-24,19:30,Werder Bremen,Union Berlin,1,0,H,Bundesliga,Alemanha
-2025-10-25,14:30,Augsburg,RB Leipzig,0,6,A,Bundesliga,Alemanha
-2025-10-25,14:30,Ein Frankfurt,St Pauli,2,0,H,Bundesliga,Alemanha
-2025-10-25,14:30,Hamburg,Wolfsburg,0,1,A,Bundesliga,Alemanha
-2025-10-25,14:30,Hoffenheim,Heidenheim,3,1,H,Bundesliga,Alemanha
-2025-10-25,14:30,M'gladbach,Bayern Munich,0,3,A,Bundesliga,Alemanha
-2025-10-25,17:30,Dortmund,FC Koln,1,0,H,Bundesliga,Alemanha
-2025-10-26,14:30,Leverkusen,Freiburg,2,0,H,Bundesliga,Alemanha
-2025-10-26,16:30,Stuttgart,Mainz,2,1,H,Bundesliga,Alemanha
-2025-10-31,19:30,Augsburg,Dortmund,0,1,A,Bundesliga,Alemanha
-2025-11-01,14:30,Heidenheim,Ein Frankfurt,1,1,D,Bundesliga,Alemanha
-2025-11-01,14:30,Mainz,Werder Bremen,1,1,D,Bundesliga,Alemanha
-2025-11-01,14:30,RB Leipzig,Stuttgart,3,1,H,Bundesliga,Alemanha
-2025-11-01,14:30,St Pauli,M'gladbach,0,4,A,Bundesliga,Alemanha
-2025-11-01,14:30,Union Berlin,Freiburg,0,0,D,Bundesliga,Alemanha
-2025-11-01,17:30,Bayern Munich,Leverkusen,3,0,H,Bundesliga,Alemanha
-2025-11-02,14:30,FC Koln,Hamburg,4,1,H,Bundesliga,Alemanha
-2025-11-02,16:30,Wolfsburg,Hoffenheim,2,3,A,Bundesliga,Alemanha
-2025-11-07,19:30,Werder Bremen,Wolfsburg,2,1,H,Bundesliga,Alemanha
-2025-11-08,14:30,Hamburg,Dortmund,1,1,D,Bundesliga,Alemanha
-2025-11-08,14:30,Hoffenheim,RB Leipzig,3,1,H,Bundesliga,Alemanha
-2025-11-08,14:30,Leverkusen,Heidenheim,6,0,H,Bundesliga,Alemanha
-2025-11-08,14:30,Union Berlin,Bayern Munich,2,2,D,Bundesliga,Alemanha
-2025-11-08,17:30,M'gladbach,FC Koln,3,1,H,Bundesliga,Alemanha
-2025-11-09,14:30,Freiburg,St Pauli,2,1,H,Bundesliga,Alemanha
-2025-11-09,16:30,Stuttgart,Augsburg,3,2,H,Bundesliga,Alemanha
-2025-11-09,18:30,Ein Frankfurt,Mainz,1,0,H,Bundesliga,Alemanha
-2025-11-21,19:30,Mainz,Hoffenheim,1,1,D,Bundesliga,Alemanha
-2025-11-22,14:30,Augsburg,Hamburg,1,0,H,Bundesliga,Alemanha
-2025-11-22,14:30,Bayern Munich,Freiburg,6,2,H,Bundesliga,Alemanha
-2025-11-22,14:30,Dortmund,Stuttgart,3,3,D,Bundesliga,Alemanha
-2025-11-22,14:30,Heidenheim,M'gladbach,0,3,A,Bundesliga,Alemanha
-2025-11-22,14:30,Wolfsburg,Leverkusen,1,3,A,Bundesliga,Alemanha
-2025-11-22,17:30,FC Koln,Ein Frankfurt,3,4,A,Bundesliga,Alemanha
-2025-11-23,14:30,RB Leipzig,Werder Bremen,2,0,H,Bundesliga,Alemanha
-2025-11-23,16:30,St Pauli,Union Berlin,0,1,A,Bundesliga,Alemanha
-2025-11-28,19:30,M'gladbach,RB Leipzig,0,0,D,Bundesliga,Alemanha
-2025-11-29,14:30,Bayern Munich,St Pauli,3,1,H,Bundesliga,Alemanha
-2025-11-29,14:30,Hoffenheim,Augsburg,3,0,H,Bundesliga,Alemanha
-2025-11-29,14:30,Union Berlin,Heidenheim,1,2,A,Bundesliga,Alemanha
-2025-11-29,14:30,Werder Bremen,FC Koln,1,1,D,Bundesliga,Alemanha
-2025-11-29,17:30,Leverkusen,Dortmund,1,2,A,Bundesliga,Alemanha
-2025-11-30,14:30,Hamburg,Stuttgart,2,1,H,Bundesliga,Alemanha
-2025-11-30,16:30,Ein Frankfurt,Wolfsburg,1,1,D,Bundesliga,Alemanha
-2025-11-30,18:30,Freiburg,Mainz,4,0,H,Bundesliga,Alemanha
-2025-12-05,19:30,Mainz,M'gladbach,0,1,A,Bundesliga,Alemanha
-2025-12-06,14:30,Augsburg,Leverkusen,2,0,H,Bundesliga,Alemanha
-2025-12-06,14:30,FC Koln,St Pauli,1,1,D,Bundesliga,Alemanha
-2025-12-06,14:30,Heidenheim,Freiburg,2,1,H,Bundesliga,Alemanha
-2025-12-06,14:30,Stuttgart,Bayern Munich,0,5,A,Bundesliga,Alemanha
-2025-12-06,14:30,Wolfsburg,Union Berlin,3,1,H,Bundesliga,Alemanha
-2025-12-06,17:30,RB Leipzig,Ein Frankfurt,6,0,H,Bundesliga,Alemanha
-2025-12-07,14:30,Hamburg,Werder Bremen,3,2,H,Bundesliga,Alemanha
-2025-12-07,16:30,Dortmund,Hoffenheim,2,0,H,Bundesliga,Alemanha
-2025-12-12,19:30,Union Berlin,RB Leipzig,3,1,H,Bundesliga,Alemanha
-2025-12-13,14:30,Ein Frankfurt,Augsburg,1,0,H,Bundesliga,Alemanha
-2025-12-13,14:30,Hoffenheim,Hamburg,4,1,H,Bundesliga,Alemanha
-2025-12-13,14:30,M'gladbach,Wolfsburg,1,3,A,Bundesliga,Alemanha
-2025-12-13,14:30,St Pauli,Heidenheim,2,1,H,Bundesliga,Alemanha
-2025-12-13,17:30,Leverkusen,FC Koln,2,0,H,Bundesliga,Alemanha
-2025-12-14,14:30,Freiburg,Dortmund,1,1,D,Bundesliga,Alemanha
-2025-12-14,16:30,Bayern Munich,Mainz,2,2,D,Bundesliga,Alemanha
-2025-12-14,18:30,Werder Bremen,Stuttgart,0,4,A,Bundesliga,Alemanha
-2025-12-19,19:30,Dortmund,M'gladbach,2,0,H,Bundesliga,Alemanha
-2025-12-20,14:30,Augsburg,Werder Bremen,0,0,D,Bundesliga,Alemanha
-2025-12-20,14:30,FC Koln,Union Berlin,0,1,A,Bundesliga,Alemanha
-2025-12-20,14:30,Hamburg,Ein Frankfurt,1,1,D,Bundesliga,Alemanha
-2025-12-20,14:30,Stuttgart,Hoffenheim,0,0,D,Bundesliga,Alemanha
-2025-12-20,14:30,Wolfsburg,Freiburg,3,4,A,Bundesliga,Alemanha
-2025-12-20,17:30,RB Leipzig,Leverkusen,1,3,A,Bundesliga,Alemanha
-2025-12-21,14:30,Mainz,St Pauli,0,0,D,Bundesliga,Alemanha
-2025-12-21,16:30,Heidenheim,Bayern Munich,0,4,A,Bundesliga,Alemanha
-2026-01-09,19:30,Ein Frankfurt,Dortmund,3,3,D,Bundesliga,Alemanha
-2026-01-10,14:30,Freiburg,Hamburg,2,1,H,Bundesliga,Alemanha
-2026-01-10,14:30,Heidenheim,FC Koln,2,2,D,Bundesliga,Alemanha
-2026-01-10,14:30,Union Berlin,Mainz,2,2,D,Bundesliga,Alemanha
-2026-01-10,17:30,Leverkusen,Stuttgart,1,4,A,Bundesliga,Alemanha
-2026-01-11,14:30,M'gladbach,Augsburg,4,0,H,Bundesliga,Alemanha
-2026-01-11,16:30,Bayern Munich,Wolfsburg,8,1,H,Bundesliga,Alemanha
-2026-01-13,17:30,Stuttgart,Ein Frankfurt,3,2,H,Bundesliga,Alemanha
-2026-01-13,19:30,Dortmund,Werder Bremen,3,0,H,Bundesliga,Alemanha
-2026-01-13,19:30,Mainz,Heidenheim,2,1,H,Bundesliga,Alemanha
-2026-01-14,17:30,Wolfsburg,St Pauli,2,1,H,Bundesliga,Alemanha
-2026-01-14,19:30,FC Koln,Bayern Munich,1,3,A,Bundesliga,Alemanha
-2026-01-14,19:30,Hoffenheim,M'gladbach,5,1,H,Bundesliga,Alemanha
-2026-01-14,19:30,RB Leipzig,Freiburg,2,0,H,Bundesliga,Alemanha
-2026-01-15,19:30,Augsburg,Union Berlin,1,1,D,Bundesliga,Alemanha
-2026-01-16,19:30,Werder Bremen,Ein Frankfurt,3,3,D,Bundesliga,Alemanha
-2026-01-17,14:30,Dortmund,St Pauli,3,2,H,Bundesliga,Alemanha
-2026-01-17,14:30,FC Koln,Mainz,2,1,H,Bundesliga,Alemanha
-2026-01-17,14:30,Hamburg,M'gladbach,0,0,D,Bundesliga,Alemanha
-2026-01-17,14:30,Hoffenheim,Leverkusen,1,0,H,Bundesliga,Alemanha
-2026-01-17,14:30,Wolfsburg,Heidenheim,1,1,D,Bundesliga,Alemanha
-2026-01-17,17:30,RB Leipzig,Bayern Munich,1,5,A,Bundesliga,Alemanha
-2026-01-18,14:30,Stuttgart,Union Berlin,1,1,D,Bundesliga,Alemanha
-2026-01-18,16:30,Augsburg,Freiburg,2,2,D,Bundesliga,Alemanha
-2025-08-08,20:15,Casa Pia,Sp Lisbon,0,2,A,Liga Portugal,Portugal
-2025-08-09,15:30,Nacional,Gil Vicente,0,2,A,Liga Portugal,Portugal
-2025-08-09,20:30,Arouca,AVS,3,1,H,Liga Portugal,Portugal
-2025-08-10,17:00,Famalicao,Santa Clara,3,0,H,Liga Portugal,Portugal
-2025-08-10,20:30,Moreirense,Alverca,2,1,H,Liga Portugal,Portugal
-2025-08-10,20:30,Sp Braga,Tondela,3,0,H,Liga Portugal,Portugal
-2025-08-11,18:45,Estoril,Estrela,1,1,D,Liga Portugal,Portugal
-2025-08-11,20:45,Porto,Guimaraes,3,0,H,Liga Portugal,Portugal
-2025-08-15,15:30,AVS,Casa Pia,0,2,A,Liga Portugal,Portugal
-2025-08-16,15:30,Tondela,Famalicao,0,1,A,Liga Portugal,Portugal
-2025-08-16,18:00,Guimaraes,Estoril,3,2,H,Liga Portugal,Portugal
-2025-08-16,20:30,Estrela,Benfica,0,1,A,Liga Portugal,Portugal
-2025-08-17,15:30,Rio Ave,Nacional,1,1,D,Liga Portugal,Portugal
-2025-08-17,18:00,Alverca,Sp Braga,0,3,A,Liga Portugal,Portugal
-2025-08-17,18:00,Santa Clara,Moreirense,0,1,A,Liga Portugal,Portugal
-2025-08-17,20:30,Sp Lisbon,Arouca,6,0,H,Liga Portugal,Portugal
-2025-08-18,20:15,Gil Vicente,Porto,0,2,A,Liga Portugal,Portugal
-2025-08-23,16:00,Moreirense,Guimaraes,2,0,H,Liga Portugal,Portugal
-2025-08-23,18:00,Nacional,Sp Lisbon,1,4,A,Liga Portugal,Portugal
-2025-08-23,20:30,Arouca,Rio Ave,3,3,D,Liga Portugal,Portugal
-2025-08-23,20:30,Benfica,Tondela,3,0,H,Liga Portugal,Portugal
-2025-08-24,15:30,Famalicao,Gil Vicente,0,0,D,Liga Portugal,Portugal
-2025-08-24,18:00,Porto,Casa Pia,4,0,H,Liga Portugal,Portugal
-2025-08-24,20:30,Sp Braga,AVS,2,2,D,Liga Portugal,Portugal
-2025-08-25,20:15,Estrela,Alverca,2,2,D,Liga Portugal,Portugal
-2025-08-29,20:15,Gil Vicente,Moreirense,2,0,H,Liga Portugal,Portugal
-2025-08-30,15:30,Casa Pia,Nacional,0,2,A,Liga Portugal,Portugal
-2025-08-30,18:00,AVS,Famalicao,0,1,A,Liga Portugal,Portugal
-2025-08-30,18:00,Guimaraes,Arouca,1,1,D,Liga Portugal,Portugal
-2025-08-30,20:30,Sp Lisbon,Porto,1,2,A,Liga Portugal,Portugal
-2025-08-31,15:30,Tondela,Estoril,2,2,D,Liga Portugal,Portugal
-2025-08-31,18:00,Alverca,Benfica,1,2,A,Liga Portugal,Portugal
-2025-08-31,20:30,Rio Ave,Sp Braga,2,2,D,Liga Portugal,Portugal
-2025-08-31,20:30,Santa Clara,Estrela,0,0,D,Liga Portugal,Portugal
-2025-09-06,20:30,Estoril,Santa Clara,0,1,A,Liga Portugal,Portugal
-2025-09-12,20:15,Alverca,Tondela,1,0,H,Liga Portugal,Portugal
-2025-09-12,20:15,Benfica,Santa Clara,1,1,D,Liga Portugal,Portugal
-2025-09-13,15:30,Estoril,AVS,3,1,H,Liga Portugal,Portugal
-2025-09-13,15:30,Moreirense,Rio Ave,3,1,H,Liga Portugal,Portugal
-2025-09-13,18:00,Porto,Nacional,1,0,H,Liga Portugal,Portugal
-2025-09-13,20:30,Famalicao,Sp Lisbon,1,2,A,Liga Portugal,Portugal
-2025-09-14,15:30,Estrela,Guimaraes,0,2,A,Liga Portugal,Portugal
-2025-09-14,18:00,Arouca,Casa Pia,0,2,A,Liga Portugal,Portugal
-2025-09-14,20:30,Sp Braga,Gil Vicente,0,1,A,Liga Portugal,Portugal
-2025-09-19,20:15,Rio Ave,Porto,0,3,A,Liga Portugal,Portugal
-2025-09-20,15:30,Nacional,Arouca,1,2,A,Liga Portugal,Portugal
-2025-09-20,15:30,Santa Clara,Alverca,2,1,H,Liga Portugal,Portugal
-2025-09-20,18:00,AVS,Benfica,0,3,A,Liga Portugal,Portugal
-2025-09-20,20:30,Guimaraes,Sp Braga,1,1,D,Liga Portugal,Portugal
-2025-09-21,15:30,Tondela,Estrela,0,0,D,Liga Portugal,Portugal
-2025-09-21,18:00,Gil Vicente,Estoril,2,0,H,Liga Portugal,Portugal
-2025-09-21,20:30,Casa Pia,Famalicao,1,1,D,Liga Portugal,Portugal
-2025-09-22,20:15,Sp Lisbon,Moreirense,3,0,H,Liga Portugal,Portugal
-2025-09-23,20:15,Benfica,Rio Ave,1,1,D,Liga Portugal,Portugal
-2025-09-26,20:15,Benfica,Gil Vicente,2,1,H,Liga Portugal,Portugal
-2025-09-27,15:30,Moreirense,Casa Pia,2,1,H,Liga Portugal,Portugal
-2025-09-27,16:30,Santa Clara,Tondela,1,2,A,Liga Portugal,Portugal
-2025-09-27,18:00,Estrela,AVS,3,0,H,Liga Portugal,Portugal
-2025-09-27,20:30,Estoril,Sp Lisbon,0,1,A,Liga Portugal,Portugal
-2025-09-28,15:30,Alverca,Guimaraes,2,0,H,Liga Portugal,Portugal
-2025-09-28,18:00,Sp Braga,Nacional,0,1,A,Liga Portugal,Portugal
-2025-09-28,20:30,Famalicao,Rio Ave,0,0,D,Liga Portugal,Portugal
-2025-09-29,20:00,Arouca,Porto,0,4,A,Liga Portugal,Portugal
-2025-10-03,20:15,Casa Pia,Estoril,2,2,D,Liga Portugal,Portugal
-2025-10-04,15:30,Gil Vicente,Estrela,2,0,H,Liga Portugal,Portugal
-2025-10-04,15:30,Nacional,Moreirense,3,2,H,Liga Portugal,Portugal
-2025-10-04,18:00,AVS,Alverca,1,3,A,Liga Portugal,Portugal
-2025-10-04,20:30,Guimaraes,Santa Clara,2,1,H,Liga Portugal,Portugal
-2025-10-05,15:30,Arouca,Famalicao,1,1,D,Liga Portugal,Portugal
-2025-10-05,17:30,Rio Ave,Tondela,3,0,H,Liga Portugal,Portugal
-2025-10-05,19:15,Sp Lisbon,Sp Braga,1,1,D,Liga Portugal,Portugal
-2025-10-05,21:15,Porto,Benfica,0,0,D,Liga Portugal,Portugal
-2025-10-24,20:15,Alverca,Gil Vicente,0,4,A,Liga Portugal,Portugal
-2025-10-25,18:00,Santa Clara,AVS,2,0,H,Liga Portugal,Portugal
-2025-10-25,20:30,Benfica,Arouca,5,0,H,Liga Portugal,Portugal
-2025-10-25,20:30,Estrela,Rio Ave,1,2,A,Liga Portugal,Portugal
-2025-10-26,15:30,Estoril,Nacional,1,1,D,Liga Portugal,Portugal
-2025-10-26,15:30,Famalicao,Guimaraes,2,0,H,Liga Portugal,Portugal
-2025-10-26,18:00,Tondela,Sp Lisbon,0,3,A,Liga Portugal,Portugal
-2025-10-26,20:30,Sp Braga,Casa Pia,4,0,H,Liga Portugal,Portugal
-2025-10-27,20:15,Moreirense,Porto,1,2,A,Liga Portugal,Portugal
-2025-10-31,20:15,Sp Lisbon,Alverca,2,0,H,Liga Portugal,Portugal
-2025-11-01,15:30,Nacional,Famalicao,0,1,A,Liga Portugal,Portugal
-2025-11-01,18:00,Casa Pia,Estrela,3,5,A,Liga Portugal,Portugal
-2025-11-01,18:00,Rio Ave,Estoril,0,4,A,Liga Portugal,Portugal
-2025-11-01,20:30,Guimaraes,Benfica,0,3,A,Liga Portugal,Portugal
-2025-11-02,15:30,AVS,Tondela,2,2,D,Liga Portugal,Portugal
-2025-11-02,18:00,Arouca,Moreirense,0,2,A,Liga Portugal,Portugal
-2025-11-02,20:30,Porto,Sp Braga,2,1,H,Liga Portugal,Portugal
-2025-11-03,20:45,Gil Vicente,Santa Clara,1,0,H,Liga Portugal,Portugal
-2025-11-07,20:15,Estoril,Arouca,4,3,H,Liga Portugal,Portugal
-2025-11-08,15:30,Alverca,Rio Ave,1,1,D,Liga Portugal,Portugal
-2025-11-08,18:00,Tondela,Guimaraes,0,1,A,Liga Portugal,Portugal
-2025-11-08,20:30,Santa Clara,Sp Lisbon,1,2,A,Liga Portugal,Portugal
-2025-11-09,15:30,AVS,Gil Vicente,1,1,D,Liga Portugal,Portugal
-2025-11-09,15:30,Estrela,Nacional,1,1,D,Liga Portugal,Portugal
-2025-11-09,18:00,Famalicao,Porto,0,1,A,Liga Portugal,Portugal
-2025-11-09,20:30,Benfica,Casa Pia,2,2,D,Liga Portugal,Portugal
-2025-11-09,20:30,Sp Braga,Moreirense,2,1,H,Liga Portugal,Portugal
-2025-11-28,20:15,Guimaraes,AVS,4,0,H,Liga Portugal,Portugal
-2025-11-29,15:30,Casa Pia,Alverca,0,2,A,Liga Portugal,Portugal
-2025-11-29,15:30,Moreirense,Famalicao,2,2,D,Liga Portugal,Portugal
-2025-11-29,18:00,Nacional,Benfica,1,2,A,Liga Portugal,Portugal
-2025-11-29,20:30,Gil Vicente,Tondela,0,1,A,Liga Portugal,Portugal
-2025-11-30,15:30,Rio Ave,Santa Clara,1,1,D,Liga Portugal,Portugal
-2025-11-30,18:00,Sp Lisbon,Estrela,4,0,H,Liga Portugal,Portugal
-2025-11-30,20:30,Porto,Estoril,1,0,H,Liga Portugal,Portugal
-2025-12-01,20:15,Arouca,Sp Braga,0,4,A,Liga Portugal,Portugal
-2025-12-05,20:15,Benfica,Sp Lisbon,1,1,D,Liga Portugal,Portugal
-2025-12-06,15:30,Santa Clara,Casa Pia,1,0,H,Liga Portugal,Portugal
-2025-12-06,18:00,AVS,Rio Ave,1,2,A,Liga Portugal,Portugal
-2025-12-06,20:30,Famalicao,Sp Braga,1,2,A,Liga Portugal,Portugal
-2025-12-07,15:30,Estoril,Moreirense,3,3,D,Liga Portugal,Portugal
-2025-12-07,18:00,Alverca,Nacional,1,0,H,Liga Portugal,Portugal
-2025-12-07,18:00,Estrela,Arouca,3,1,H,Liga Portugal,Portugal
-2025-12-07,20:30,Tondela,Porto,0,2,A,Liga Portugal,Portugal
-2025-12-08,20:30,Guimaraes,Gil Vicente,0,0,D,Liga Portugal,Portugal
-2025-12-13,15:30,Casa Pia,Gil Vicente,1,1,D,Liga Portugal,Portugal
-2025-12-13,18:00,Rio Ave,Guimaraes,0,1,A,Liga Portugal,Portugal
-2025-12-13,20:30,Sp Lisbon,AVS,6,0,H,Liga Portugal,Portugal
-2025-12-14,15:30,Famalicao,Estoril,4,0,H,Liga Portugal,Portugal
-2025-12-14,18:00,Moreirense,Benfica,0,4,A,Liga Portugal,Portugal
-2025-12-14,20:30,Arouca,Alverca,1,0,H,Liga Portugal,Portugal
-2025-12-15,17:30,Nacional,Tondela,3,1,H,Liga Portugal,Portugal
-2025-12-15,18:45,Sp Braga,Santa Clara,1,0,H,Liga Portugal,Portugal
-2025-12-15,20:45,Porto,Estrela,3,1,H,Liga Portugal,Portugal
-2025-12-19,20:15,Estoril,Sp Braga,1,0,H,Liga Portugal,Portugal
-2025-12-20,18:00,Gil Vicente,Rio Ave,2,2,D,Liga Portugal,Portugal
-2025-12-20,20:30,Estrela,Moreirense,0,0,D,Liga Portugal,Portugal
-2025-12-21,15:30,AVS,Nacional,2,2,D,Liga Portugal,Portugal
-2025-12-21,18:00,Tondela,Casa Pia,1,2,A,Liga Portugal,Portugal
-2025-12-21,20:30,Santa Clara,Arouca,0,0,D,Liga Portugal,Portugal
-2025-12-22,18:45,Alverca,Porto,0,3,A,Liga Portugal,Portugal
-2025-12-22,20:45,Benfica,Famalicao,1,0,H,Liga Portugal,Portugal
-2025-12-23,20:45,Guimaraes,Sp Lisbon,1,4,A,Liga Portugal,Portugal
-2025-12-27,18:00,Famalicao,Estrela,2,3,A,Liga Portugal,Portugal
-2025-12-27,20:30,Estoril,Alverca,4,1,H,Liga Portugal,Portugal
-2025-12-28,15:30,Arouca,Gil Vicente,2,2,D,Liga Portugal,Portugal
-2025-12-28,15:30,Casa Pia,Guimaraes,0,0,D,Liga Portugal,Portugal
-2025-12-28,18:00,Sp Braga,Benfica,2,2,D,Liga Portugal,Portugal
-2025-12-28,20:30,Sp Lisbon,Rio Ave,4,0,H,Liga Portugal,Portugal
-2025-12-29,20:15,Porto,AVS,2,0,H,Liga Portugal,Portugal
-2026-01-02,18:45,Gil Vicente,Sp Lisbon,1,1,D,Liga Portugal,Portugal
-2026-01-02,20:45,Guimaraes,Nacional,2,1,H,Liga Portugal,Portugal
-2026-01-03,15:30,Tondela,Arouca,3,1,H,Liga Portugal,Portugal
-2026-01-03,18:00,Benfica,Estoril,3,1,H,Liga Portugal,Portugal
-2026-01-03,18:00,Estrela,Sp Braga,3,3,D,Liga Portugal,Portugal
-2026-01-03,20:30,AVS,Moreirense,0,2,A,Liga Portugal,Portugal
-2026-01-04,15:30,Rio Ave,Casa Pia,3,1,H,Liga Portugal,Portugal
-2026-01-04,18:00,Santa Clara,Porto,0,1,A,Liga Portugal,Portugal
-2026-01-04,20:30,Alverca,Famalicao,1,0,H,Liga Portugal,Portugal
-2026-01-11,15:30,Nacional,Santa Clara,3,3,D,Liga Portugal,Portugal
-2026-01-11,18:00,Moreirense,Tondela,1,0,H,Liga Portugal,Portugal
-2026-01-16,20:15,Sp Lisbon,Casa Pia,3,0,H,Liga Portugal,Portugal
-2026-01-17,15:30,Gil Vicente,Nacional,2,1,H,Liga Portugal,Portugal
-2026-01-17,18:00,Alverca,Moreirense,2,1,H,Liga Portugal,Portugal
-2026-01-17,18:00,AVS,Arouca,0,1,A,Liga Portugal,Portugal
-2026-01-17,20:30,Rio Ave,Benfica,0,2,A,Liga Portugal,Portugal
-2026-01-18,15:30,Santa Clara,Famalicao,0,1,A,Liga Portugal,Portugal
-2026-01-18,18:00,Tondela,Sp Braga,0,1,A,Liga Portugal,Portugal
-2026-01-18,20:30,Guimaraes,Porto,0,1,A,Liga Portugal,Portugal
-2026-01-19,20:15,Estrela,Estoril,0,5,A,Liga Portugal,Portugal
+2025-08-15,20:00,Liverpool,Bournemouth,4.0,2.0,H,Premier League,Inglaterra
+2025-08-16,12:30,Aston Villa,Newcastle,0.0,0.0,D,Premier League,Inglaterra
+2025-08-16,15:00,Brighton,Fulham,1.0,1.0,D,Premier League,Inglaterra
+2025-08-16,15:00,Sunderland,West Ham,3.0,0.0,H,Premier League,Inglaterra
+2025-08-16,15:00,Tottenham,Burnley,3.0,0.0,H,Premier League,Inglaterra
+2025-08-16,17:30,Wolves,Man City,0.0,4.0,A,Premier League,Inglaterra
+2025-08-17,14:00,Chelsea,Crystal Palace,0.0,0.0,D,Premier League,Inglaterra
+2025-08-17,14:00,Nott'm Forest,Brentford,3.0,1.0,H,Premier League,Inglaterra
+2025-08-17,16:30,Man United,Arsenal,0.0,1.0,A,Premier League,Inglaterra
+2025-08-18,20:00,Leeds,Everton,1.0,0.0,H,Premier League,Inglaterra
+2025-08-22,20:00,West Ham,Chelsea,1.0,5.0,A,Premier League,Inglaterra
+2025-08-23,12:30,Man City,Tottenham,0.0,2.0,A,Premier League,Inglaterra
+2025-08-23,15:00,Bournemouth,Wolves,1.0,0.0,H,Premier League,Inglaterra
+2025-08-23,15:00,Brentford,Aston Villa,1.0,0.0,H,Premier League,Inglaterra
+2025-08-23,15:00,Burnley,Sunderland,2.0,0.0,H,Premier League,Inglaterra
+2025-08-23,17:30,Arsenal,Leeds,5.0,0.0,H,Premier League,Inglaterra
+2025-08-24,14:00,Crystal Palace,Nott'm Forest,1.0,1.0,D,Premier League,Inglaterra
+2025-08-24,14:00,Everton,Brighton,2.0,0.0,H,Premier League,Inglaterra
+2025-08-24,16:30,Fulham,Man United,1.0,1.0,D,Premier League,Inglaterra
+2025-08-25,20:00,Newcastle,Liverpool,2.0,3.0,A,Premier League,Inglaterra
+2025-08-30,12:30,Chelsea,Fulham,2.0,0.0,H,Premier League,Inglaterra
+2025-08-30,15:00,Man United,Burnley,3.0,2.0,H,Premier League,Inglaterra
+2025-08-30,15:00,Sunderland,Brentford,2.0,1.0,H,Premier League,Inglaterra
+2025-08-30,15:00,Tottenham,Bournemouth,0.0,1.0,A,Premier League,Inglaterra
+2025-08-30,15:00,Wolves,Everton,2.0,3.0,A,Premier League,Inglaterra
+2025-08-30,17:30,Leeds,Newcastle,0.0,0.0,D,Premier League,Inglaterra
+2025-08-31,14:00,Brighton,Man City,2.0,1.0,H,Premier League,Inglaterra
+2025-08-31,14:00,Nott'm Forest,West Ham,0.0,3.0,A,Premier League,Inglaterra
+2025-08-31,16:30,Liverpool,Arsenal,1.0,0.0,H,Premier League,Inglaterra
+2025-08-31,19:00,Aston Villa,Crystal Palace,0.0,3.0,A,Premier League,Inglaterra
+2025-09-13,12:30,Arsenal,Nott'm Forest,3.0,0.0,H,Premier League,Inglaterra
+2025-09-13,15:00,Bournemouth,Brighton,2.0,1.0,H,Premier League,Inglaterra
+2025-09-13,15:00,Crystal Palace,Sunderland,0.0,0.0,D,Premier League,Inglaterra
+2025-09-13,15:00,Everton,Aston Villa,0.0,0.0,D,Premier League,Inglaterra
+2025-09-13,15:00,Fulham,Leeds,1.0,0.0,H,Premier League,Inglaterra
+2025-09-13,15:00,Newcastle,Wolves,1.0,0.0,H,Premier League,Inglaterra
+2025-09-13,17:30,West Ham,Tottenham,0.0,3.0,A,Premier League,Inglaterra
+2025-09-13,20:00,Brentford,Chelsea,2.0,2.0,D,Premier League,Inglaterra
+2025-09-14,14:00,Burnley,Liverpool,0.0,1.0,A,Premier League,Inglaterra
+2025-09-14,16:30,Man City,Man United,3.0,0.0,H,Premier League,Inglaterra
+2025-09-20,12:30,Liverpool,Everton,2.0,1.0,H,Premier League,Inglaterra
+2025-09-20,15:00,Brighton,Tottenham,2.0,2.0,D,Premier League,Inglaterra
+2025-09-20,15:00,Burnley,Nott'm Forest,1.0,1.0,D,Premier League,Inglaterra
+2025-09-20,15:00,West Ham,Crystal Palace,1.0,2.0,A,Premier League,Inglaterra
+2025-09-20,15:00,Wolves,Leeds,1.0,3.0,A,Premier League,Inglaterra
+2025-09-20,17:30,Man United,Chelsea,2.0,1.0,H,Premier League,Inglaterra
+2025-09-20,20:00,Fulham,Brentford,3.0,1.0,H,Premier League,Inglaterra
+2025-09-21,14:00,Bournemouth,Newcastle,0.0,0.0,D,Premier League,Inglaterra
+2025-09-21,14:00,Sunderland,Aston Villa,1.0,1.0,D,Premier League,Inglaterra
+2025-09-21,16:30,Arsenal,Man City,1.0,1.0,D,Premier League,Inglaterra
+2025-09-27,12:30,Brentford,Man United,3.0,1.0,H,Premier League,Inglaterra
+2025-09-27,15:00,Chelsea,Brighton,1.0,3.0,A,Premier League,Inglaterra
+2025-09-27,15:00,Crystal Palace,Liverpool,2.0,1.0,H,Premier League,Inglaterra
+2025-09-27,15:00,Leeds,Bournemouth,2.0,2.0,D,Premier League,Inglaterra
+2025-09-27,15:00,Man City,Burnley,5.0,1.0,H,Premier League,Inglaterra
+2025-09-27,17:30,Nott'm Forest,Sunderland,0.0,1.0,A,Premier League,Inglaterra
+2025-09-27,20:00,Tottenham,Wolves,1.0,1.0,D,Premier League,Inglaterra
+2025-09-28,14:00,Aston Villa,Fulham,3.0,1.0,H,Premier League,Inglaterra
+2025-09-28,16:30,Newcastle,Arsenal,1.0,2.0,A,Premier League,Inglaterra
+2025-09-29,20:00,Everton,West Ham,1.0,1.0,D,Premier League,Inglaterra
+2025-10-03,20:00,Bournemouth,Fulham,3.0,1.0,H,Premier League,Inglaterra
+2025-10-04,12:30,Leeds,Tottenham,1.0,2.0,A,Premier League,Inglaterra
+2025-10-04,15:00,Arsenal,West Ham,2.0,0.0,H,Premier League,Inglaterra
+2025-10-04,15:00,Man United,Sunderland,2.0,0.0,H,Premier League,Inglaterra
+2025-10-04,17:30,Chelsea,Liverpool,2.0,1.0,H,Premier League,Inglaterra
+2025-10-05,14:00,Aston Villa,Burnley,2.0,1.0,H,Premier League,Inglaterra
+2025-10-05,14:00,Everton,Crystal Palace,2.0,1.0,H,Premier League,Inglaterra
+2025-10-05,14:00,Newcastle,Nott'm Forest,2.0,0.0,H,Premier League,Inglaterra
+2025-10-05,14:00,Wolves,Brighton,1.0,1.0,D,Premier League,Inglaterra
+2025-10-05,16:30,Brentford,Man City,0.0,1.0,A,Premier League,Inglaterra
+2025-10-18,12:30,Nott'm Forest,Chelsea,0.0,3.0,A,Premier League,Inglaterra
+2025-10-18,15:00,Brighton,Newcastle,2.0,1.0,H,Premier League,Inglaterra
+2025-10-18,15:00,Burnley,Leeds,2.0,0.0,H,Premier League,Inglaterra
+2025-10-18,15:00,Crystal Palace,Bournemouth,3.0,3.0,D,Premier League,Inglaterra
+2025-10-18,15:00,Man City,Everton,2.0,0.0,H,Premier League,Inglaterra
+2025-10-18,15:00,Sunderland,Wolves,2.0,0.0,H,Premier League,Inglaterra
+2025-10-18,17:30,Fulham,Arsenal,0.0,1.0,A,Premier League,Inglaterra
+2025-10-19,14:00,Tottenham,Aston Villa,1.0,2.0,A,Premier League,Inglaterra
+2025-10-19,16:30,Liverpool,Man United,1.0,2.0,A,Premier League,Inglaterra
+2025-10-20,20:00,West Ham,Brentford,0.0,2.0,A,Premier League,Inglaterra
+2025-10-24,20:00,Leeds,West Ham,2.0,1.0,H,Premier League,Inglaterra
+2025-10-25,15:00,Chelsea,Sunderland,1.0,2.0,A,Premier League,Inglaterra
+2025-10-25,15:00,Newcastle,Fulham,2.0,1.0,H,Premier League,Inglaterra
+2025-10-25,17:30,Man United,Brighton,4.0,2.0,H,Premier League,Inglaterra
+2025-10-25,20:00,Brentford,Liverpool,3.0,2.0,H,Premier League,Inglaterra
+2025-10-26,14:00,Arsenal,Crystal Palace,1.0,0.0,H,Premier League,Inglaterra
+2025-10-26,14:00,Aston Villa,Man City,1.0,0.0,H,Premier League,Inglaterra
+2025-10-26,14:00,Bournemouth,Nott'm Forest,2.0,0.0,H,Premier League,Inglaterra
+2025-10-26,14:00,Wolves,Burnley,2.0,3.0,A,Premier League,Inglaterra
+2025-10-26,16:30,Everton,Tottenham,0.0,3.0,A,Premier League,Inglaterra
+2025-11-01,15:00,Brighton,Leeds,3.0,0.0,H,Premier League,Inglaterra
+2025-11-01,15:00,Burnley,Arsenal,0.0,2.0,A,Premier League,Inglaterra
+2025-11-01,15:00,Crystal Palace,Brentford,2.0,0.0,H,Premier League,Inglaterra
+2025-11-01,15:00,Fulham,Wolves,3.0,0.0,H,Premier League,Inglaterra
+2025-11-01,15:00,Nott'm Forest,Man United,2.0,2.0,D,Premier League,Inglaterra
+2025-11-01,17:30,Tottenham,Chelsea,0.0,1.0,A,Premier League,Inglaterra
+2025-11-01,20:00,Liverpool,Aston Villa,2.0,0.0,H,Premier League,Inglaterra
+2025-11-02,14:00,West Ham,Newcastle,3.0,1.0,H,Premier League,Inglaterra
+2025-11-02,16:30,Man City,Bournemouth,3.0,1.0,H,Premier League,Inglaterra
+2025-11-03,20:00,Sunderland,Everton,1.0,1.0,D,Premier League,Inglaterra
+2025-11-08,12:30,Tottenham,Man United,2.0,2.0,D,Premier League,Inglaterra
+2025-11-08,15:00,Everton,Fulham,2.0,0.0,H,Premier League,Inglaterra
+2025-11-08,15:00,West Ham,Burnley,3.0,2.0,H,Premier League,Inglaterra
+2025-11-08,17:30,Sunderland,Arsenal,2.0,2.0,D,Premier League,Inglaterra
+2025-11-08,20:00,Chelsea,Wolves,3.0,0.0,H,Premier League,Inglaterra
+2025-11-09,14:00,Aston Villa,Bournemouth,4.0,0.0,H,Premier League,Inglaterra
+2025-11-09,14:00,Brentford,Newcastle,3.0,1.0,H,Premier League,Inglaterra
+2025-11-09,14:00,Crystal Palace,Brighton,0.0,0.0,D,Premier League,Inglaterra
+2025-11-09,14:00,Nott'm Forest,Leeds,3.0,1.0,H,Premier League,Inglaterra
+2025-11-09,16:30,Man City,Liverpool,3.0,0.0,H,Premier League,Inglaterra
+2025-11-22,12:30,Burnley,Chelsea,0.0,2.0,A,Premier League,Inglaterra
+2025-11-22,15:00,Bournemouth,West Ham,2.0,2.0,D,Premier League,Inglaterra
+2025-11-22,15:00,Brighton,Brentford,2.0,1.0,H,Premier League,Inglaterra
+2025-11-22,15:00,Fulham,Sunderland,1.0,0.0,H,Premier League,Inglaterra
+2025-11-22,15:00,Liverpool,Nott'm Forest,0.0,3.0,A,Premier League,Inglaterra
+2025-11-22,15:00,Wolves,Crystal Palace,0.0,2.0,A,Premier League,Inglaterra
+2025-11-22,17:30,Newcastle,Man City,2.0,1.0,H,Premier League,Inglaterra
+2025-11-23,14:00,Leeds,Aston Villa,1.0,2.0,A,Premier League,Inglaterra
+2025-11-23,16:30,Arsenal,Tottenham,4.0,1.0,H,Premier League,Inglaterra
+2025-11-24,20:00,Man United,Everton,0.0,1.0,A,Premier League,Inglaterra
+2025-11-29,15:00,Brentford,Burnley,3.0,1.0,H,Premier League,Inglaterra
+2025-11-29,15:00,Man City,Leeds,3.0,2.0,H,Premier League,Inglaterra
+2025-11-29,15:00,Sunderland,Bournemouth,3.0,2.0,H,Premier League,Inglaterra
+2025-11-29,17:30,Everton,Newcastle,1.0,4.0,A,Premier League,Inglaterra
+2025-11-29,20:00,Tottenham,Fulham,1.0,2.0,A,Premier League,Inglaterra
+2025-11-30,12:00,Crystal Palace,Man United,1.0,2.0,A,Premier League,Inglaterra
+2025-11-30,14:05,Aston Villa,Wolves,1.0,0.0,H,Premier League,Inglaterra
+2025-11-30,14:05,Nott'm Forest,Brighton,0.0,2.0,A,Premier League,Inglaterra
+2025-11-30,14:05,West Ham,Liverpool,0.0,2.0,A,Premier League,Inglaterra
+2025-11-30,16:30,Chelsea,Arsenal,1.0,1.0,D,Premier League,Inglaterra
+2025-12-02,19:30,Bournemouth,Everton,0.0,1.0,A,Premier League,Inglaterra
+2025-12-02,19:30,Fulham,Man City,4.0,5.0,A,Premier League,Inglaterra
+2025-12-02,20:15,Newcastle,Tottenham,2.0,2.0,D,Premier League,Inglaterra
+2025-12-03,19:30,Arsenal,Brentford,2.0,0.0,H,Premier League,Inglaterra
+2025-12-03,19:30,Brighton,Aston Villa,3.0,4.0,A,Premier League,Inglaterra
+2025-12-03,19:30,Burnley,Crystal Palace,0.0,1.0,A,Premier League,Inglaterra
+2025-12-03,19:30,Wolves,Nott'm Forest,0.0,1.0,A,Premier League,Inglaterra
+2025-12-03,20:15,Leeds,Chelsea,3.0,1.0,H,Premier League,Inglaterra
+2025-12-03,20:15,Liverpool,Sunderland,1.0,1.0,D,Premier League,Inglaterra
+2025-12-04,20:00,Man United,West Ham,1.0,1.0,D,Premier League,Inglaterra
+2025-12-06,12:30,Aston Villa,Arsenal,2.0,1.0,H,Premier League,Inglaterra
+2025-12-06,15:00,Bournemouth,Chelsea,0.0,0.0,D,Premier League,Inglaterra
+2025-12-06,15:00,Everton,Nott'm Forest,3.0,0.0,H,Premier League,Inglaterra
+2025-12-06,15:00,Man City,Sunderland,3.0,0.0,H,Premier League,Inglaterra
+2025-12-06,15:00,Newcastle,Burnley,2.0,1.0,H,Premier League,Inglaterra
+2025-12-06,15:00,Tottenham,Brentford,2.0,0.0,H,Premier League,Inglaterra
+2025-12-06,17:30,Leeds,Liverpool,3.0,3.0,D,Premier League,Inglaterra
+2025-12-07,14:00,Brighton,West Ham,1.0,1.0,D,Premier League,Inglaterra
+2025-12-07,16:30,Fulham,Crystal Palace,1.0,2.0,A,Premier League,Inglaterra
+2025-12-08,20:00,Wolves,Man United,1.0,4.0,A,Premier League,Inglaterra
+2025-12-13,15:00,Chelsea,Everton,2.0,0.0,H,Premier League,Inglaterra
+2025-12-13,15:00,Liverpool,Brighton,2.0,0.0,H,Premier League,Inglaterra
+2025-12-13,17:30,Burnley,Fulham,2.0,3.0,A,Premier League,Inglaterra
+2025-12-13,20:00,Arsenal,Wolves,2.0,1.0,H,Premier League,Inglaterra
+2025-12-14,14:00,Crystal Palace,Man City,0.0,3.0,A,Premier League,Inglaterra
+2025-12-14,14:00,Nott'm Forest,Tottenham,3.0,0.0,H,Premier League,Inglaterra
+2025-12-14,14:00,Sunderland,Newcastle,1.0,0.0,H,Premier League,Inglaterra
+2025-12-14,14:00,West Ham,Aston Villa,2.0,3.0,A,Premier League,Inglaterra
+2025-12-14,16:30,Brentford,Leeds,1.0,1.0,D,Premier League,Inglaterra
+2025-12-15,20:00,Man United,Bournemouth,4.0,4.0,D,Premier League,Inglaterra
+2025-12-20,12:30,Newcastle,Chelsea,2.0,2.0,D,Premier League,Inglaterra
+2025-12-20,15:00,Bournemouth,Burnley,1.0,1.0,D,Premier League,Inglaterra
+2025-12-20,15:00,Brighton,Sunderland,0.0,0.0,D,Premier League,Inglaterra
+2025-12-20,15:00,Man City,West Ham,3.0,0.0,H,Premier League,Inglaterra
+2025-12-20,15:00,Wolves,Brentford,0.0,2.0,A,Premier League,Inglaterra
+2025-12-20,17:30,Tottenham,Liverpool,1.0,2.0,A,Premier League,Inglaterra
+2025-12-20,20:00,Everton,Arsenal,0.0,1.0,A,Premier League,Inglaterra
+2025-12-20,20:00,Leeds,Crystal Palace,4.0,1.0,H,Premier League,Inglaterra
+2025-12-21,16:30,Aston Villa,Man United,2.0,1.0,H,Premier League,Inglaterra
+2025-12-22,20:00,Fulham,Nott'm Forest,1.0,0.0,H,Premier League,Inglaterra
+2025-12-26,20:00,Man United,Newcastle,1.0,0.0,H,Premier League,Inglaterra
+2025-12-27,12:30,Nott'm Forest,Man City,1.0,2.0,A,Premier League,Inglaterra
+2025-12-27,15:00,Arsenal,Brighton,2.0,1.0,H,Premier League,Inglaterra
+2025-12-27,15:00,Brentford,Bournemouth,4.0,1.0,H,Premier League,Inglaterra
+2025-12-27,15:00,Burnley,Everton,0.0,0.0,D,Premier League,Inglaterra
+2025-12-27,15:00,Liverpool,Wolves,2.0,1.0,H,Premier League,Inglaterra
+2025-12-27,15:00,West Ham,Fulham,0.0,1.0,A,Premier League,Inglaterra
+2025-12-27,17:30,Chelsea,Aston Villa,1.0,2.0,A,Premier League,Inglaterra
+2025-12-28,14:00,Sunderland,Leeds,1.0,1.0,D,Premier League,Inglaterra
+2025-12-28,16:30,Crystal Palace,Tottenham,0.0,1.0,A,Premier League,Inglaterra
+2025-12-30,19:30,Burnley,Newcastle,1.0,3.0,A,Premier League,Inglaterra
+2025-12-30,19:30,Chelsea,Bournemouth,2.0,2.0,D,Premier League,Inglaterra
+2025-12-30,19:30,Nott'm Forest,Everton,0.0,2.0,A,Premier League,Inglaterra
+2025-12-30,19:30,West Ham,Brighton,2.0,2.0,D,Premier League,Inglaterra
+2025-12-30,20:15,Arsenal,Aston Villa,4.0,1.0,H,Premier League,Inglaterra
+2025-12-30,20:15,Man United,Wolves,1.0,1.0,D,Premier League,Inglaterra
+2026-01-01,17:30,Crystal Palace,Fulham,1.0,1.0,D,Premier League,Inglaterra
+2026-01-01,17:30,Liverpool,Leeds,0.0,0.0,D,Premier League,Inglaterra
+2026-01-01,20:00,Brentford,Tottenham,0.0,0.0,D,Premier League,Inglaterra
+2026-01-01,20:00,Sunderland,Man City,0.0,0.0,D,Premier League,Inglaterra
+2026-01-03,12:30,Aston Villa,Nott'm Forest,3.0,1.0,H,Premier League,Inglaterra
+2026-01-03,15:00,Brighton,Burnley,2.0,0.0,H,Premier League,Inglaterra
+2026-01-03,15:00,Wolves,West Ham,3.0,0.0,H,Premier League,Inglaterra
+2026-01-03,17:30,Bournemouth,Arsenal,2.0,3.0,A,Premier League,Inglaterra
+2026-01-04,12:30,Leeds,Man United,1.0,1.0,D,Premier League,Inglaterra
+2026-01-04,15:00,Everton,Brentford,2.0,4.0,A,Premier League,Inglaterra
+2026-01-04,15:00,Newcastle,Crystal Palace,2.0,0.0,H,Premier League,Inglaterra
+2026-01-04,15:00,Tottenham,Sunderland,1.0,1.0,D,Premier League,Inglaterra
+2026-01-04,15:15,Fulham,Liverpool,2.0,2.0,D,Premier League,Inglaterra
+2026-01-04,17:30,Man City,Chelsea,1.0,1.0,D,Premier League,Inglaterra
+2026-01-06,20:00,West Ham,Nott'm Forest,1.0,2.0,A,Premier League,Inglaterra
+2026-01-07,19:30,Bournemouth,Tottenham,3.0,2.0,H,Premier League,Inglaterra
+2026-01-07,19:30,Brentford,Sunderland,3.0,0.0,H,Premier League,Inglaterra
+2026-01-07,19:30,Crystal Palace,Aston Villa,0.0,0.0,D,Premier League,Inglaterra
+2026-01-07,19:30,Everton,Wolves,1.0,1.0,D,Premier League,Inglaterra
+2026-01-07,19:30,Fulham,Chelsea,2.0,1.0,H,Premier League,Inglaterra
+2026-01-07,19:30,Man City,Brighton,1.0,1.0,D,Premier League,Inglaterra
+2026-01-07,20:15,Burnley,Man United,2.0,2.0,D,Premier League,Inglaterra
+2026-01-07,20:15,Newcastle,Leeds,4.0,3.0,H,Premier League,Inglaterra
+2026-01-08,20:00,Arsenal,Liverpool,0.0,0.0,D,Premier League,Inglaterra
+2026-01-17,12:30,Man United,Man City,2.0,0.0,H,Premier League,Inglaterra
+2026-01-17,15:00,Chelsea,Brentford,2.0,0.0,H,Premier League,Inglaterra
+2026-01-17,15:00,Leeds,Fulham,1.0,0.0,H,Premier League,Inglaterra
+2026-01-17,15:00,Liverpool,Burnley,1.0,1.0,D,Premier League,Inglaterra
+2026-01-17,15:00,Sunderland,Crystal Palace,2.0,1.0,H,Premier League,Inglaterra
+2026-01-17,15:00,Tottenham,West Ham,1.0,2.0,A,Premier League,Inglaterra
+2026-01-17,17:30,Nott'm Forest,Arsenal,0.0,0.0,D,Premier League,Inglaterra
+2026-01-18,14:00,Wolves,Newcastle,0.0,0.0,D,Premier League,Inglaterra
+2026-01-18,16:30,Aston Villa,Everton,0.0,1.0,A,Premier League,Inglaterra
+2026-01-19,20:00,Brighton,Bournemouth,1.0,1.0,D,Premier League,Inglaterra
+2025-08-15,18:00,Girona,Vallecano,1.0,3.0,A,La Liga,Espanha
+2025-08-15,20:30,Villarreal,Oviedo,2.0,0.0,H,La Liga,Espanha
+2025-08-16,18:30,Mallorca,Barcelona,0.0,3.0,A,La Liga,Espanha
+2025-08-16,20:30,Alaves,Levante,2.0,1.0,H,La Liga,Espanha
+2025-08-16,20:30,Valencia,Sociedad,1.0,1.0,D,La Liga,Espanha
+2025-08-17,16:00,Celta,Getafe,0.0,2.0,A,La Liga,Espanha
+2025-08-17,18:30,Ath Bilbao,Sevilla,3.0,2.0,H,La Liga,Espanha
+2025-08-17,20:30,Espanol,Ath Madrid,2.0,1.0,H,La Liga,Espanha
+2025-08-18,20:00,Elche,Betis,1.0,1.0,D,La Liga,Espanha
+2025-08-19,20:00,Real Madrid,Osasuna,1.0,0.0,H,La Liga,Espanha
+2025-08-22,20:30,Betis,Alaves,1.0,0.0,H,La Liga,Espanha
+2025-08-23,16:00,Mallorca,Celta,1.0,1.0,D,La Liga,Espanha
+2025-08-23,18:30,Ath Madrid,Elche,1.0,1.0,D,La Liga,Espanha
+2025-08-23,20:30,Levante,Barcelona,2.0,3.0,A,La Liga,Espanha
+2025-08-24,16:00,Osasuna,Valencia,1.0,0.0,H,La Liga,Espanha
+2025-08-24,18:30,Sociedad,Espanol,2.0,2.0,D,La Liga,Espanha
+2025-08-24,18:30,Villarreal,Girona,5.0,0.0,H,La Liga,Espanha
+2025-08-24,20:30,Oviedo,Real Madrid,0.0,3.0,A,La Liga,Espanha
+2025-08-25,18:30,Ath Bilbao,Vallecano,1.0,0.0,H,La Liga,Espanha
+2025-08-25,20:30,Sevilla,Getafe,1.0,2.0,A,La Liga,Espanha
+2025-08-27,20:00,Celta,Betis,1.0,1.0,D,La Liga,Espanha
+2025-08-29,18:30,Elche,Levante,2.0,0.0,H,La Liga,Espanha
+2025-08-29,20:30,Valencia,Getafe,3.0,0.0,H,La Liga,Espanha
+2025-08-30,16:00,Alaves,Ath Madrid,1.0,1.0,D,La Liga,Espanha
+2025-08-30,18:00,Oviedo,Sociedad,1.0,0.0,H,La Liga,Espanha
+2025-08-30,18:30,Girona,Sevilla,0.0,2.0,A,La Liga,Espanha
+2025-08-30,20:30,Real Madrid,Mallorca,2.0,1.0,H,La Liga,Espanha
+2025-08-31,16:00,Celta,Villarreal,1.0,1.0,D,La Liga,Espanha
+2025-08-31,18:00,Betis,Ath Bilbao,1.0,2.0,A,La Liga,Espanha
+2025-08-31,18:30,Espanol,Osasuna,1.0,0.0,H,La Liga,Espanha
+2025-08-31,20:30,Vallecano,Barcelona,1.0,1.0,D,La Liga,Espanha
+2025-09-12,20:00,Sevilla,Elche,2.0,2.0,D,La Liga,Espanha
+2025-09-13,13:00,Getafe,Oviedo,2.0,0.0,H,La Liga,Espanha
+2025-09-13,15:15,Sociedad,Real Madrid,1.0,2.0,A,La Liga,Espanha
+2025-09-13,17:30,Ath Bilbao,Alaves,0.0,1.0,A,La Liga,Espanha
+2025-09-13,20:00,Ath Madrid,Villarreal,2.0,0.0,H,La Liga,Espanha
+2025-09-14,13:00,Celta,Girona,1.0,1.0,D,La Liga,Espanha
+2025-09-14,15:15,Levante,Betis,2.0,2.0,D,La Liga,Espanha
+2025-09-14,17:30,Osasuna,Vallecano,2.0,0.0,H,La Liga,Espanha
+2025-09-14,20:00,Barcelona,Valencia,6.0,0.0,H,La Liga,Espanha
+2025-09-15,20:00,Espanol,Mallorca,3.0,2.0,H,La Liga,Espanha
+2025-09-19,20:00,Betis,Sociedad,3.0,1.0,H,La Liga,Espanha
+2025-09-20,13:00,Girona,Levante,0.0,4.0,A,La Liga,Espanha
+2025-09-20,15:15,Real Madrid,Espanol,2.0,0.0,H,La Liga,Espanha
+2025-09-20,17:30,Alaves,Sevilla,1.0,2.0,A,La Liga,Espanha
+2025-09-20,17:30,Villarreal,Osasuna,2.0,1.0,H,La Liga,Espanha
+2025-09-20,20:00,Valencia,Ath Bilbao,2.0,0.0,H,La Liga,Espanha
+2025-09-21,13:00,Vallecano,Celta,1.0,1.0,D,La Liga,Espanha
+2025-09-21,15:15,Mallorca,Ath Madrid,1.0,1.0,D,La Liga,Espanha
+2025-09-21,17:30,Elche,Oviedo,1.0,0.0,H,La Liga,Espanha
+2025-09-21,20:00,Barcelona,Getafe,3.0,0.0,H,La Liga,Espanha
+2025-09-23,18:00,Ath Bilbao,Girona,1.0,1.0,D,La Liga,Espanha
+2025-09-23,18:00,Espanol,Valencia,2.0,2.0,D,La Liga,Espanha
+2025-09-23,20:30,Levante,Real Madrid,1.0,4.0,A,La Liga,Espanha
+2025-09-23,20:30,Sevilla,Villarreal,1.0,2.0,A,La Liga,Espanha
+2025-09-24,18:00,Getafe,Alaves,1.0,1.0,D,La Liga,Espanha
+2025-09-24,20:30,Ath Madrid,Vallecano,3.0,2.0,H,La Liga,Espanha
+2025-09-24,20:30,Sociedad,Mallorca,1.0,0.0,H,La Liga,Espanha
+2025-09-25,18:30,Osasuna,Elche,1.0,1.0,D,La Liga,Espanha
+2025-09-25,20:30,Oviedo,Barcelona,1.0,3.0,A,La Liga,Espanha
+2025-09-26,20:00,Girona,Espanol,0.0,0.0,D,La Liga,Espanha
+2025-09-27,13:00,Getafe,Levante,1.0,1.0,D,La Liga,Espanha
+2025-09-27,15:15,Ath Madrid,Real Madrid,5.0,2.0,H,La Liga,Espanha
+2025-09-27,17:30,Mallorca,Alaves,1.0,0.0,H,La Liga,Espanha
+2025-09-27,20:00,Villarreal,Ath Bilbao,1.0,0.0,H,La Liga,Espanha
+2025-09-28,13:00,Vallecano,Sevilla,0.0,1.0,A,La Liga,Espanha
+2025-09-28,15:15,Elche,Celta,2.0,1.0,H,La Liga,Espanha
+2025-09-28,17:30,Barcelona,Sociedad,2.0,1.0,H,La Liga,Espanha
+2025-09-28,20:00,Betis,Osasuna,2.0,0.0,H,La Liga,Espanha
+2025-09-30,19:00,Valencia,Oviedo,1.0,2.0,A,La Liga,Espanha
+2025-10-03,20:00,Osasuna,Getafe,2.0,1.0,H,La Liga,Espanha
+2025-10-04,13:00,Oviedo,Levante,0.0,2.0,A,La Liga,Espanha
+2025-10-04,15:15,Girona,Valencia,2.0,1.0,H,La Liga,Espanha
+2025-10-04,17:30,Ath Bilbao,Mallorca,2.0,1.0,H,La Liga,Espanha
+2025-10-04,20:00,Real Madrid,Villarreal,3.0,1.0,H,La Liga,Espanha
+2025-10-05,13:00,Alaves,Elche,3.0,1.0,H,La Liga,Espanha
+2025-10-05,15:15,Sevilla,Barcelona,4.0,1.0,H,La Liga,Espanha
+2025-10-05,17:30,Espanol,Betis,1.0,2.0,A,La Liga,Espanha
+2025-10-05,17:30,Sociedad,Vallecano,0.0,1.0,A,La Liga,Espanha
+2025-10-05,20:00,Celta,Ath Madrid,1.0,1.0,D,La Liga,Espanha
+2025-10-17,20:00,Oviedo,Espanol,0.0,2.0,A,La Liga,Espanha
+2025-10-18,13:00,Sevilla,Mallorca,1.0,3.0,A,La Liga,Espanha
+2025-10-18,15:15,Barcelona,Girona,2.0,1.0,H,La Liga,Espanha
+2025-10-18,17:30,Villarreal,Betis,2.0,2.0,D,La Liga,Espanha
+2025-10-18,20:00,Ath Madrid,Osasuna,1.0,0.0,H,La Liga,Espanha
+2025-10-19,13:00,Elche,Ath Bilbao,0.0,0.0,D,La Liga,Espanha
+2025-10-19,15:15,Celta,Sociedad,1.0,1.0,D,La Liga,Espanha
+2025-10-19,17:30,Levante,Vallecano,0.0,3.0,A,La Liga,Espanha
+2025-10-19,20:00,Getafe,Real Madrid,0.0,1.0,A,La Liga,Espanha
+2025-10-20,20:00,Alaves,Valencia,0.0,0.0,D,La Liga,Espanha
+2025-10-24,20:00,Sociedad,Sevilla,2.0,1.0,H,La Liga,Espanha
+2025-10-25,13:00,Girona,Oviedo,3.0,3.0,D,La Liga,Espanha
+2025-10-25,15:15,Espanol,Elche,1.0,0.0,H,La Liga,Espanha
+2025-10-25,17:30,Ath Bilbao,Getafe,0.0,1.0,A,La Liga,Espanha
+2025-10-25,20:00,Valencia,Villarreal,0.0,2.0,A,La Liga,Espanha
+2025-10-26,13:00,Mallorca,Levante,1.0,1.0,D,La Liga,Espanha
+2025-10-26,15:15,Real Madrid,Barcelona,2.0,1.0,H,La Liga,Espanha
+2025-10-26,17:30,Osasuna,Celta,2.0,3.0,A,La Liga,Espanha
+2025-10-26,20:00,Vallecano,Alaves,1.0,0.0,H,La Liga,Espanha
+2025-10-27,20:00,Betis,Ath Madrid,0.0,2.0,A,La Liga,Espanha
+2025-10-31,20:00,Getafe,Girona,2.0,1.0,H,La Liga,Espanha
+2025-11-01,13:00,Villarreal,Vallecano,4.0,0.0,H,La Liga,Espanha
+2025-11-01,15:15,Ath Madrid,Sevilla,3.0,0.0,H,La Liga,Espanha
+2025-11-01,17:30,Sociedad,Ath Bilbao,3.0,2.0,H,La Liga,Espanha
+2025-11-01,20:00,Real Madrid,Valencia,4.0,0.0,H,La Liga,Espanha
+2025-11-02,13:00,Levante,Celta,1.0,2.0,A,La Liga,Espanha
+2025-11-02,15:15,Alaves,Espanol,2.0,1.0,H,La Liga,Espanha
+2025-11-02,17:30,Barcelona,Elche,3.0,1.0,H,La Liga,Espanha
+2025-11-02,20:00,Betis,Mallorca,3.0,0.0,H,La Liga,Espanha
+2025-11-03,20:00,Oviedo,Osasuna,0.0,0.0,D,La Liga,Espanha
+2025-11-07,20:00,Elche,Sociedad,1.0,1.0,D,La Liga,Espanha
+2025-11-08,13:00,Girona,Alaves,1.0,0.0,H,La Liga,Espanha
+2025-11-08,15:15,Sevilla,Osasuna,1.0,0.0,H,La Liga,Espanha
+2025-11-08,17:30,Ath Madrid,Levante,3.0,1.0,H,La Liga,Espanha
+2025-11-08,20:00,Espanol,Villarreal,0.0,2.0,A,La Liga,Espanha
+2025-11-09,13:00,Ath Bilbao,Oviedo,1.0,0.0,H,La Liga,Espanha
+2025-11-09,15:15,Vallecano,Real Madrid,0.0,0.0,D,La Liga,Espanha
+2025-11-09,17:30,Mallorca,Getafe,1.0,0.0,H,La Liga,Espanha
+2025-11-09,17:30,Valencia,Betis,1.0,1.0,D,La Liga,Espanha
+2025-11-09,20:00,Celta,Barcelona,2.0,4.0,A,La Liga,Espanha
+2025-11-21,20:00,Valencia,Levante,1.0,0.0,H,La Liga,Espanha
+2025-11-22,13:00,Alaves,Celta,0.0,1.0,A,La Liga,Espanha
+2025-11-22,15:15,Barcelona,Ath Bilbao,4.0,0.0,H,La Liga,Espanha
+2025-11-22,17:30,Osasuna,Sociedad,1.0,3.0,A,La Liga,Espanha
+2025-11-22,20:00,Villarreal,Mallorca,2.0,1.0,H,La Liga,Espanha
+2025-11-23,13:00,Oviedo,Vallecano,0.0,0.0,D,La Liga,Espanha
+2025-11-23,15:15,Betis,Girona,1.0,1.0,D,La Liga,Espanha
+2025-11-23,17:30,Getafe,Ath Madrid,0.0,1.0,A,La Liga,Espanha
+2025-11-23,20:00,Elche,Real Madrid,2.0,2.0,D,La Liga,Espanha
+2025-11-24,20:00,Espanol,Sevilla,2.0,1.0,H,La Liga,Espanha
+2025-11-28,20:00,Getafe,Elche,1.0,0.0,H,La Liga,Espanha
+2025-11-29,13:00,Mallorca,Osasuna,2.0,2.0,D,La Liga,Espanha
+2025-11-29,15:15,Barcelona,Alaves,3.0,1.0,H,La Liga,Espanha
+2025-11-29,17:30,Levante,Ath Bilbao,0.0,2.0,A,La Liga,Espanha
+2025-11-29,20:00,Ath Madrid,Oviedo,2.0,0.0,H,La Liga,Espanha
+2025-11-30,13:00,Sociedad,Villarreal,2.0,3.0,A,La Liga,Espanha
+2025-11-30,15:15,Sevilla,Betis,0.0,2.0,A,La Liga,Espanha
+2025-11-30,17:30,Celta,Espanol,0.0,1.0,A,La Liga,Espanha
+2025-11-30,20:00,Girona,Real Madrid,1.0,1.0,D,La Liga,Espanha
+2025-12-01,20:00,Vallecano,Valencia,1.0,1.0,D,La Liga,Espanha
+2025-12-02,20:00,Barcelona,Ath Madrid,3.0,1.0,H,La Liga,Espanha
+2025-12-03,18:00,Ath Bilbao,Real Madrid,0.0,3.0,A,La Liga,Espanha
+2025-12-05,20:00,Oviedo,Mallorca,0.0,0.0,D,La Liga,Espanha
+2025-12-06,13:00,Villarreal,Getafe,2.0,0.0,H,La Liga,Espanha
+2025-12-06,15:15,Alaves,Sociedad,1.0,0.0,H,La Liga,Espanha
+2025-12-06,17:30,Betis,Barcelona,3.0,5.0,A,La Liga,Espanha
+2025-12-06,20:00,Ath Bilbao,Ath Madrid,1.0,0.0,H,La Liga,Espanha
+2025-12-07,13:00,Elche,Girona,3.0,0.0,H,La Liga,Espanha
+2025-12-07,15:15,Valencia,Sevilla,1.0,1.0,D,La Liga,Espanha
+2025-12-07,17:30,Espanol,Vallecano,1.0,0.0,H,La Liga,Espanha
+2025-12-07,20:00,Real Madrid,Celta,0.0,2.0,A,La Liga,Espanha
+2025-12-08,20:00,Osasuna,Levante,2.0,0.0,H,La Liga,Espanha
+2025-12-12,20:00,Sociedad,Girona,1.0,2.0,A,La Liga,Espanha
+2025-12-13,13:00,Ath Madrid,Valencia,2.0,1.0,H,La Liga,Espanha
+2025-12-13,15:15,Mallorca,Elche,3.0,1.0,H,La Liga,Espanha
+2025-12-13,17:30,Barcelona,Osasuna,2.0,0.0,H,La Liga,Espanha
+2025-12-13,20:00,Getafe,Espanol,0.0,1.0,A,La Liga,Espanha
+2025-12-14,13:00,Sevilla,Oviedo,4.0,0.0,H,La Liga,Espanha
+2025-12-14,15:15,Celta,Ath Bilbao,2.0,0.0,H,La Liga,Espanha
+2025-12-14,20:00,Alaves,Real Madrid,1.0,2.0,A,La Liga,Espanha
+2025-12-15,20:00,Vallecano,Betis,0.0,0.0,D,La Liga,Espanha
+2025-12-19,20:00,Valencia,Mallorca,1.0,1.0,D,La Liga,Espanha
+2025-12-20,13:00,Oviedo,Celta,0.0,0.0,D,La Liga,Espanha
+2025-12-20,15:15,Levante,Sociedad,1.0,1.0,D,La Liga,Espanha
+2025-12-20,17:30,Osasuna,Alaves,3.0,0.0,H,La Liga,Espanha
+2025-12-20,20:00,Real Madrid,Sevilla,2.0,0.0,H,La Liga,Espanha
+2025-12-21,13:00,Girona,Ath Madrid,0.0,3.0,A,La Liga,Espanha
+2025-12-21,15:15,Villarreal,Barcelona,0.0,2.0,A,La Liga,Espanha
+2025-12-21,17:30,Elche,Vallecano,4.0,0.0,H,La Liga,Espanha
+2025-12-21,20:00,Betis,Getafe,4.0,0.0,H,La Liga,Espanha
+2025-12-22,20:00,Ath Bilbao,Espanol,1.0,2.0,A,La Liga,Espanha
+2026-01-02,20:00,Vallecano,Getafe,1.0,1.0,D,La Liga,Espanha
+2026-01-03,13:00,Celta,Valencia,4.0,1.0,H,La Liga,Espanha
+2026-01-03,15:15,Osasuna,Ath Bilbao,1.0,1.0,D,La Liga,Espanha
+2026-01-03,17:30,Elche,Villarreal,1.0,3.0,A,La Liga,Espanha
+2026-01-03,20:00,Espanol,Barcelona,0.0,2.0,A,La Liga,Espanha
+2026-01-04,13:00,Sevilla,Levante,0.0,3.0,A,La Liga,Espanha
+2026-01-04,15:15,Real Madrid,Betis,5.0,1.0,H,La Liga,Espanha
+2026-01-04,17:30,Alaves,Oviedo,1.0,1.0,D,La Liga,Espanha
+2026-01-04,17:30,Mallorca,Girona,1.0,2.0,A,La Liga,Espanha
+2026-01-04,20:00,Sociedad,Ath Madrid,1.0,1.0,D,La Liga,Espanha
+2026-01-09,20:00,Getafe,Sociedad,1.0,2.0,A,La Liga,Espanha
+2026-01-10,13:00,Oviedo,Betis,1.0,1.0,D,La Liga,Espanha
+2026-01-10,15:15,Villarreal,Alaves,3.0,1.0,H,La Liga,Espanha
+2026-01-10,17:30,Girona,Osasuna,1.0,0.0,H,La Liga,Espanha
+2026-01-10,20:00,Valencia,Elche,1.0,1.0,D,La Liga,Espanha
+2026-01-11,13:00,Vallecano,Mallorca,2.0,1.0,H,La Liga,Espanha
+2026-01-11,15:15,Levante,Espanol,1.0,1.0,D,La Liga,Espanha
+2026-01-12,20:00,Sevilla,Celta,0.0,1.0,A,La Liga,Espanha
+2026-01-16,20:00,Espanol,Girona,0.0,2.0,A,La Liga,Espanha
+2026-01-17,13:00,Real Madrid,Levante,2.0,0.0,H,La Liga,Espanha
+2026-01-17,15:15,Mallorca,Ath Bilbao,3.0,2.0,H,La Liga,Espanha
+2026-01-17,17:30,Osasuna,Oviedo,3.0,2.0,H,La Liga,Espanha
+2026-01-17,20:00,Betis,Villarreal,2.0,0.0,H,La Liga,Espanha
+2026-01-18,13:00,Getafe,Valencia,0.0,1.0,A,La Liga,Espanha
+2026-01-18,15:15,Ath Madrid,Alaves,1.0,0.0,H,La Liga,Espanha
+2026-01-18,17:30,Celta,Vallecano,3.0,0.0,H,La Liga,Espanha
+2026-01-18,20:00,Sociedad,Barcelona,2.0,1.0,H,La Liga,Espanha
+2026-01-19,20:00,Elche,Sevilla,2.0,2.0,D,La Liga,Espanha
+2025-08-08,19:00,For Sittard,Go Ahead Eagles,2.0,2.0,D,Eredivisie,Holanda
+2025-08-09,15:30,Nijmegen,Excelsior,5.0,0.0,H,Eredivisie,Holanda
+2025-08-09,17:45,Feyenoord,NAC Breda,2.0,0.0,H,Eredivisie,Holanda
+2025-08-09,19:00,Heerenveen,Volendam,1.0,1.0,D,Eredivisie,Holanda
+2025-08-09,20:00,PSV Eindhoven,Sparta Rotterdam,6.0,1.0,H,Eredivisie,Holanda
+2025-08-10,11:15,Zwolle,Twente,1.0,0.0,H,Eredivisie,Holanda
+2025-08-10,13:30,Ajax,Telstar,2.0,0.0,H,Eredivisie,Holanda
+2025-08-10,13:30,AZ Alkmaar,Groningen,4.0,1.0,H,Eredivisie,Holanda
+2025-08-10,15:45,Utrecht,Heracles,4.0,0.0,H,Eredivisie,Holanda
+2025-08-15,19:00,Telstar,Zwolle,0.0,2.0,A,Eredivisie,Holanda
+2025-08-16,17:45,Excelsior,Feyenoord,1.0,2.0,A,Eredivisie,Holanda
+2025-08-16,19:00,Heracles,Nijmegen,1.0,4.0,A,Eredivisie,Holanda
+2025-08-16,20:00,Groningen,Heerenveen,2.0,1.0,H,Eredivisie,Holanda
+2025-08-17,11:15,Go Ahead Eagles,Ajax,2.0,2.0,D,Eredivisie,Holanda
+2025-08-17,13:30,Sparta Rotterdam,Utrecht,2.0,1.0,H,Eredivisie,Holanda
+2025-08-17,13:30,Twente,PSV Eindhoven,0.0,2.0,A,Eredivisie,Holanda
+2025-08-17,15:45,Volendam,AZ Alkmaar,2.0,2.0,D,Eredivisie,Holanda
+2025-08-17,19:00,NAC Breda,For Sittard,2.0,1.0,H,Eredivisie,Holanda
+2025-08-23,15:30,Go Ahead Eagles,Sparta Rotterdam,0.0,3.0,A,Eredivisie,Holanda
+2025-08-23,17:45,PSV Eindhoven,Groningen,4.0,2.0,H,Eredivisie,Holanda
+2025-08-23,20:00,Telstar,Volendam,2.0,2.0,D,Eredivisie,Holanda
+2025-08-24,11:15,Heerenveen,Twente,1.0,2.0,A,Eredivisie,Holanda
+2025-08-24,13:30,Nijmegen,NAC Breda,3.0,0.0,H,Eredivisie,Holanda
+2025-08-24,13:30,Utrecht,Excelsior,4.0,1.0,H,Eredivisie,Holanda
+2025-08-24,15:45,Ajax,Heracles,2.0,0.0,H,Eredivisie,Holanda
+2025-08-29,19:00,Groningen,Heracles,4.0,0.0,H,Eredivisie,Holanda
+2025-08-30,15:30,Volendam,Ajax,1.0,1.0,D,Eredivisie,Holanda
+2025-08-30,17:45,Heerenveen,Go Ahead Eagles,2.0,2.0,D,Eredivisie,Holanda
+2025-08-30,19:00,PSV Eindhoven,Telstar,0.0,2.0,A,Eredivisie,Holanda
+2025-08-30,20:00,Excelsior,Twente,1.0,0.0,H,Eredivisie,Holanda
+2025-08-31,11:15,For Sittard,Nijmegen,3.0,2.0,H,Eredivisie,Holanda
+2025-08-31,13:30,Sparta Rotterdam,Feyenoord,0.0,4.0,A,Eredivisie,Holanda
+2025-08-31,13:30,Zwolle,Utrecht,0.0,2.0,A,Eredivisie,Holanda
+2025-08-31,15:45,NAC Breda,AZ Alkmaar,0.0,1.0,A,Eredivisie,Holanda
+2025-09-13,15:30,Ajax,Zwolle,3.0,1.0,H,Eredivisie,Holanda
+2025-09-13,17:45,Go Ahead Eagles,Volendam,3.0,0.0,H,Eredivisie,Holanda
+2025-09-13,17:45,Nijmegen,PSV Eindhoven,3.0,5.0,A,Eredivisie,Holanda
+2025-09-13,20:00,Feyenoord,Heerenveen,1.0,0.0,H,Eredivisie,Holanda
+2025-09-13,20:00,Twente,NAC Breda,2.0,2.0,D,Eredivisie,Holanda
+2025-09-14,11:15,Excelsior,Sparta Rotterdam,0.0,1.0,A,Eredivisie,Holanda
+2025-09-14,13:30,Heracles,AZ Alkmaar,1.0,2.0,A,Eredivisie,Holanda
+2025-09-14,13:30,Utrecht,Groningen,0.0,1.0,A,Eredivisie,Holanda
+2025-09-14,15:45,Telstar,For Sittard,1.0,3.0,A,Eredivisie,Holanda
+2025-09-17,19:00,Feyenoord,For Sittard,2.0,0.0,H,Eredivisie,Holanda
+2025-09-19,19:00,Sparta Rotterdam,Twente,1.0,5.0,A,Eredivisie,Holanda
+2025-09-20,15:30,Volendam,Excelsior,1.0,2.0,A,Eredivisie,Holanda
+2025-09-20,17:45,Groningen,Telstar,2.0,0.0,H,Eredivisie,Holanda
+2025-09-20,19:00,For Sittard,Utrecht,1.0,0.0,H,Eredivisie,Holanda
+2025-09-20,20:00,NAC Breda,Heracles,2.0,1.0,H,Eredivisie,Holanda
+2025-09-21,11:15,Zwolle,Go Ahead Eagles,0.0,2.0,A,Eredivisie,Holanda
+2025-09-21,13:30,Heerenveen,Nijmegen,3.0,2.0,H,Eredivisie,Holanda
+2025-09-21,13:30,PSV Eindhoven,Ajax,2.0,2.0,D,Eredivisie,Holanda
+2025-09-21,15:45,AZ Alkmaar,Feyenoord,3.0,3.0,D,Eredivisie,Holanda
+2025-09-24,19:00,AZ Alkmaar,Zwolle,2.0,2.0,D,Eredivisie,Holanda
+2025-09-26,19:00,Twente,For Sittard,3.0,2.0,H,Eredivisie,Holanda
+2025-09-27,15:30,Ajax,NAC Breda,2.0,1.0,H,Eredivisie,Holanda
+2025-09-27,17:45,Volendam,Zwolle,2.0,1.0,H,Eredivisie,Holanda
+2025-09-27,19:00,Excelsior,PSV Eindhoven,1.0,2.0,A,Eredivisie,Holanda
+2025-09-27,20:00,Heracles,Sparta Rotterdam,3.0,0.0,H,Eredivisie,Holanda
+2025-09-28,11:15,Nijmegen,AZ Alkmaar,2.0,1.0,H,Eredivisie,Holanda
+2025-09-28,13:30,Groningen,Feyenoord,0.0,1.0,A,Eredivisie,Holanda
+2025-09-28,13:30,Utrecht,Heerenveen,2.0,2.0,D,Eredivisie,Holanda
+2025-09-28,15:45,Telstar,Go Ahead Eagles,4.0,2.0,H,Eredivisie,Holanda
+2025-10-03,19:00,NAC Breda,Groningen,1.0,2.0,A,Eredivisie,Holanda
+2025-10-04,15:30,Sparta Rotterdam,Ajax,3.0,3.0,D,Eredivisie,Holanda
+2025-10-04,17:45,For Sittard,Volendam,1.0,0.0,H,Eredivisie,Holanda
+2025-10-04,19:00,Zwolle,PSV Eindhoven,0.0,4.0,A,Eredivisie,Holanda
+2025-10-04,20:00,Heerenveen,Excelsior,2.0,1.0,H,Eredivisie,Holanda
+2025-10-05,11:15,Twente,Heracles,2.0,1.0,H,Eredivisie,Holanda
+2025-10-05,13:30,Feyenoord,Utrecht,3.0,2.0,H,Eredivisie,Holanda
+2025-10-05,15:45,AZ Alkmaar,Telstar,2.0,1.0,H,Eredivisie,Holanda
+2025-10-05,19:00,Go Ahead Eagles,Nijmegen,1.0,1.0,D,Eredivisie,Holanda
+2025-10-18,15:30,Nijmegen,Twente,3.0,3.0,D,Eredivisie,Holanda
+2025-10-18,17:45,PSV Eindhoven,Go Ahead Eagles,2.0,1.0,H,Eredivisie,Holanda
+2025-10-18,17:45,Utrecht,Volendam,3.0,1.0,H,Eredivisie,Holanda
+2025-10-18,20:00,Ajax,AZ Alkmaar,0.0,2.0,A,Eredivisie,Holanda
+2025-10-18,20:00,NAC Breda,Zwolle,2.0,2.0,D,Eredivisie,Holanda
+2025-10-19,11:15,Telstar,Heerenveen,2.0,3.0,A,Eredivisie,Holanda
+2025-10-19,13:30,Excelsior,For Sittard,1.0,0.0,H,Eredivisie,Holanda
+2025-10-19,13:30,Groningen,Sparta Rotterdam,0.0,2.0,A,Eredivisie,Holanda
+2025-10-19,15:45,Heracles,Feyenoord,0.0,7.0,A,Eredivisie,Holanda
+2025-10-24,19:00,Heerenveen,NAC Breda,3.0,3.0,D,Eredivisie,Holanda
+2025-10-25,15:30,For Sittard,Groningen,1.0,2.0,A,Eredivisie,Holanda
+2025-10-25,17:45,Sparta Rotterdam,Telstar,1.0,0.0,H,Eredivisie,Holanda
+2025-10-25,19:00,Volendam,Heracles,3.0,0.0,H,Eredivisie,Holanda
+2025-10-25,20:00,Zwolle,Nijmegen,2.0,2.0,D,Eredivisie,Holanda
+2025-10-26,11:15,Twente,Ajax,2.0,3.0,A,Eredivisie,Holanda
+2025-10-26,13:30,Feyenoord,PSV Eindhoven,2.0,3.0,A,Eredivisie,Holanda
+2025-10-26,15:45,AZ Alkmaar,Utrecht,4.0,1.0,H,Eredivisie,Holanda
+2025-10-26,19:00,Go Ahead Eagles,Excelsior,2.0,0.0,H,Eredivisie,Holanda
+2025-10-31,19:00,PSV Eindhoven,For Sittard,5.0,2.0,H,Eredivisie,Holanda
+2025-11-01,15:30,Ajax,Heerenveen,1.0,1.0,D,Eredivisie,Holanda
+2025-11-01,17:45,NAC Breda,Go Ahead Eagles,1.0,0.0,H,Eredivisie,Holanda
+2025-11-01,19:00,Feyenoord,Volendam,3.0,1.0,H,Eredivisie,Holanda
+2025-11-01,20:00,Telstar,Excelsior,2.0,2.0,D,Eredivisie,Holanda
+2025-11-02,11:15,Heracles,Zwolle,8.0,2.0,H,Eredivisie,Holanda
+2025-11-02,13:30,Groningen,Twente,1.0,1.0,D,Eredivisie,Holanda
+2025-11-02,13:30,Sparta Rotterdam,AZ Alkmaar,0.0,1.0,A,Eredivisie,Holanda
+2025-11-02,15:45,Utrecht,Nijmegen,1.0,0.0,H,Eredivisie,Holanda
+2025-11-07,19:00,Twente,Telstar,0.0,0.0,D,Eredivisie,Holanda
+2025-11-08,15:30,Excelsior,Heracles,1.0,2.0,A,Eredivisie,Holanda
+2025-11-08,17:45,Volendam,NAC Breda,2.0,1.0,H,Eredivisie,Holanda
+2025-11-08,19:00,For Sittard,Heerenveen,2.0,0.0,H,Eredivisie,Holanda
+2025-11-08,20:00,Zwolle,Sparta Rotterdam,1.0,0.0,H,Eredivisie,Holanda
+2025-11-09,11:15,Utrecht,Ajax,2.0,1.0,H,Eredivisie,Holanda
+2025-11-09,13:30,Nijmegen,Groningen,2.0,0.0,H,Eredivisie,Holanda
+2025-11-09,15:45,AZ Alkmaar,PSV Eindhoven,1.0,5.0,A,Eredivisie,Holanda
+2025-11-09,19:00,Go Ahead Eagles,Feyenoord,2.0,1.0,H,Eredivisie,Holanda
+2025-11-22,15:30,NAC Breda,PSV Eindhoven,0.0,1.0,A,Eredivisie,Holanda
+2025-11-22,17:45,Ajax,Excelsior,1.0,2.0,A,Eredivisie,Holanda
+2025-11-22,17:45,Volendam,Twente,1.0,1.0,D,Eredivisie,Holanda
+2025-11-22,20:00,Heracles,Go Ahead Eagles,4.0,2.0,H,Eredivisie,Holanda
+2025-11-22,20:00,Sparta Rotterdam,For Sittard,1.0,1.0,D,Eredivisie,Holanda
+2025-11-23,11:15,Heerenveen,AZ Alkmaar,3.0,1.0,H,Eredivisie,Holanda
+2025-11-23,13:30,Feyenoord,Nijmegen,2.0,4.0,A,Eredivisie,Holanda
+2025-11-23,13:30,Telstar,Utrecht,1.0,1.0,D,Eredivisie,Holanda
+2025-11-23,15:45,Groningen,Zwolle,2.0,2.0,D,Eredivisie,Holanda
+2025-11-28,19:00,Zwolle,Heerenveen,2.0,1.0,H,Eredivisie,Holanda
+2025-11-29,15:30,Excelsior,NAC Breda,1.0,0.0,H,Eredivisie,Holanda
+2025-11-29,17:45,For Sittard,Heracles,1.0,1.0,D,Eredivisie,Holanda
+2025-11-29,20:00,Nijmegen,Sparta Rotterdam,3.0,1.0,H,Eredivisie,Holanda
+2025-11-30,11:15,PSV Eindhoven,Volendam,3.0,0.0,H,Eredivisie,Holanda
+2025-11-30,13:30,Go Ahead Eagles,Utrecht,2.0,2.0,D,Eredivisie,Holanda
+2025-11-30,13:30,Telstar,Feyenoord,1.0,2.0,A,Eredivisie,Holanda
+2025-11-30,15:45,Twente,AZ Alkmaar,1.0,0.0,H,Eredivisie,Holanda
+2025-12-02,13:30,Ajax,Groningen,2.0,0.0,H,Eredivisie,Holanda
+2025-12-05,19:00,Excelsior,Groningen,0.0,2.0,A,Eredivisie,Holanda
+2025-12-06,15:30,Heerenveen,PSV Eindhoven,0.0,2.0,A,Eredivisie,Holanda
+2025-12-06,17:45,For Sittard,Ajax,1.0,3.0,A,Eredivisie,Holanda
+2025-12-06,19:00,Heracles,Telstar,1.0,1.0,D,Eredivisie,Holanda
+2025-12-06,20:00,Feyenoord,Zwolle,6.0,1.0,H,Eredivisie,Holanda
+2025-12-07,11:15,Utrecht,Twente,1.0,1.0,D,Eredivisie,Holanda
+2025-12-07,13:30,AZ Alkmaar,Go Ahead Eagles,2.0,2.0,D,Eredivisie,Holanda
+2025-12-07,13:30,Volendam,Nijmegen,2.0,3.0,A,Eredivisie,Holanda
+2025-12-07,15:45,Sparta Rotterdam,NAC Breda,1.0,0.0,H,Eredivisie,Holanda
+2025-12-13,15:30,Telstar,Nijmegen,2.0,2.0,D,Eredivisie,Holanda
+2025-12-13,17:45,Groningen,Volendam,3.0,0.0,H,Eredivisie,Holanda
+2025-12-13,19:00,PSV Eindhoven,Heracles,4.0,3.0,H,Eredivisie,Holanda
+2025-12-13,20:00,Zwolle,For Sittard,1.0,0.0,H,Eredivisie,Holanda
+2025-12-14,11:15,Sparta Rotterdam,Heerenveen,0.0,3.0,A,Eredivisie,Holanda
+2025-12-14,13:30,Ajax,Feyenoord,2.0,0.0,H,Eredivisie,Holanda
+2025-12-14,13:30,Twente,Go Ahead Eagles,2.0,0.0,H,Eredivisie,Holanda
+2025-12-14,15:45,NAC Breda,Utrecht,1.0,1.0,D,Eredivisie,Holanda
+2025-12-20,15:30,Heracles,Heerenveen,0.0,3.0,A,Eredivisie,Holanda
+2025-12-20,17:45,Excelsior,Zwolle,2.0,1.0,H,Eredivisie,Holanda
+2025-12-20,19:00,Nijmegen,Ajax,2.0,2.0,D,Eredivisie,Holanda
+2025-12-20,20:00,NAC Breda,Telstar,0.0,1.0,A,Eredivisie,Holanda
+2025-12-21,11:15,Utrecht,PSV Eindhoven,1.0,2.0,A,Eredivisie,Holanda
+2025-12-21,13:30,Feyenoord,Twente,1.0,1.0,D,Eredivisie,Holanda
+2025-12-21,13:30,Go Ahead Eagles,Groningen,1.0,1.0,D,Eredivisie,Holanda
+2025-12-21,15:45,For Sittard,AZ Alkmaar,4.0,3.0,H,Eredivisie,Holanda
+2025-12-21,15:45,Volendam,Sparta Rotterdam,0.0,1.0,A,Eredivisie,Holanda
+2026-01-10,15:30,AZ Alkmaar,Volendam,1.0,0.0,H,Eredivisie,Holanda
+2026-01-10,17:45,Twente,Zwolle,1.0,1.0,D,Eredivisie,Holanda
+2026-01-10,19:00,PSV Eindhoven,Excelsior,5.0,1.0,H,Eredivisie,Holanda
+2026-01-10,20:00,Groningen,NAC Breda,0.0,0.0,D,Eredivisie,Holanda
+2026-01-11,11:15,Heerenveen,Feyenoord,2.0,2.0,D,Eredivisie,Holanda
+2026-01-11,13:30,Go Ahead Eagles,For Sittard,2.0,2.0,D,Eredivisie,Holanda
+2026-01-11,13:30,Telstar,Ajax,2.0,3.0,A,Eredivisie,Holanda
+2026-01-11,15:45,Sparta Rotterdam,Heracles,2.0,0.0,H,Eredivisie,Holanda
+2026-01-17,15:30,Ajax,Go Ahead Eagles,2.0,2.0,D,Eredivisie,Holanda
+2026-01-17,17:45,Zwolle,AZ Alkmaar,3.0,1.0,H,Eredivisie,Holanda
+2026-01-17,19:00,Excelsior,Telstar,2.0,2.0,D,Eredivisie,Holanda
+2026-01-17,19:00,For Sittard,PSV Eindhoven,1.0,2.0,A,Eredivisie,Holanda
+2026-01-17,20:00,NAC Breda,Nijmegen,3.0,4.0,A,Eredivisie,Holanda
+2026-01-18,11:15,Heerenveen,Groningen,0.0,2.0,A,Eredivisie,Holanda
+2026-01-18,13:30,Heracles,Twente,0.0,2.0,A,Eredivisie,Holanda
+2026-01-18,13:30,Volendam,Utrecht,2.0,1.0,H,Eredivisie,Holanda
+2026-01-18,15:45,Feyenoord,Sparta Rotterdam,3.0,4.0,A,Eredivisie,Holanda
+2026-01-21,17:45,AZ Alkmaar,Excelsior,1.0,1.0,D,Eredivisie,Holanda
+2025-08-23,17:30,Genoa,Lecce,0.0,0.0,D,Serie A,Italia
+2025-08-23,17:30,Sassuolo,Napoli,0.0,2.0,A,Serie A,Italia
+2025-08-23,19:45,Milan,Cremonese,1.0,2.0,A,Serie A,Italia
+2025-08-23,19:45,Roma,Bologna,1.0,0.0,H,Serie A,Italia
+2025-08-24,17:30,Cagliari,Fiorentina,1.0,1.0,D,Serie A,Italia
+2025-08-24,17:30,Como,Lazio,2.0,0.0,H,Serie A,Italia
+2025-08-24,19:45,Atalanta,Pisa,1.0,1.0,D,Serie A,Italia
+2025-08-24,19:45,Juventus,Parma,2.0,0.0,H,Serie A,Italia
+2025-08-25,17:30,Udinese,Verona,1.0,1.0,D,Serie A,Italia
+2025-08-25,19:45,Inter,Torino,5.0,0.0,H,Serie A,Italia
+2025-08-29,17:30,Cremonese,Sassuolo,3.0,2.0,H,Serie A,Italia
+2025-08-29,19:45,Lecce,Milan,0.0,2.0,A,Serie A,Italia
+2025-08-30,17:30,Bologna,Como,1.0,0.0,H,Serie A,Italia
+2025-08-30,17:30,Parma,Atalanta,1.0,1.0,D,Serie A,Italia
+2025-08-30,19:45,Napoli,Cagliari,1.0,0.0,H,Serie A,Italia
+2025-08-30,19:45,Pisa,Roma,0.0,1.0,A,Serie A,Italia
+2025-08-31,17:30,Genoa,Juventus,0.0,1.0,A,Serie A,Italia
+2025-08-31,17:30,Torino,Fiorentina,0.0,0.0,D,Serie A,Italia
+2025-08-31,19:45,Inter,Udinese,1.0,2.0,A,Serie A,Italia
+2025-08-31,19:45,Lazio,Verona,4.0,0.0,H,Serie A,Italia
+2025-09-13,14:00,Cagliari,Parma,2.0,0.0,H,Serie A,Italia
+2025-09-13,17:00,Juventus,Inter,4.0,3.0,H,Serie A,Italia
+2025-09-13,19:45,Fiorentina,Napoli,1.0,3.0,A,Serie A,Italia
+2025-09-14,11:30,Roma,Torino,0.0,1.0,A,Serie A,Italia
+2025-09-14,14:00,Atalanta,Lecce,4.0,1.0,H,Serie A,Italia
+2025-09-14,14:00,Pisa,Udinese,0.0,1.0,A,Serie A,Italia
+2025-09-14,17:00,Sassuolo,Lazio,1.0,0.0,H,Serie A,Italia
+2025-09-14,19:45,Milan,Bologna,1.0,0.0,H,Serie A,Italia
+2025-09-15,17:30,Verona,Cremonese,0.0,0.0,D,Serie A,Italia
+2025-09-15,19:45,Como,Genoa,1.0,1.0,D,Serie A,Italia
+2025-09-19,19:45,Lecce,Cagliari,1.0,2.0,A,Serie A,Italia
+2025-09-20,14:00,Bologna,Genoa,2.0,1.0,H,Serie A,Italia
+2025-09-20,17:00,Verona,Juventus,1.0,1.0,D,Serie A,Italia
+2025-09-20,19:45,Udinese,Milan,0.0,3.0,A,Serie A,Italia
+2025-09-21,11:30,Lazio,Roma,0.0,1.0,A,Serie A,Italia
+2025-09-21,14:00,Cremonese,Parma,0.0,0.0,D,Serie A,Italia
+2025-09-21,14:00,Torino,Atalanta,0.0,3.0,A,Serie A,Italia
+2025-09-21,17:00,Fiorentina,Como,1.0,2.0,A,Serie A,Italia
+2025-09-21,19:45,Inter,Sassuolo,2.0,1.0,H,Serie A,Italia
+2025-09-22,19:45,Napoli,Pisa,3.0,2.0,H,Serie A,Italia
+2025-09-27,14:00,Como,Cremonese,1.0,1.0,D,Serie A,Italia
+2025-09-27,17:00,Juventus,Atalanta,1.0,1.0,D,Serie A,Italia
+2025-09-27,19:45,Cagliari,Inter,0.0,2.0,A,Serie A,Italia
+2025-09-28,11:30,Sassuolo,Udinese,3.0,1.0,H,Serie A,Italia
+2025-09-28,14:00,Pisa,Fiorentina,0.0,0.0,D,Serie A,Italia
+2025-09-28,14:00,Roma,Verona,2.0,0.0,H,Serie A,Italia
+2025-09-28,17:00,Lecce,Bologna,2.0,2.0,D,Serie A,Italia
+2025-09-28,19:45,Milan,Napoli,2.0,1.0,H,Serie A,Italia
+2025-09-29,17:30,Parma,Torino,2.0,1.0,H,Serie A,Italia
+2025-09-29,19:45,Genoa,Lazio,0.0,3.0,A,Serie A,Italia
+2025-10-03,19:45,Verona,Sassuolo,0.0,1.0,A,Serie A,Italia
+2025-10-04,14:00,Lazio,Torino,3.0,3.0,D,Serie A,Italia
+2025-10-04,14:00,Parma,Lecce,0.0,1.0,A,Serie A,Italia
+2025-10-04,17:00,Inter,Cremonese,4.0,1.0,H,Serie A,Italia
+2025-10-04,19:45,Atalanta,Como,1.0,1.0,D,Serie A,Italia
+2025-10-05,11:30,Udinese,Cagliari,1.0,1.0,D,Serie A,Italia
+2025-10-05,14:00,Bologna,Pisa,4.0,0.0,H,Serie A,Italia
+2025-10-05,14:00,Fiorentina,Roma,1.0,2.0,A,Serie A,Italia
+2025-10-05,17:00,Napoli,Genoa,2.0,1.0,H,Serie A,Italia
+2025-10-05,19:45,Juventus,Milan,0.0,0.0,D,Serie A,Italia
+2025-10-18,14:00,Lecce,Sassuolo,0.0,0.0,D,Serie A,Italia
+2025-10-18,14:00,Pisa,Verona,0.0,0.0,D,Serie A,Italia
+2025-10-18,17:00,Torino,Napoli,1.0,0.0,H,Serie A,Italia
+2025-10-18,19:45,Roma,Inter,0.0,1.0,A,Serie A,Italia
+2025-10-19,11:30,Como,Juventus,2.0,0.0,H,Serie A,Italia
+2025-10-19,14:00,Cagliari,Bologna,0.0,2.0,A,Serie A,Italia
+2025-10-19,14:00,Genoa,Parma,0.0,0.0,D,Serie A,Italia
+2025-10-19,17:00,Atalanta,Lazio,0.0,0.0,D,Serie A,Italia
+2025-10-19,19:45,Milan,Fiorentina,2.0,1.0,H,Serie A,Italia
+2025-10-20,19:45,Cremonese,Udinese,1.0,1.0,D,Serie A,Italia
+2025-10-24,19:45,Milan,Pisa,2.0,2.0,D,Serie A,Italia
+2025-10-25,14:00,Parma,Como,0.0,0.0,D,Serie A,Italia
+2025-10-25,14:00,Udinese,Lecce,3.0,2.0,H,Serie A,Italia
+2025-10-25,17:00,Napoli,Inter,3.0,1.0,H,Serie A,Italia
+2025-10-25,19:45,Cremonese,Atalanta,1.0,1.0,D,Serie A,Italia
+2025-10-26,11:30,Torino,Genoa,2.0,1.0,H,Serie A,Italia
+2025-10-26,14:00,Sassuolo,Roma,0.0,1.0,A,Serie A,Italia
+2025-10-26,14:00,Verona,Cagliari,2.0,2.0,D,Serie A,Italia
+2025-10-26,17:00,Fiorentina,Bologna,2.0,2.0,D,Serie A,Italia
+2025-10-26,19:45,Lazio,Juventus,1.0,0.0,H,Serie A,Italia
+2025-10-28,17:30,Lecce,Napoli,0.0,1.0,A,Serie A,Italia
+2025-10-28,19:45,Atalanta,Milan,1.0,1.0,D,Serie A,Italia
+2025-10-29,17:30,Como,Verona,3.0,1.0,H,Serie A,Italia
+2025-10-29,17:30,Juventus,Udinese,3.0,1.0,H,Serie A,Italia
+2025-10-29,17:30,Roma,Parma,2.0,1.0,H,Serie A,Italia
+2025-10-29,19:45,Bologna,Torino,0.0,0.0,D,Serie A,Italia
+2025-10-29,19:45,Genoa,Cremonese,0.0,2.0,A,Serie A,Italia
+2025-10-29,19:45,Inter,Fiorentina,3.0,0.0,H,Serie A,Italia
+2025-10-30,17:30,Cagliari,Sassuolo,1.0,2.0,A,Serie A,Italia
+2025-10-30,19:45,Pisa,Lazio,0.0,0.0,D,Serie A,Italia
+2025-11-01,14:00,Udinese,Atalanta,1.0,0.0,H,Serie A,Italia
+2025-11-01,17:00,Napoli,Como,0.0,0.0,D,Serie A,Italia
+2025-11-01,19:45,Cremonese,Juventus,1.0,2.0,A,Serie A,Italia
+2025-11-02,11:30,Verona,Inter,1.0,2.0,A,Serie A,Italia
+2025-11-02,14:00,Fiorentina,Lecce,0.0,1.0,A,Serie A,Italia
+2025-11-02,14:00,Torino,Pisa,2.0,2.0,D,Serie A,Italia
+2025-11-02,17:00,Parma,Bologna,1.0,3.0,A,Serie A,Italia
+2025-11-02,19:45,Milan,Roma,1.0,0.0,H,Serie A,Italia
+2025-11-03,17:30,Sassuolo,Genoa,1.0,2.0,A,Serie A,Italia
+2025-11-03,19:45,Lazio,Cagliari,2.0,0.0,H,Serie A,Italia
+2025-11-07,19:45,Pisa,Cremonese,1.0,0.0,H,Serie A,Italia
+2025-11-08,14:00,Como,Cagliari,0.0,0.0,D,Serie A,Italia
+2025-11-08,14:00,Lecce,Verona,0.0,0.0,D,Serie A,Italia
+2025-11-08,17:00,Juventus,Torino,0.0,0.0,D,Serie A,Italia
+2025-11-08,19:45,Parma,Milan,2.0,2.0,D,Serie A,Italia
+2025-11-09,11:30,Atalanta,Sassuolo,0.0,3.0,A,Serie A,Italia
+2025-11-09,14:00,Bologna,Napoli,2.0,0.0,H,Serie A,Italia
+2025-11-09,14:00,Genoa,Fiorentina,2.0,2.0,D,Serie A,Italia
+2025-11-09,17:00,Roma,Udinese,2.0,0.0,H,Serie A,Italia
+2025-11-09,19:45,Inter,Lazio,2.0,0.0,H,Serie A,Italia
+2025-11-22,14:00,Cagliari,Genoa,3.0,3.0,D,Serie A,Italia
+2025-11-22,14:00,Udinese,Bologna,0.0,3.0,A,Serie A,Italia
+2025-11-22,17:00,Fiorentina,Juventus,1.0,1.0,D,Serie A,Italia
+2025-11-22,19:45,Napoli,Atalanta,3.0,1.0,H,Serie A,Italia
+2025-11-23,11:30,Verona,Parma,1.0,2.0,A,Serie A,Italia
+2025-11-23,14:00,Cremonese,Roma,1.0,3.0,A,Serie A,Italia
+2025-11-23,17:00,Lazio,Lecce,2.0,0.0,H,Serie A,Italia
+2025-11-23,19:45,Inter,Milan,0.0,1.0,A,Serie A,Italia
+2025-11-24,17:30,Torino,Como,1.0,5.0,A,Serie A,Italia
+2025-11-24,19:45,Sassuolo,Pisa,2.0,2.0,D,Serie A,Italia
+2025-11-28,19:45,Como,Sassuolo,2.0,0.0,H,Serie A,Italia
+2025-11-29,14:00,Genoa,Verona,2.0,1.0,H,Serie A,Italia
+2025-11-29,14:00,Parma,Udinese,0.0,2.0,A,Serie A,Italia
+2025-11-29,17:00,Juventus,Cagliari,2.0,1.0,H,Serie A,Italia
+2025-11-29,19:45,Milan,Lazio,1.0,0.0,H,Serie A,Italia
+2025-11-30,11:30,Lecce,Torino,2.0,1.0,H,Serie A,Italia
+2025-11-30,14:00,Pisa,Inter,0.0,2.0,A,Serie A,Italia
+2025-11-30,17:00,Atalanta,Fiorentina,2.0,0.0,H,Serie A,Italia
+2025-11-30,19:45,Roma,Napoli,0.0,1.0,A,Serie A,Italia
+2025-12-01,19:45,Bologna,Cremonese,1.0,3.0,A,Serie A,Italia
+2025-12-06,14:00,Sassuolo,Fiorentina,3.0,1.0,H,Serie A,Italia
+2025-12-06,17:00,Inter,Como,4.0,0.0,H,Serie A,Italia
+2025-12-06,19:45,Verona,Atalanta,3.0,1.0,H,Serie A,Italia
+2025-12-07,11:30,Cremonese,Lecce,2.0,0.0,H,Serie A,Italia
+2025-12-07,14:00,Cagliari,Roma,1.0,0.0,H,Serie A,Italia
+2025-12-07,17:00,Lazio,Bologna,1.0,1.0,D,Serie A,Italia
+2025-12-07,19:45,Napoli,Juventus,2.0,1.0,H,Serie A,Italia
+2025-12-08,14:00,Pisa,Parma,0.0,1.0,A,Serie A,Italia
+2025-12-08,17:00,Udinese,Genoa,1.0,2.0,A,Serie A,Italia
+2025-12-08,19:45,Torino,Milan,2.0,3.0,A,Serie A,Italia
+2025-12-12,19:45,Lecce,Pisa,1.0,0.0,H,Serie A,Italia
+2025-12-13,14:00,Torino,Cremonese,1.0,0.0,H,Serie A,Italia
+2025-12-13,17:00,Parma,Lazio,0.0,1.0,A,Serie A,Italia
+2025-12-13,19:45,Atalanta,Cagliari,2.0,1.0,H,Serie A,Italia
+2025-12-14,11:30,Milan,Sassuolo,2.0,2.0,D,Serie A,Italia
+2025-12-14,14:00,Fiorentina,Verona,1.0,2.0,A,Serie A,Italia
+2025-12-14,14:00,Udinese,Napoli,1.0,0.0,H,Serie A,Italia
+2025-12-14,17:00,Genoa,Inter,1.0,2.0,A,Serie A,Italia
+2025-12-14,19:45,Bologna,Juventus,0.0,1.0,A,Serie A,Italia
+2025-12-15,19:45,Roma,Como,1.0,0.0,H,Serie A,Italia
+2025-12-20,17:00,Lazio,Cremonese,0.0,0.0,D,Serie A,Italia
+2025-12-20,19:45,Juventus,Roma,2.0,1.0,H,Serie A,Italia
+2025-12-21,11:30,Cagliari,Pisa,2.0,2.0,D,Serie A,Italia
+2025-12-21,14:00,Sassuolo,Torino,0.0,1.0,A,Serie A,Italia
+2025-12-21,17:00,Fiorentina,Udinese,5.0,1.0,H,Serie A,Italia
+2025-12-21,19:45,Genoa,Atalanta,0.0,1.0,A,Serie A,Italia
+2025-12-27,11:30,Parma,Fiorentina,1.0,0.0,H,Serie A,Italia
+2025-12-27,14:00,Lecce,Como,0.0,3.0,A,Serie A,Italia
+2025-12-27,14:00,Torino,Cagliari,1.0,2.0,A,Serie A,Italia
+2025-12-27,17:00,Udinese,Lazio,1.0,1.0,D,Serie A,Italia
+2025-12-27,19:45,Pisa,Juventus,0.0,2.0,A,Serie A,Italia
+2025-12-28,11:30,Milan,Verona,3.0,0.0,H,Serie A,Italia
+2025-12-28,14:00,Cremonese,Napoli,0.0,2.0,A,Serie A,Italia
+2025-12-28,17:00,Bologna,Sassuolo,1.0,1.0,D,Serie A,Italia
+2025-12-28,19:45,Atalanta,Inter,0.0,1.0,A,Serie A,Italia
+2025-12-29,19:45,Roma,Genoa,3.0,1.0,H,Serie A,Italia
+2026-01-02,19:45,Cagliari,Milan,0.0,1.0,A,Serie A,Italia
+2026-01-03,11:30,Como,Udinese,1.0,0.0,H,Serie A,Italia
+2026-01-03,14:00,Genoa,Pisa,1.0,1.0,D,Serie A,Italia
+2026-01-03,14:00,Sassuolo,Parma,1.0,1.0,D,Serie A,Italia
+2026-01-03,17:00,Juventus,Lecce,1.0,1.0,D,Serie A,Italia
+2026-01-03,19:45,Atalanta,Roma,1.0,0.0,H,Serie A,Italia
+2026-01-04,11:30,Lazio,Napoli,0.0,2.0,A,Serie A,Italia
+2026-01-04,14:00,Fiorentina,Cremonese,1.0,0.0,H,Serie A,Italia
+2026-01-04,17:00,Verona,Torino,0.0,3.0,A,Serie A,Italia
+2026-01-04,19:45,Inter,Bologna,3.0,1.0,H,Serie A,Italia
+2026-01-06,14:00,Pisa,Como,0.0,3.0,A,Serie A,Italia
+2026-01-06,17:00,Lecce,Roma,0.0,2.0,A,Serie A,Italia
+2026-01-06,19:45,Sassuolo,Juventus,0.0,3.0,A,Serie A,Italia
+2026-01-07,17:30,Bologna,Atalanta,0.0,2.0,A,Serie A,Italia
+2026-01-07,17:30,Napoli,Verona,2.0,2.0,D,Serie A,Italia
+2026-01-07,19:45,Lazio,Fiorentina,2.0,2.0,D,Serie A,Italia
+2026-01-07,19:45,Parma,Inter,0.0,2.0,A,Serie A,Italia
+2026-01-07,19:45,Torino,Udinese,1.0,2.0,A,Serie A,Italia
+2026-01-08,17:30,Cremonese,Cagliari,2.0,2.0,D,Serie A,Italia
+2026-01-08,19:45,Milan,Genoa,1.0,1.0,D,Serie A,Italia
+2026-01-10,14:00,Como,Bologna,1.0,1.0,D,Serie A,Italia
+2026-01-10,14:00,Udinese,Pisa,2.0,2.0,D,Serie A,Italia
+2026-01-10,17:00,Roma,Sassuolo,2.0,0.0,H,Serie A,Italia
+2026-01-10,19:45,Atalanta,Torino,2.0,0.0,H,Serie A,Italia
+2026-01-11,11:30,Lecce,Parma,1.0,2.0,A,Serie A,Italia
+2026-01-11,14:00,Fiorentina,Milan,1.0,1.0,D,Serie A,Italia
+2026-01-11,17:00,Verona,Lazio,0.0,1.0,A,Serie A,Italia
+2026-01-11,19:45,Inter,Napoli,2.0,2.0,D,Serie A,Italia
+2026-01-12,17:30,Genoa,Cagliari,3.0,0.0,H,Serie A,Italia
+2026-01-12,19:45,Juventus,Cremonese,5.0,0.0,H,Serie A,Italia
+2026-01-14,17:30,Napoli,Parma,0.0,0.0,D,Serie A,Italia
+2026-01-14,19:45,Inter,Lecce,1.0,0.0,H,Serie A,Italia
+2026-01-15,17:30,Verona,Bologna,2.0,3.0,A,Serie A,Italia
+2026-01-15,19:45,Como,Milan,1.0,3.0,A,Serie A,Italia
+2026-01-16,19:45,Pisa,Atalanta,1.0,1.0,D,Serie A,Italia
+2026-01-17,14:00,Udinese,Inter,0.0,1.0,A,Serie A,Italia
+2026-01-17,17:00,Napoli,Sassuolo,1.0,0.0,H,Serie A,Italia
+2026-01-17,19:45,Cagliari,Juventus,1.0,0.0,H,Serie A,Italia
+2026-01-18,11:30,Parma,Genoa,0.0,0.0,D,Serie A,Italia
+2026-01-18,14:00,Bologna,Fiorentina,1.0,2.0,A,Serie A,Italia
+2026-01-18,17:00,Torino,Roma,0.0,2.0,A,Serie A,Italia
+2026-01-18,19:45,Milan,Lecce,1.0,0.0,H,Serie A,Italia
+2026-01-19,17:30,Cremonese,Verona,0.0,0.0,D,Serie A,Italia
+2026-01-19,19:45,Lazio,Como,0.0,3.0,A,Serie A,Italia
+2025-08-22,19:30,Bayern Munich,RB Leipzig,6.0,0.0,H,Bundesliga,Alemanha
+2025-08-23,14:30,Ein Frankfurt,Werder Bremen,4.0,1.0,H,Bundesliga,Alemanha
+2025-08-23,14:30,Freiburg,Augsburg,1.0,3.0,A,Bundesliga,Alemanha
+2025-08-23,14:30,Heidenheim,Wolfsburg,1.0,3.0,A,Bundesliga,Alemanha
+2025-08-23,14:30,Leverkusen,Hoffenheim,1.0,2.0,A,Bundesliga,Alemanha
+2025-08-23,14:30,Union Berlin,Stuttgart,2.0,1.0,H,Bundesliga,Alemanha
+2025-08-23,17:30,St Pauli,Dortmund,3.0,3.0,D,Bundesliga,Alemanha
+2025-08-24,14:30,Mainz,FC Koln,0.0,1.0,A,Bundesliga,Alemanha
+2025-08-24,16:30,M'gladbach,Hamburg,0.0,0.0,D,Bundesliga,Alemanha
+2025-08-29,19:30,Hamburg,St Pauli,0.0,2.0,A,Bundesliga,Alemanha
+2025-08-30,14:30,Hoffenheim,Ein Frankfurt,1.0,3.0,A,Bundesliga,Alemanha
+2025-08-30,14:30,RB Leipzig,Heidenheim,2.0,0.0,H,Bundesliga,Alemanha
+2025-08-30,14:30,Stuttgart,M'gladbach,1.0,0.0,H,Bundesliga,Alemanha
+2025-08-30,14:30,Werder Bremen,Leverkusen,3.0,3.0,D,Bundesliga,Alemanha
+2025-08-30,17:30,Augsburg,Bayern Munich,2.0,3.0,A,Bundesliga,Alemanha
+2025-08-31,14:30,Wolfsburg,Mainz,1.0,1.0,D,Bundesliga,Alemanha
+2025-08-31,16:30,Dortmund,Union Berlin,3.0,0.0,H,Bundesliga,Alemanha
+2025-08-31,18:30,FC Koln,Freiburg,4.0,1.0,H,Bundesliga,Alemanha
+2025-09-12,19:30,Leverkusen,Ein Frankfurt,3.0,1.0,H,Bundesliga,Alemanha
+2025-09-13,14:30,Freiburg,Stuttgart,3.0,1.0,H,Bundesliga,Alemanha
+2025-09-13,14:30,Heidenheim,Dortmund,0.0,2.0,A,Bundesliga,Alemanha
+2025-09-13,14:30,Mainz,RB Leipzig,0.0,1.0,A,Bundesliga,Alemanha
+2025-09-13,14:30,Union Berlin,Hoffenheim,2.0,4.0,A,Bundesliga,Alemanha
+2025-09-13,14:30,Wolfsburg,FC Koln,3.0,3.0,D,Bundesliga,Alemanha
+2025-09-13,17:30,Bayern Munich,Hamburg,5.0,0.0,H,Bundesliga,Alemanha
+2025-09-14,14:30,St Pauli,Augsburg,2.0,1.0,H,Bundesliga,Alemanha
+2025-09-14,16:30,M'gladbach,Werder Bremen,0.0,4.0,A,Bundesliga,Alemanha
+2025-09-19,19:30,Stuttgart,St Pauli,2.0,0.0,H,Bundesliga,Alemanha
+2025-09-20,14:30,Augsburg,Mainz,1.0,4.0,A,Bundesliga,Alemanha
+2025-09-20,14:30,Hamburg,Heidenheim,2.0,1.0,H,Bundesliga,Alemanha
+2025-09-20,14:30,Hoffenheim,Bayern Munich,1.0,4.0,A,Bundesliga,Alemanha
+2025-09-20,14:30,Werder Bremen,Freiburg,0.0,3.0,A,Bundesliga,Alemanha
+2025-09-20,17:30,RB Leipzig,FC Koln,3.0,1.0,H,Bundesliga,Alemanha
+2025-09-21,14:30,Ein Frankfurt,Union Berlin,3.0,4.0,A,Bundesliga,Alemanha
+2025-09-21,16:30,Leverkusen,M'gladbach,1.0,1.0,D,Bundesliga,Alemanha
+2025-09-21,18:30,Dortmund,Wolfsburg,1.0,0.0,H,Bundesliga,Alemanha
+2025-09-26,19:30,Bayern Munich,Werder Bremen,4.0,0.0,H,Bundesliga,Alemanha
+2025-09-27,14:30,Heidenheim,Augsburg,2.0,1.0,H,Bundesliga,Alemanha
+2025-09-27,14:30,Mainz,Dortmund,0.0,2.0,A,Bundesliga,Alemanha
+2025-09-27,14:30,St Pauli,Leverkusen,1.0,2.0,A,Bundesliga,Alemanha
+2025-09-27,14:30,Wolfsburg,RB Leipzig,0.0,1.0,A,Bundesliga,Alemanha
+2025-09-27,17:30,M'gladbach,Ein Frankfurt,4.0,6.0,A,Bundesliga,Alemanha
+2025-09-28,14:30,Freiburg,Hoffenheim,1.0,1.0,D,Bundesliga,Alemanha
+2025-09-28,16:30,FC Koln,Stuttgart,1.0,2.0,A,Bundesliga,Alemanha
+2025-09-28,18:30,Union Berlin,Hamburg,0.0,0.0,D,Bundesliga,Alemanha
+2025-10-03,19:30,Hoffenheim,FC Koln,0.0,1.0,A,Bundesliga,Alemanha
+2025-10-04,14:30,Augsburg,Wolfsburg,3.0,1.0,H,Bundesliga,Alemanha
+2025-10-04,14:30,Dortmund,RB Leipzig,1.0,1.0,D,Bundesliga,Alemanha
+2025-10-04,14:30,Leverkusen,Union Berlin,2.0,0.0,H,Bundesliga,Alemanha
+2025-10-04,14:30,Werder Bremen,St Pauli,1.0,0.0,H,Bundesliga,Alemanha
+2025-10-04,17:30,Ein Frankfurt,Bayern Munich,0.0,3.0,A,Bundesliga,Alemanha
+2025-10-05,14:30,Stuttgart,Heidenheim,1.0,0.0,H,Bundesliga,Alemanha
+2025-10-05,16:30,Hamburg,Mainz,4.0,0.0,H,Bundesliga,Alemanha
+2025-10-05,18:30,M'gladbach,Freiburg,0.0,0.0,D,Bundesliga,Alemanha
+2025-10-17,19:30,Union Berlin,M'gladbach,3.0,1.0,H,Bundesliga,Alemanha
+2025-10-18,14:30,FC Koln,Augsburg,1.0,1.0,D,Bundesliga,Alemanha
+2025-10-18,14:30,Heidenheim,Werder Bremen,2.0,2.0,D,Bundesliga,Alemanha
+2025-10-18,14:30,Mainz,Leverkusen,3.0,4.0,A,Bundesliga,Alemanha
+2025-10-18,14:30,RB Leipzig,Hamburg,2.0,1.0,H,Bundesliga,Alemanha
+2025-10-18,14:30,Wolfsburg,Stuttgart,0.0,3.0,A,Bundesliga,Alemanha
+2025-10-18,17:30,Bayern Munich,Dortmund,2.0,1.0,H,Bundesliga,Alemanha
+2025-10-19,14:30,Freiburg,Ein Frankfurt,2.0,2.0,D,Bundesliga,Alemanha
+2025-10-19,16:30,St Pauli,Hoffenheim,0.0,3.0,A,Bundesliga,Alemanha
+2025-10-24,19:30,Werder Bremen,Union Berlin,1.0,0.0,H,Bundesliga,Alemanha
+2025-10-25,14:30,Augsburg,RB Leipzig,0.0,6.0,A,Bundesliga,Alemanha
+2025-10-25,14:30,Ein Frankfurt,St Pauli,2.0,0.0,H,Bundesliga,Alemanha
+2025-10-25,14:30,Hamburg,Wolfsburg,0.0,1.0,A,Bundesliga,Alemanha
+2025-10-25,14:30,Hoffenheim,Heidenheim,3.0,1.0,H,Bundesliga,Alemanha
+2025-10-25,14:30,M'gladbach,Bayern Munich,0.0,3.0,A,Bundesliga,Alemanha
+2025-10-25,17:30,Dortmund,FC Koln,1.0,0.0,H,Bundesliga,Alemanha
+2025-10-26,14:30,Leverkusen,Freiburg,2.0,0.0,H,Bundesliga,Alemanha
+2025-10-26,16:30,Stuttgart,Mainz,2.0,1.0,H,Bundesliga,Alemanha
+2025-10-31,19:30,Augsburg,Dortmund,0.0,1.0,A,Bundesliga,Alemanha
+2025-11-01,14:30,Heidenheim,Ein Frankfurt,1.0,1.0,D,Bundesliga,Alemanha
+2025-11-01,14:30,Mainz,Werder Bremen,1.0,1.0,D,Bundesliga,Alemanha
+2025-11-01,14:30,RB Leipzig,Stuttgart,3.0,1.0,H,Bundesliga,Alemanha
+2025-11-01,14:30,St Pauli,M'gladbach,0.0,4.0,A,Bundesliga,Alemanha
+2025-11-01,14:30,Union Berlin,Freiburg,0.0,0.0,D,Bundesliga,Alemanha
+2025-11-01,17:30,Bayern Munich,Leverkusen,3.0,0.0,H,Bundesliga,Alemanha
+2025-11-02,14:30,FC Koln,Hamburg,4.0,1.0,H,Bundesliga,Alemanha
+2025-11-02,16:30,Wolfsburg,Hoffenheim,2.0,3.0,A,Bundesliga,Alemanha
+2025-11-07,19:30,Werder Bremen,Wolfsburg,2.0,1.0,H,Bundesliga,Alemanha
+2025-11-08,14:30,Hamburg,Dortmund,1.0,1.0,D,Bundesliga,Alemanha
+2025-11-08,14:30,Hoffenheim,RB Leipzig,3.0,1.0,H,Bundesliga,Alemanha
+2025-11-08,14:30,Leverkusen,Heidenheim,6.0,0.0,H,Bundesliga,Alemanha
+2025-11-08,14:30,Union Berlin,Bayern Munich,2.0,2.0,D,Bundesliga,Alemanha
+2025-11-08,17:30,M'gladbach,FC Koln,3.0,1.0,H,Bundesliga,Alemanha
+2025-11-09,14:30,Freiburg,St Pauli,2.0,1.0,H,Bundesliga,Alemanha
+2025-11-09,16:30,Stuttgart,Augsburg,3.0,2.0,H,Bundesliga,Alemanha
+2025-11-09,18:30,Ein Frankfurt,Mainz,1.0,0.0,H,Bundesliga,Alemanha
+2025-11-21,19:30,Mainz,Hoffenheim,1.0,1.0,D,Bundesliga,Alemanha
+2025-11-22,14:30,Augsburg,Hamburg,1.0,0.0,H,Bundesliga,Alemanha
+2025-11-22,14:30,Bayern Munich,Freiburg,6.0,2.0,H,Bundesliga,Alemanha
+2025-11-22,14:30,Dortmund,Stuttgart,3.0,3.0,D,Bundesliga,Alemanha
+2025-11-22,14:30,Heidenheim,M'gladbach,0.0,3.0,A,Bundesliga,Alemanha
+2025-11-22,14:30,Wolfsburg,Leverkusen,1.0,3.0,A,Bundesliga,Alemanha
+2025-11-22,17:30,FC Koln,Ein Frankfurt,3.0,4.0,A,Bundesliga,Alemanha
+2025-11-23,14:30,RB Leipzig,Werder Bremen,2.0,0.0,H,Bundesliga,Alemanha
+2025-11-23,16:30,St Pauli,Union Berlin,0.0,1.0,A,Bundesliga,Alemanha
+2025-11-28,19:30,M'gladbach,RB Leipzig,0.0,0.0,D,Bundesliga,Alemanha
+2025-11-29,14:30,Bayern Munich,St Pauli,3.0,1.0,H,Bundesliga,Alemanha
+2025-11-29,14:30,Hoffenheim,Augsburg,3.0,0.0,H,Bundesliga,Alemanha
+2025-11-29,14:30,Union Berlin,Heidenheim,1.0,2.0,A,Bundesliga,Alemanha
+2025-11-29,14:30,Werder Bremen,FC Koln,1.0,1.0,D,Bundesliga,Alemanha
+2025-11-29,17:30,Leverkusen,Dortmund,1.0,2.0,A,Bundesliga,Alemanha
+2025-11-30,14:30,Hamburg,Stuttgart,2.0,1.0,H,Bundesliga,Alemanha
+2025-11-30,16:30,Ein Frankfurt,Wolfsburg,1.0,1.0,D,Bundesliga,Alemanha
+2025-11-30,18:30,Freiburg,Mainz,4.0,0.0,H,Bundesliga,Alemanha
+2025-12-05,19:30,Mainz,M'gladbach,0.0,1.0,A,Bundesliga,Alemanha
+2025-12-06,14:30,Augsburg,Leverkusen,2.0,0.0,H,Bundesliga,Alemanha
+2025-12-06,14:30,FC Koln,St Pauli,1.0,1.0,D,Bundesliga,Alemanha
+2025-12-06,14:30,Heidenheim,Freiburg,2.0,1.0,H,Bundesliga,Alemanha
+2025-12-06,14:30,Stuttgart,Bayern Munich,0.0,5.0,A,Bundesliga,Alemanha
+2025-12-06,14:30,Wolfsburg,Union Berlin,3.0,1.0,H,Bundesliga,Alemanha
+2025-12-06,17:30,RB Leipzig,Ein Frankfurt,6.0,0.0,H,Bundesliga,Alemanha
+2025-12-07,14:30,Hamburg,Werder Bremen,3.0,2.0,H,Bundesliga,Alemanha
+2025-12-07,16:30,Dortmund,Hoffenheim,2.0,0.0,H,Bundesliga,Alemanha
+2025-12-12,19:30,Union Berlin,RB Leipzig,3.0,1.0,H,Bundesliga,Alemanha
+2025-12-13,14:30,Ein Frankfurt,Augsburg,1.0,0.0,H,Bundesliga,Alemanha
+2025-12-13,14:30,Hoffenheim,Hamburg,4.0,1.0,H,Bundesliga,Alemanha
+2025-12-13,14:30,M'gladbach,Wolfsburg,1.0,3.0,A,Bundesliga,Alemanha
+2025-12-13,14:30,St Pauli,Heidenheim,2.0,1.0,H,Bundesliga,Alemanha
+2025-12-13,17:30,Leverkusen,FC Koln,2.0,0.0,H,Bundesliga,Alemanha
+2025-12-14,14:30,Freiburg,Dortmund,1.0,1.0,D,Bundesliga,Alemanha
+2025-12-14,16:30,Bayern Munich,Mainz,2.0,2.0,D,Bundesliga,Alemanha
+2025-12-14,18:30,Werder Bremen,Stuttgart,0.0,4.0,A,Bundesliga,Alemanha
+2025-12-19,19:30,Dortmund,M'gladbach,2.0,0.0,H,Bundesliga,Alemanha
+2025-12-20,14:30,Augsburg,Werder Bremen,0.0,0.0,D,Bundesliga,Alemanha
+2025-12-20,14:30,FC Koln,Union Berlin,0.0,1.0,A,Bundesliga,Alemanha
+2025-12-20,14:30,Hamburg,Ein Frankfurt,1.0,1.0,D,Bundesliga,Alemanha
+2025-12-20,14:30,Stuttgart,Hoffenheim,0.0,0.0,D,Bundesliga,Alemanha
+2025-12-20,14:30,Wolfsburg,Freiburg,3.0,4.0,A,Bundesliga,Alemanha
+2025-12-20,17:30,RB Leipzig,Leverkusen,1.0,3.0,A,Bundesliga,Alemanha
+2025-12-21,14:30,Mainz,St Pauli,0.0,0.0,D,Bundesliga,Alemanha
+2025-12-21,16:30,Heidenheim,Bayern Munich,0.0,4.0,A,Bundesliga,Alemanha
+2026-01-09,19:30,Ein Frankfurt,Dortmund,3.0,3.0,D,Bundesliga,Alemanha
+2026-01-10,14:30,Freiburg,Hamburg,2.0,1.0,H,Bundesliga,Alemanha
+2026-01-10,14:30,Heidenheim,FC Koln,2.0,2.0,D,Bundesliga,Alemanha
+2026-01-10,14:30,Union Berlin,Mainz,2.0,2.0,D,Bundesliga,Alemanha
+2026-01-10,17:30,Leverkusen,Stuttgart,1.0,4.0,A,Bundesliga,Alemanha
+2026-01-11,14:30,M'gladbach,Augsburg,4.0,0.0,H,Bundesliga,Alemanha
+2026-01-11,16:30,Bayern Munich,Wolfsburg,8.0,1.0,H,Bundesliga,Alemanha
+2026-01-13,17:30,Stuttgart,Ein Frankfurt,3.0,2.0,H,Bundesliga,Alemanha
+2026-01-13,19:30,Dortmund,Werder Bremen,3.0,0.0,H,Bundesliga,Alemanha
+2026-01-13,19:30,Mainz,Heidenheim,2.0,1.0,H,Bundesliga,Alemanha
+2026-01-14,17:30,Wolfsburg,St Pauli,2.0,1.0,H,Bundesliga,Alemanha
+2026-01-14,19:30,FC Koln,Bayern Munich,1.0,3.0,A,Bundesliga,Alemanha
+2026-01-14,19:30,Hoffenheim,M'gladbach,5.0,1.0,H,Bundesliga,Alemanha
+2026-01-14,19:30,RB Leipzig,Freiburg,2.0,0.0,H,Bundesliga,Alemanha
+2026-01-15,19:30,Augsburg,Union Berlin,1.0,1.0,D,Bundesliga,Alemanha
+2026-01-16,19:30,Werder Bremen,Ein Frankfurt,3.0,3.0,D,Bundesliga,Alemanha
+2026-01-17,14:30,Dortmund,St Pauli,3.0,2.0,H,Bundesliga,Alemanha
+2026-01-17,14:30,FC Koln,Mainz,2.0,1.0,H,Bundesliga,Alemanha
+2026-01-17,14:30,Hamburg,M'gladbach,0.0,0.0,D,Bundesliga,Alemanha
+2026-01-17,14:30,Hoffenheim,Leverkusen,1.0,0.0,H,Bundesliga,Alemanha
+2026-01-17,14:30,Wolfsburg,Heidenheim,1.0,1.0,D,Bundesliga,Alemanha
+2026-01-17,17:30,RB Leipzig,Bayern Munich,1.0,5.0,A,Bundesliga,Alemanha
+2026-01-18,14:30,Stuttgart,Union Berlin,1.0,1.0,D,Bundesliga,Alemanha
+2026-01-18,16:30,Augsburg,Freiburg,2.0,2.0,D,Bundesliga,Alemanha
+2025-08-08,20:15,Casa Pia,Sp Lisbon,0.0,2.0,A,Liga Portugal,Portugal
+2025-08-09,15:30,Nacional,Gil Vicente,0.0,2.0,A,Liga Portugal,Portugal
+2025-08-09,20:30,Arouca,AVS,3.0,1.0,H,Liga Portugal,Portugal
+2025-08-10,17:00,Famalicao,Santa Clara,3.0,0.0,H,Liga Portugal,Portugal
+2025-08-10,20:30,Moreirense,Alverca,2.0,1.0,H,Liga Portugal,Portugal
+2025-08-10,20:30,Sp Braga,Tondela,3.0,0.0,H,Liga Portugal,Portugal
+2025-08-11,18:45,Estoril,Estrela,1.0,1.0,D,Liga Portugal,Portugal
+2025-08-11,20:45,Porto,Guimaraes,3.0,0.0,H,Liga Portugal,Portugal
+2025-08-15,15:30,AVS,Casa Pia,0.0,2.0,A,Liga Portugal,Portugal
+2025-08-16,15:30,Tondela,Famalicao,0.0,1.0,A,Liga Portugal,Portugal
+2025-08-16,18:00,Guimaraes,Estoril,3.0,2.0,H,Liga Portugal,Portugal
+2025-08-16,20:30,Estrela,Benfica,0.0,1.0,A,Liga Portugal,Portugal
+2025-08-17,15:30,Rio Ave,Nacional,1.0,1.0,D,Liga Portugal,Portugal
+2025-08-17,18:00,Alverca,Sp Braga,0.0,3.0,A,Liga Portugal,Portugal
+2025-08-17,18:00,Santa Clara,Moreirense,0.0,1.0,A,Liga Portugal,Portugal
+2025-08-17,20:30,Sp Lisbon,Arouca,6.0,0.0,H,Liga Portugal,Portugal
+2025-08-18,20:15,Gil Vicente,Porto,0.0,2.0,A,Liga Portugal,Portugal
+2025-08-23,16:00,Moreirense,Guimaraes,2.0,0.0,H,Liga Portugal,Portugal
+2025-08-23,18:00,Nacional,Sp Lisbon,1.0,4.0,A,Liga Portugal,Portugal
+2025-08-23,20:30,Arouca,Rio Ave,3.0,3.0,D,Liga Portugal,Portugal
+2025-08-23,20:30,Benfica,Tondela,3.0,0.0,H,Liga Portugal,Portugal
+2025-08-24,15:30,Famalicao,Gil Vicente,0.0,0.0,D,Liga Portugal,Portugal
+2025-08-24,18:00,Porto,Casa Pia,4.0,0.0,H,Liga Portugal,Portugal
+2025-08-24,20:30,Sp Braga,AVS,2.0,2.0,D,Liga Portugal,Portugal
+2025-08-25,20:15,Estrela,Alverca,2.0,2.0,D,Liga Portugal,Portugal
+2025-08-29,20:15,Gil Vicente,Moreirense,2.0,0.0,H,Liga Portugal,Portugal
+2025-08-30,15:30,Casa Pia,Nacional,0.0,2.0,A,Liga Portugal,Portugal
+2025-08-30,18:00,AVS,Famalicao,0.0,1.0,A,Liga Portugal,Portugal
+2025-08-30,18:00,Guimaraes,Arouca,1.0,1.0,D,Liga Portugal,Portugal
+2025-08-30,20:30,Sp Lisbon,Porto,1.0,2.0,A,Liga Portugal,Portugal
+2025-08-31,15:30,Tondela,Estoril,2.0,2.0,D,Liga Portugal,Portugal
+2025-08-31,18:00,Alverca,Benfica,1.0,2.0,A,Liga Portugal,Portugal
+2025-08-31,20:30,Rio Ave,Sp Braga,2.0,2.0,D,Liga Portugal,Portugal
+2025-08-31,20:30,Santa Clara,Estrela,0.0,0.0,D,Liga Portugal,Portugal
+2025-09-06,20:30,Estoril,Santa Clara,0.0,1.0,A,Liga Portugal,Portugal
+2025-09-12,20:15,Alverca,Tondela,1.0,0.0,H,Liga Portugal,Portugal
+2025-09-12,20:15,Benfica,Santa Clara,1.0,1.0,D,Liga Portugal,Portugal
+2025-09-13,15:30,Estoril,AVS,3.0,1.0,H,Liga Portugal,Portugal
+2025-09-13,15:30,Moreirense,Rio Ave,3.0,1.0,H,Liga Portugal,Portugal
+2025-09-13,18:00,Porto,Nacional,1.0,0.0,H,Liga Portugal,Portugal
+2025-09-13,20:30,Famalicao,Sp Lisbon,1.0,2.0,A,Liga Portugal,Portugal
+2025-09-14,15:30,Estrela,Guimaraes,0.0,2.0,A,Liga Portugal,Portugal
+2025-09-14,18:00,Arouca,Casa Pia,0.0,2.0,A,Liga Portugal,Portugal
+2025-09-14,20:30,Sp Braga,Gil Vicente,0.0,1.0,A,Liga Portugal,Portugal
+2025-09-19,20:15,Rio Ave,Porto,0.0,3.0,A,Liga Portugal,Portugal
+2025-09-20,15:30,Nacional,Arouca,1.0,2.0,A,Liga Portugal,Portugal
+2025-09-20,15:30,Santa Clara,Alverca,2.0,1.0,H,Liga Portugal,Portugal
+2025-09-20,18:00,AVS,Benfica,0.0,3.0,A,Liga Portugal,Portugal
+2025-09-20,20:30,Guimaraes,Sp Braga,1.0,1.0,D,Liga Portugal,Portugal
+2025-09-21,15:30,Tondela,Estrela,0.0,0.0,D,Liga Portugal,Portugal
+2025-09-21,18:00,Gil Vicente,Estoril,2.0,0.0,H,Liga Portugal,Portugal
+2025-09-21,20:30,Casa Pia,Famalicao,1.0,1.0,D,Liga Portugal,Portugal
+2025-09-22,20:15,Sp Lisbon,Moreirense,3.0,0.0,H,Liga Portugal,Portugal
+2025-09-23,20:15,Benfica,Rio Ave,1.0,1.0,D,Liga Portugal,Portugal
+2025-09-26,20:15,Benfica,Gil Vicente,2.0,1.0,H,Liga Portugal,Portugal
+2025-09-27,15:30,Moreirense,Casa Pia,2.0,1.0,H,Liga Portugal,Portugal
+2025-09-27,16:30,Santa Clara,Tondela,1.0,2.0,A,Liga Portugal,Portugal
+2025-09-27,18:00,Estrela,AVS,3.0,0.0,H,Liga Portugal,Portugal
+2025-09-27,20:30,Estoril,Sp Lisbon,0.0,1.0,A,Liga Portugal,Portugal
+2025-09-28,15:30,Alverca,Guimaraes,2.0,0.0,H,Liga Portugal,Portugal
+2025-09-28,18:00,Sp Braga,Nacional,0.0,1.0,A,Liga Portugal,Portugal
+2025-09-28,20:30,Famalicao,Rio Ave,0.0,0.0,D,Liga Portugal,Portugal
+2025-09-29,20:00,Arouca,Porto,0.0,4.0,A,Liga Portugal,Portugal
+2025-10-03,20:15,Casa Pia,Estoril,2.0,2.0,D,Liga Portugal,Portugal
+2025-10-04,15:30,Gil Vicente,Estrela,2.0,0.0,H,Liga Portugal,Portugal
+2025-10-04,15:30,Nacional,Moreirense,3.0,2.0,H,Liga Portugal,Portugal
+2025-10-04,18:00,AVS,Alverca,1.0,3.0,A,Liga Portugal,Portugal
+2025-10-04,20:30,Guimaraes,Santa Clara,2.0,1.0,H,Liga Portugal,Portugal
+2025-10-05,15:30,Arouca,Famalicao,1.0,1.0,D,Liga Portugal,Portugal
+2025-10-05,17:30,Rio Ave,Tondela,3.0,0.0,H,Liga Portugal,Portugal
+2025-10-05,19:15,Sp Lisbon,Sp Braga,1.0,1.0,D,Liga Portugal,Portugal
+2025-10-05,21:15,Porto,Benfica,0.0,0.0,D,Liga Portugal,Portugal
+2025-10-24,20:15,Alverca,Gil Vicente,0.0,4.0,A,Liga Portugal,Portugal
+2025-10-25,18:00,Santa Clara,AVS,2.0,0.0,H,Liga Portugal,Portugal
+2025-10-25,20:30,Benfica,Arouca,5.0,0.0,H,Liga Portugal,Portugal
+2025-10-25,20:30,Estrela,Rio Ave,1.0,2.0,A,Liga Portugal,Portugal
+2025-10-26,15:30,Estoril,Nacional,1.0,1.0,D,Liga Portugal,Portugal
+2025-10-26,15:30,Famalicao,Guimaraes,2.0,0.0,H,Liga Portugal,Portugal
+2025-10-26,18:00,Tondela,Sp Lisbon,0.0,3.0,A,Liga Portugal,Portugal
+2025-10-26,20:30,Sp Braga,Casa Pia,4.0,0.0,H,Liga Portugal,Portugal
+2025-10-27,20:15,Moreirense,Porto,1.0,2.0,A,Liga Portugal,Portugal
+2025-10-31,20:15,Sp Lisbon,Alverca,2.0,0.0,H,Liga Portugal,Portugal
+2025-11-01,15:30,Nacional,Famalicao,0.0,1.0,A,Liga Portugal,Portugal
+2025-11-01,18:00,Casa Pia,Estrela,3.0,5.0,A,Liga Portugal,Portugal
+2025-11-01,18:00,Rio Ave,Estoril,0.0,4.0,A,Liga Portugal,Portugal
+2025-11-01,20:30,Guimaraes,Benfica,0.0,3.0,A,Liga Portugal,Portugal
+2025-11-02,15:30,AVS,Tondela,2.0,2.0,D,Liga Portugal,Portugal
+2025-11-02,18:00,Arouca,Moreirense,0.0,2.0,A,Liga Portugal,Portugal
+2025-11-02,20:30,Porto,Sp Braga,2.0,1.0,H,Liga Portugal,Portugal
+2025-11-03,20:45,Gil Vicente,Santa Clara,1.0,0.0,H,Liga Portugal,Portugal
+2025-11-07,20:15,Estoril,Arouca,4.0,3.0,H,Liga Portugal,Portugal
+2025-11-08,15:30,Alverca,Rio Ave,1.0,1.0,D,Liga Portugal,Portugal
+2025-11-08,18:00,Tondela,Guimaraes,0.0,1.0,A,Liga Portugal,Portugal
+2025-11-08,20:30,Santa Clara,Sp Lisbon,1.0,2.0,A,Liga Portugal,Portugal
+2025-11-09,15:30,AVS,Gil Vicente,1.0,1.0,D,Liga Portugal,Portugal
+2025-11-09,15:30,Estrela,Nacional,1.0,1.0,D,Liga Portugal,Portugal
+2025-11-09,18:00,Famalicao,Porto,0.0,1.0,A,Liga Portugal,Portugal
+2025-11-09,20:30,Benfica,Casa Pia,2.0,2.0,D,Liga Portugal,Portugal
+2025-11-09,20:30,Sp Braga,Moreirense,2.0,1.0,H,Liga Portugal,Portugal
+2025-11-28,20:15,Guimaraes,AVS,4.0,0.0,H,Liga Portugal,Portugal
+2025-11-29,15:30,Casa Pia,Alverca,0.0,2.0,A,Liga Portugal,Portugal
+2025-11-29,15:30,Moreirense,Famalicao,2.0,2.0,D,Liga Portugal,Portugal
+2025-11-29,18:00,Nacional,Benfica,1.0,2.0,A,Liga Portugal,Portugal
+2025-11-29,20:30,Gil Vicente,Tondela,0.0,1.0,A,Liga Portugal,Portugal
+2025-11-30,15:30,Rio Ave,Santa Clara,1.0,1.0,D,Liga Portugal,Portugal
+2025-11-30,18:00,Sp Lisbon,Estrela,4.0,0.0,H,Liga Portugal,Portugal
+2025-11-30,20:30,Porto,Estoril,1.0,0.0,H,Liga Portugal,Portugal
+2025-12-01,20:15,Arouca,Sp Braga,0.0,4.0,A,Liga Portugal,Portugal
+2025-12-05,20:15,Benfica,Sp Lisbon,1.0,1.0,D,Liga Portugal,Portugal
+2025-12-06,15:30,Santa Clara,Casa Pia,1.0,0.0,H,Liga Portugal,Portugal
+2025-12-06,18:00,AVS,Rio Ave,1.0,2.0,A,Liga Portugal,Portugal
+2025-12-06,20:30,Famalicao,Sp Braga,1.0,2.0,A,Liga Portugal,Portugal
+2025-12-07,15:30,Estoril,Moreirense,3.0,3.0,D,Liga Portugal,Portugal
+2025-12-07,18:00,Alverca,Nacional,1.0,0.0,H,Liga Portugal,Portugal
+2025-12-07,18:00,Estrela,Arouca,3.0,1.0,H,Liga Portugal,Portugal
+2025-12-07,20:30,Tondela,Porto,0.0,2.0,A,Liga Portugal,Portugal
+2025-12-08,20:30,Guimaraes,Gil Vicente,0.0,0.0,D,Liga Portugal,Portugal
+2025-12-13,15:30,Casa Pia,Gil Vicente,1.0,1.0,D,Liga Portugal,Portugal
+2025-12-13,18:00,Rio Ave,Guimaraes,0.0,1.0,A,Liga Portugal,Portugal
+2025-12-13,20:30,Sp Lisbon,AVS,6.0,0.0,H,Liga Portugal,Portugal
+2025-12-14,15:30,Famalicao,Estoril,4.0,0.0,H,Liga Portugal,Portugal
+2025-12-14,18:00,Moreirense,Benfica,0.0,4.0,A,Liga Portugal,Portugal
+2025-12-14,20:30,Arouca,Alverca,1.0,0.0,H,Liga Portugal,Portugal
+2025-12-15,17:30,Nacional,Tondela,3.0,1.0,H,Liga Portugal,Portugal
+2025-12-15,18:45,Sp Braga,Santa Clara,1.0,0.0,H,Liga Portugal,Portugal
+2025-12-15,20:45,Porto,Estrela,3.0,1.0,H,Liga Portugal,Portugal
+2025-12-19,20:15,Estoril,Sp Braga,1.0,0.0,H,Liga Portugal,Portugal
+2025-12-20,18:00,Gil Vicente,Rio Ave,2.0,2.0,D,Liga Portugal,Portugal
+2025-12-20,20:30,Estrela,Moreirense,0.0,0.0,D,Liga Portugal,Portugal
+2025-12-21,15:30,AVS,Nacional,2.0,2.0,D,Liga Portugal,Portugal
+2025-12-21,18:00,Tondela,Casa Pia,1.0,2.0,A,Liga Portugal,Portugal
+2025-12-21,20:30,Santa Clara,Arouca,0.0,0.0,D,Liga Portugal,Portugal
+2025-12-22,18:45,Alverca,Porto,0.0,3.0,A,Liga Portugal,Portugal
+2025-12-22,20:45,Benfica,Famalicao,1.0,0.0,H,Liga Portugal,Portugal
+2025-12-23,20:45,Guimaraes,Sp Lisbon,1.0,4.0,A,Liga Portugal,Portugal
+2025-12-27,18:00,Famalicao,Estrela,2.0,3.0,A,Liga Portugal,Portugal
+2025-12-27,20:30,Estoril,Alverca,4.0,1.0,H,Liga Portugal,Portugal
+2025-12-28,15:30,Arouca,Gil Vicente,2.0,2.0,D,Liga Portugal,Portugal
+2025-12-28,15:30,Casa Pia,Guimaraes,0.0,0.0,D,Liga Portugal,Portugal
+2025-12-28,18:00,Sp Braga,Benfica,2.0,2.0,D,Liga Portugal,Portugal
+2025-12-28,20:30,Sp Lisbon,Rio Ave,4.0,0.0,H,Liga Portugal,Portugal
+2025-12-29,20:15,Porto,AVS,2.0,0.0,H,Liga Portugal,Portugal
+2026-01-02,18:45,Gil Vicente,Sp Lisbon,1.0,1.0,D,Liga Portugal,Portugal
+2026-01-02,20:45,Guimaraes,Nacional,2.0,1.0,H,Liga Portugal,Portugal
+2026-01-03,15:30,Tondela,Arouca,3.0,1.0,H,Liga Portugal,Portugal
+2026-01-03,18:00,Benfica,Estoril,3.0,1.0,H,Liga Portugal,Portugal
+2026-01-03,18:00,Estrela,Sp Braga,3.0,3.0,D,Liga Portugal,Portugal
+2026-01-03,20:30,AVS,Moreirense,0.0,2.0,A,Liga Portugal,Portugal
+2026-01-04,15:30,Rio Ave,Casa Pia,3.0,1.0,H,Liga Portugal,Portugal
+2026-01-04,18:00,Santa Clara,Porto,0.0,1.0,A,Liga Portugal,Portugal
+2026-01-04,20:30,Alverca,Famalicao,1.0,0.0,H,Liga Portugal,Portugal
+2026-01-11,15:30,Nacional,Santa Clara,3.0,3.0,D,Liga Portugal,Portugal
+2026-01-11,18:00,Moreirense,Tondela,1.0,0.0,H,Liga Portugal,Portugal
+2026-01-16,20:15,Sp Lisbon,Casa Pia,3.0,0.0,H,Liga Portugal,Portugal
+2026-01-17,15:30,Gil Vicente,Nacional,2.0,1.0,H,Liga Portugal,Portugal
+2026-01-17,18:00,Alverca,Moreirense,2.0,1.0,H,Liga Portugal,Portugal
+2026-01-17,18:00,AVS,Arouca,0.0,1.0,A,Liga Portugal,Portugal
+2026-01-17,20:30,Rio Ave,Benfica,0.0,2.0,A,Liga Portugal,Portugal
+2026-01-18,15:30,Santa Clara,Famalicao,0.0,1.0,A,Liga Portugal,Portugal
+2026-01-18,18:00,Tondela,Sp Braga,0.0,1.0,A,Liga Portugal,Portugal
+2026-01-18,20:30,Guimaraes,Porto,0.0,1.0,A,Liga Portugal,Portugal
+2026-01-19,20:15,Estrela,Estoril,0.0,5.0,A,Liga Portugal,Portugal
+2026-03-22,,Mainz,2 - 1 Eintracht Frankfurt,,,,Bundesliga,
+2026-03-22,,St. Pauli,1 - 2 Freiburg,,,,Bundesliga,
