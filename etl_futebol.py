@@ -165,30 +165,42 @@ def main():
         print(f"Erro ao ler CSV do GitHub: {e}")
         return
 
-    # 1. Pega os jogos futuros via API
+    # 1. Tenta pegar os jogos futuros via API
     df_novos = obter_proxima_rodada()
     
-    # 2. Gera a previsão
-    if not df_novos.empty:
-        df_analise = gerar_analise(df_historico, df_novos)
+    # --- O TRUQUE PARA TESTAR O POWER BI HOJE ---
+    if df_novos.empty:
+        print("\n⚠️ Como não há jogos na ESPN, ativando MODO SIMULAÇÃO para gerar arquivo de teste...")
+        df_sorted = df_historico.sort_values(by=['Data', 'Mandante'])
         
-        # 3. Salva
-        if not df_analise.empty:
-            csv_analise = df_analise.to_csv(index=False)
+        # Pega a última rodada (9 jogos) do histórico e finge que é o futuro
+        df_novos = df_sorted.tail(9).copy()
+        df_novos['Gols_Mandante'] = np.nan
+        df_novos['Gols_Visitante'] = np.nan
+        
+        # Tira esses jogos do histórico de treino para o robô não "colar" na prova
+        df_historico = df_historico.drop(df_novos.index)
+        print(f"Simulando {len(df_novos)} jogos de teste...\n")
+    # --------------------------------------------
+
+    # 2. Gera a previsão
+    df_analise = gerar_analise(df_historico, df_novos)
+    
+    # 3. Salva
+    if not df_analise.empty:
+        csv_analise = df_analise.to_csv(index=False)
+        try:
             try:
-                try:
-                    contents = repo.get_contents(ARQUIVO_PREVISOES)
-                    repo.update_file(contents.path, "Update Analise", csv_analise, contents.sha)
-                    print("SUCESSO: analise_preditiva.csv Atualizado na Nuvem!")
-                except:
-                    repo.create_file(ARQUIVO_PREVISOES, "Create Analise", csv_analise)
-                    print("SUCESSO: analise_preditiva.csv Criado na Nuvem!")
-            except Exception as e:
-                print(f"Erro ao salvar no GitHub: {e}")
-        else:
-            print("Aviso: Falha ao gerar tabela de previsões.")
+                contents = repo.get_contents(ARQUIVO_PREVISOES)
+                repo.update_file(contents.path, "Update Analise", csv_analise, contents.sha)
+                print("SUCESSO: analise_preditiva.csv Atualizado na Nuvem!")
+            except:
+                repo.create_file(ARQUIVO_PREVISOES, "Create Analise", csv_analise)
+                print("SUCESSO: analise_preditiva.csv Criado na Nuvem!")
+        except Exception as e:
+            print(f"Erro ao salvar no GitHub: {e}")
     else:
-        print("Aviso: Sem jogos futuros para prever hoje.")
+        print("Aviso: Falha ao gerar tabela de previsões.")
 
 if __name__ == "__main__":
     main()
