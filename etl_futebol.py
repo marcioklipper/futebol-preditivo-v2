@@ -6,7 +6,7 @@ from io import StringIO
 import requests
 from scipy.stats import poisson
 import difflib
-from bs4 import BeautifulSoup
+from datetime import datetime, timedelta
 
 # --- CONFIGURAÇÕES ---
 GITHUB_TOKEN = os.getenv('GH_TOKEN')
@@ -15,60 +15,60 @@ ARQUIVO_JOGOS = "historico_jogos.csv"
 ARQUIVO_PREVISOES = "analise_preditiva.csv"
 
 def obter_proxima_rodada():
-    print("--- 1. BUSCANDO PRÓXIMOS JOGOS (ESPN CALENDÁRIO) ---")
-    url = "https://www.espn.com.br/futebol/calendario/_/liga/GER.1"
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+    print("--- 1. BUSCANDO PRÓXIMOS JOGOS (ESPN API 30 DIAS) ---")
+    
+    # Criando a "Máquina do Tempo" para olhar 30 dias para frente
+    hoje = datetime.now()
+    futuro = hoje + timedelta(days=30)
+    data_inicio = hoje.strftime('%Y%m%d')
+    data_fim = futuro.strftime('%Y%m%d')
+    
+    # A URL agora pede explicitamente os jogos desse período
+    url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates={data_inicio}-{data_fim}"
     
     try:
-        r = requests.get(url, headers=headers, timeout=15)
-        soup = BeautifulSoup(r.content, 'html.parser')
+        r = requests.get(url, timeout=15)
+        dados = r.json()
         
         jogos = []
-        tabelas = soup.find_all('table', class_='Table')
-        
-        if not tabelas:
-             print("Aviso: Nenhuma tabela de jogos encontrada no calendário da ESPN.")
-             return pd.DataFrame()
-
-        for tabela in tabelas:
-            linhas = tabela.find_all('tr', class_='Table__TR')
-            for linha in linhas:
-                 colunas = linha.find_all('td')
-                 if len(colunas) >= 3:
-                     try:
-                         mandante = colunas[0].find_all('a')[1].text.strip() if len(colunas[0].find_all('a')) > 1 else colunas[0].text.strip()
-                         visitante = colunas[2].find_all('a')[1].text.strip() if len(colunas[2].find_all('a')) > 1 else colunas[2].text.strip()
-                         
-                         placar_ou_hora = colunas[1].text.strip()
-                         if ':' in placar_ou_hora or 'v' in placar_ou_hora.lower():
-                             jogos.append({
-                                 'Data': '2025-03-29', 
-                                 'Mandante': mandante,
-                                 'Visitante': visitante,
-                                 'Liga': 'Bundesliga'
-                             })
-                     except Exception as e:
-                         pass
+        for evento in dados.get('events', []):
+            comp = evento['competitions'][0]
+            status = comp['status']['type']['state']
+            
+            # Pega apenas os jogos que ainda vão acontecer ('pre')
+            if status == 'pre':
+                data_jogo = evento['date'][:10]
+                times = comp['competitors']
+                
+                mandante = next(t['team']['displayName'] for t in times if t['homeAway'] == 'home')
+                visitante = next(t['team']['displayName'] for t in times if t['homeAway'] == 'away')
+                
+                jogos.append({
+                    'Data': data_jogo,
+                    'Mandante': mandante,
+                    'Visitante': visitante,
+                    'Liga': 'Bundesliga'
+                })
         
         df_futuros = pd.DataFrame(jogos)
-        
         if not df_futuros.empty:
-            df_futuros = df_futuros.drop_duplicates(subset=['Mandante', 'Visitante']).head(9)
-            print(f"Encontrados {len(df_futuros)} jogos futuros da próxima rodada no calendário!")
+            # Pega os próximos 9 jogos (1 rodada)
+            df_futuros = df_futuros.head(9)
+            print(f"Encontrados {len(df_futuros)} jogos agendados na API!")
             return df_futuros
         else:
-            print("Aviso: Não encontrou jogos futuros na raspagem da página.")
+            print("Aviso: A API não retornou jogos para os próximos 30 dias.")
             return pd.DataFrame()
             
     except Exception as e:
-        print(f"Erro ao conectar na ESPN: {e}")
+        print(f"Erro ao conectar na API da ESPN: {e}")
         return pd.DataFrame()
 
 def gerar_analise(df_treino, df_prever):
     print("--- 2. CÉREBRO PREDITIVO (POISSON) ---")
-    df_treino['Gols_Mandante'] = pd.to_numeric(df_treino['Gols_Mandante'], errors='coerce')
-    df_treino['Gols_Visitante'] = pd.to_numeric(df_treino['Gols_Visitante'], errors='coerce')
-    df_treino = df_treino.dropna(subset=['Gols_Mandante', 'Gols_Visitante'])
+    
+    # O .copy() aqui resolve o aviso chato do Pandas (SettingWithCopyWarning)
+    df_treino = df_treino.dropna(subset=['Gols_Mandante', 'Gols_Visitante']).copy()
 
     if df_treino.empty or df_prever.empty:
         return pd.DataFrame()
