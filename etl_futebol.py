@@ -5,9 +5,7 @@ from github import Github, Auth
 from io import StringIO
 import requests
 from scipy.stats import poisson
-from datetime import datetime
-import urllib.parse
-import difflib # Biblioteca nova para traduzir nomes de times!
+import difflib
 
 # --- CONFIGURAÇÕES ---
 GITHUB_TOKEN = os.getenv('GH_TOKEN')
@@ -15,90 +13,48 @@ NOME_REPO = "marcioklipper/futebol-preditivo-v2"
 ARQUIVO_JOGOS = "historico_jogos.csv"
 ARQUIVO_PREVISOES = "analise_preditiva.csv"
 
-urls_ligas = {
-    'Bundesliga': 'https://www.espn.com.br/futebol/calendario/_/liga/GER.1'
-}
-
-def extrair_jogos_espn():
-    print("--- 1. VERIFICANDO JOGOS REAIS (ESPN) ---")
-    lista_dfs = []
-    headers = {'User-Agent': 'Mozilla/5.0'}
+def obter_proxima_rodada():
+    print("--- 1. BUSCANDO PRÓXIMOS JOGOS (FBREF) ---")
+    # Tabela oficial e limpa do FBref
+    url = "https://fbref.com/en/comps/20/schedule/Bundesliga-Scores-and-Fixtures"
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+    try:
+        r = requests.get(url, headers=headers)
+        dfs = pd.read_html(StringIO(r.text))
+        for df in dfs:
+            if 'Home' in df.columns and 'Away' in df.columns and 'Score' in df.columns:
+                df = df.dropna(subset=['Home', 'Away'])
+                
+                # O Pulo do Gato: Jogos que ainda não aconteceram NÃO têm Score
+                df_futuros = df[df['Score'].isna() | (df['Score'] == '')].copy()
+                
+                if not df_futuros.empty:
+                    df_futuros = df_futuros.rename(columns={'Home': 'Mandante', 'Away': 'Visitante', 'Date': 'Data'})
+                    df_futuros['Liga'] = 'Bundesliga'
+                    df_futuros = df_futuros.dropna(subset=['Data'])
+                    
+                    # Pega exatamente os próximos 9 jogos (1 rodada completa da Bundesliga)
+                    proximos = df_futuros.head(9)[['Data', 'Mandante', 'Visitante', 'Liga']]
+                    print(f"Encontrados {len(proximos)} jogos reais da próxima rodada!")
+                    return proximos
+    except Exception as e:
+        print(f"Erro ao buscar na web: {e}")
     
-    for liga, url in urls_ligas.items():
-        try:
-            r = requests.get(url, headers=headers)
-            tabelas = pd.read_html(StringIO(r.text), flavor=['lxml', 'bs4'])
-            for df in tabelas:
-                if len(df) < 2: continue
-                col_partida = next((c for c in df.columns if df[c].astype(str).str.contains(' vs ', na=False).any()), None)
-                df_temp = df.copy()
-                if col_partida:
-                    try:
-                        div = df_temp[col_partida].str.split(' vs ', expand=True)
-                        if len(div.columns) >= 2:
-                            df_temp['Mandante'] = div[0].str.strip()
-                            df_temp['Visitante'] = div[1].str.strip()
-                        else: continue
-                    except: continue
-                elif len(df.columns) >= 4:
-                    df_temp['Mandante'] = df_temp.iloc[:, 0]
-                    df_temp['Visitante'] = df_temp.iloc[:, 1]
-                else: continue
-
-                df_temp['Liga'] = liga
-                df_temp['Data'] = datetime.today().strftime('%Y-%m-%d')
-                
-                for c in ['Gols_Mandante', 'Gols_Visitante']:
-                    if c not in df_temp.columns: df_temp[c] = np.nan
-                
-                cols = ['Data', 'Mandante', 'Visitante', 'Liga', 'Gols_Mandante', 'Gols_Visitante']
-                for c in cols:
-                    if c not in df_temp.columns: df_temp[c] = np.nan
-                
-                lista_dfs.append(df_temp[cols])
-        except: pass
-    
-    if lista_dfs:
-        df = pd.concat(lista_dfs, ignore_index=True)
-        for c in ['Mandante', 'Visitante']:
-            df[c] = df[c].astype(str).str.replace(' logo', '', regex=False)
-        return df
+    print("Aviso: Não foi possível baixar a próxima rodada.")
     return pd.DataFrame()
 
-def gerar_analise_focada(df_completo):
-    print("--- 2. CÉREBRO PREDITIVO (MAX HISTÓRICO) ---")
+def gerar_analise(df_treino, df_prever):
+    print("--- 2. CÉREBRO PREDITIVO (POISSON) ---")
     
-    df_foco = df_completo[df_completo['Liga'] == 'Bundesliga'].copy()
-    df_foco['Gols_Mandante'] = pd.to_numeric(df_foco['Gols_Mandante'], errors='coerce')
-    df_foco['Gols_Visitante'] = pd.to_numeric(df_foco['Gols_Visitante'], errors='coerce')
+    # Faxina: Remove os "Fantasmas" (jogos antigos sem gols que corrompiam a base)
+    df_treino['Gols_Mandante'] = pd.to_numeric(df_treino['Gols_Mandante'], errors='coerce')
+    df_treino['Gols_Visitante'] = pd.to_numeric(df_treino['Gols_Visitante'], errors='coerce')
+    df_treino = df_treino.dropna(subset=['Gols_Mandante', 'Gols_Visitante'])
 
-    df_futuro_real = df_foco[df_foco['Gols_Mandante'].isna()].copy()
-    df_historico_base = df_foco.dropna(subset=['Gols_Mandante', 'Gols_Visitante']).copy()
+    if df_treino.empty or df_prever.empty:
+        return pd.DataFrame()
 
-    if not df_futuro_real.empty:
-        print(f"Encontrados {len(df_futuro_real)} jogos futuros reais.")
-        df_para_prever = df_futuro_real
-        df_treino = df_historico_base
-    else:
-        print(">>> MODO SIMULAÇÃO: Prevendo a última rodada do arquivo <<<")
-        df_sorted = df_historico_base.sort_values(by=['Data', 'Mandante'])
-        
-        ultima_data = df_sorted['Data'].max()
-        print(f"Data Alvo da Simulação: {ultima_data}")
-        
-        df_para_prever = df_sorted[df_sorted['Data'] == ultima_data].copy()
-        if len(df_para_prever) < 2:
-             df_para_prever = df_sorted.tail(9).copy()
-             
-        df_para_prever = df_para_prever.drop_duplicates(subset=['Data', 'Mandante', 'Visitante'])
-        ids_prever = df_para_prever.index
-        df_treino = df_historico_base.drop(ids_prever)
-        
-        df_para_prever['Gols_Mandante'] = np.nan
-        df_para_prever['Gols_Visitante'] = np.nan
-
-    print(f"Base de Treino: {len(df_treino)} jogos | Jogos a Prever: {len(df_para_prever)}")
-    if df_treino.empty: return pd.DataFrame()
+    print(f"Treinando o modelo com {len(df_treino)} jogos passados válidos...")
 
     df_treino['Total_Gols'] = df_treino['Gols_Mandante'] + df_treino['Gols_Visitante']
     df_treino['Over15'] = np.where(df_treino['Total_Gols'] > 1.5, 1, 0)
@@ -131,31 +87,26 @@ def gerar_analise_focada(df_completo):
     
     stats['Momento_Over'] = stats['Time'].apply(get_momento)
 
-    # Lista de todos os times que temos histórico válido
     times_conhecidos = stats['Time'].unique().tolist()
-
     previsoes = []
+
     print("--- 3. CALCULANDO PROBABILIDADES ---")
-    for idx, row in df_para_prever.iterrows():
+    for idx, row in df_prever.iterrows():
         try:
             home_original = str(row['Mandante']).strip()
             away_original = str(row['Visitante']).strip()
             
-            # Tenta encontrar o time mais parecido na base histórica (corte de 45% de semelhança)
+            # Tradutor de nomes (O mesmo que salvou nossa vida no passo anterior)
             match_home = difflib.get_close_matches(home_original, times_conhecidos, n=1, cutoff=0.45)
             match_away = difflib.get_close_matches(away_original, times_conhecidos, n=1, cutoff=0.45)
             
             home = match_home[0] if match_home else home_original
             away = match_away[0] if match_away else away_original
-            
-            if home != home_original or away != away_original:
-                 print(f"Traduzido: [{home_original} -> {home}] | [{away_original} -> {away}]")
 
             d_home = stats[stats['Time'] == home]
             d_away = stats[stats['Time'] == away]
             
             if d_home.empty or d_away.empty: 
-                print(f"❌ Ignorado (Sem histórico): {home} vs {away}")
                 continue
 
             lamb_home = d_home['Ataque_Casa'].values[0] * d_away['Defesa_Fora'].values[0] * m_liga_mand
@@ -171,7 +122,7 @@ def gerar_analise_focada(df_completo):
 
             previsoes.append({
                 'Data': row['Data'],
-                'Liga': 'Bundesliga',
+                'Liga': row['Liga'],
                 'Mandante': home,
                 'Visitante': away,
                 'xG_Mandante': round(lamb_home, 2),
@@ -181,52 +132,50 @@ def gerar_analise_focada(df_completo):
                 'Historico_Over': round(hist_over * 100, 1),
                 'Momento_Recente': round(momento * 100, 1)
             })
-            print(f"✅ Previsão gerada: {home} vs {away}")
+            print(f"✅ Gerado: {home} vs {away} | Data: {row['Data']}")
         except Exception as e: 
-            print(f"Erro no cálculo do jogo {row['Mandante']}: {e}")
             continue
 
     return pd.DataFrame(previsoes)
 
 def main():
-    # Código atualizado para evitar o DeprecationWarning
     auth = Auth.Token(GITHUB_TOKEN)
     g = Github(auth=auth)
     repo = g.get_repo(NOME_REPO)
 
     print("--- LENDO HISTÓRICO ---")
     try:
-        conteudo_arquivo = repo.get_contents(ARQUIVO_JOGOS)
-        df_historico = pd.read_csv(StringIO(conteudo_arquivo.decoded_content.decode('utf-8')))
-        print(f"Base carregada com sucesso: {len(df_historico)} linhas.")
+        conteudo = repo.get_contents(ARQUIVO_JOGOS)
+        df_historico = pd.read_csv(StringIO(conteudo.decoded_content.decode('utf-8')))
+        print("Base carregada com sucesso!")
     except Exception as e:
         print(f"Erro ao ler CSV do GitHub: {e}")
         return
 
-    df_novos = extrair_jogos_espn()
-    df_final = df_historico.copy()
+    # 1. Pega os jogos do futuro
+    df_novos = obter_proxima_rodada()
+    
+    # 2. Gera a previsão cruzando passado e futuro
     if not df_novos.empty:
-        df_final = pd.concat([df_historico, df_novos], ignore_index=True)
-        df_final = df_final.drop_duplicates(subset=['Data', 'Mandante', 'Visitante'], keep='last')
-        try:
-            repo.update_file(ARQUIVO_JOGOS, "Update Jogos", df_final.to_csv(index=False), repo.get_contents(ARQUIVO_JOGOS).sha)
-        except: pass
-
-    df_analise = gerar_analise_focada(df_final)
-    if not df_analise.empty:
-        csv_analise = df_analise.to_csv(index=False)
-        try:
+        df_analise = gerar_analise(df_historico, df_novos)
+        
+        # 3. Salva SÓ o arquivo de previsões
+        if not df_analise.empty:
+            csv_analise = df_analise.to_csv(index=False)
             try:
-                contents = repo.get_contents(ARQUIVO_PREVISOES)
-                repo.update_file(contents.path, "Update Analise", csv_analise, contents.sha)
-                print("SUCESSO: analise_preditiva.csv Atualizado!")
-            except:
-                repo.create_file(ARQUIVO_PREVISOES, "Create Analise", csv_analise)
-                print("SUCESSO: analise_preditiva.csv Criado!")
-        except Exception as e:
-            print(f"Erro ao salvar no GitHub: {e}")
+                try:
+                    contents = repo.get_contents(ARQUIVO_PREVISOES)
+                    repo.update_file(contents.path, "Update Analise", csv_analise, contents.sha)
+                    print("SUCESSO: analise_preditiva.csv Atualizado na Nuvem!")
+                except:
+                    repo.create_file(ARQUIVO_PREVISOES, "Create Analise", csv_analise)
+                    print("SUCESSO: analise_preditiva.csv Criado na Nuvem!")
+            except Exception as e:
+                print(f"Erro ao salvar no GitHub: {e}")
+        else:
+            print("Aviso: Falha ao gerar tabela de previsões.")
     else:
-        print("Aviso: Nenhuma previsão gerada.")
+        print("Aviso: Sem jogos futuros para prever hoje.")
 
 if __name__ == "__main__":
     main()
