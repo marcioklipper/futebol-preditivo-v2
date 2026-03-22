@@ -6,23 +6,24 @@ from io import StringIO
 import requests
 from scipy.stats import poisson
 import difflib
-from bs4 import BeautifulSoup # <-- Certifique-se de ter esta importação
+from bs4 import BeautifulSoup
 
-# ... (Configurações e outras partes do código ficam iguais) ...
+# --- CONFIGURAÇÕES ---
+GITHUB_TOKEN = os.getenv('GH_TOKEN')
+NOME_REPO = "marcioklipper/futebol-preditivo-v2"
+ARQUIVO_JOGOS = "historico_jogos.csv"
+ARQUIVO_PREVISOES = "analise_preditiva.csv"
 
 def obter_proxima_rodada():
     print("--- 1. BUSCANDO PRÓXIMOS JOGOS (ESPN CALENDÁRIO) ---")
-    # Agora apontamos direto para a página de calendário da Bundesliga (como você fez no navegador)
     url = "https://www.espn.com.br/futebol/calendario/_/liga/GER.1"
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
     
     try:
         r = requests.get(url, headers=headers, timeout=15)
         soup = BeautifulSoup(r.content, 'html.parser')
         
         jogos = []
-        
-        # O HTML da ESPN agrupa os jogos por dias, então precisamos achar as tabelas de calendário
         tabelas = soup.find_all('table', class_='Table')
         
         if not tabelas:
@@ -33,33 +34,25 @@ def obter_proxima_rodada():
             linhas = tabela.find_all('tr', class_='Table__TR')
             for linha in linhas:
                  colunas = linha.find_all('td')
-                 
-                 # Uma linha válida de jogo futuro costuma ter pelo menos 3 colunas (Mandante, Placar/Hora, Visitante)
                  if len(colunas) >= 3:
-                     # A coluna 0 geralmente tem o time mandante, a 1 o placar/horário, e a 2 o visitante.
                      try:
-                         # Extrai os nomes dos times. O span com a classe indica o nome do time.
                          mandante = colunas[0].find_all('a')[1].text.strip() if len(colunas[0].find_all('a')) > 1 else colunas[0].text.strip()
                          visitante = colunas[2].find_all('a')[1].text.strip() if len(colunas[2].find_all('a')) > 1 else colunas[2].text.strip()
                          
-                         # Se o "placar" for um horário (ex: 10:30) ou 'v', é um jogo futuro
                          placar_ou_hora = colunas[1].text.strip()
                          if ':' in placar_ou_hora or 'v' in placar_ou_hora.lower():
-                             # Pega a data da seção (ou usa a data atual como placeholder, já que não precisamos do dia exato para prever, só saber quem joga)
-                             
                              jogos.append({
-                                 'Data': '2025-03-29', # Simplificando: Assumimos a data da próxima rodada com base na sua imagem
+                                 'Data': '2025-03-29', 
                                  'Mandante': mandante,
                                  'Visitante': visitante,
                                  'Liga': 'Bundesliga'
                              })
                      except Exception as e:
-                         pass # Ignora linhas de cabeçalho ou mal formatadas
+                         pass
         
         df_futuros = pd.DataFrame(jogos)
         
         if not df_futuros.empty:
-            # Pega apenas os primeiros 9 jogos únicos (uma rodada completa)
             df_futuros = df_futuros.drop_duplicates(subset=['Mandante', 'Visitante']).head(9)
             print(f"Encontrados {len(df_futuros)} jogos futuros da próxima rodada no calendário!")
             return df_futuros
@@ -73,8 +66,6 @@ def obter_proxima_rodada():
 
 def gerar_analise(df_treino, df_prever):
     print("--- 2. CÉREBRO PREDITIVO (POISSON) ---")
-    
-    # Faxina: Remove os "Fantasmas" (jogos antigos sem gols)
     df_treino['Gols_Mandante'] = pd.to_numeric(df_treino['Gols_Mandante'], errors='coerce')
     df_treino['Gols_Visitante'] = pd.to_numeric(df_treino['Gols_Visitante'], errors='coerce')
     df_treino = df_treino.dropna(subset=['Gols_Mandante', 'Gols_Visitante'])
@@ -124,7 +115,6 @@ def gerar_analise(df_treino, df_prever):
             home_original = str(row['Mandante']).strip()
             away_original = str(row['Visitante']).strip()
             
-            # O Tradutor Automático de Nomes entra em ação novamente
             match_home = difflib.get_close_matches(home_original, times_conhecidos, n=1, cutoff=0.45)
             match_away = difflib.get_close_matches(away_original, times_conhecidos, n=1, cutoff=0.45)
             
@@ -161,13 +151,17 @@ def gerar_analise(df_treino, df_prever):
                 'Historico_Over': round(hist_over * 100, 1),
                 'Momento_Recente': round(momento * 100, 1)
             })
-            print(f"✅ Gerado: {home} vs {away} | Data: {row['Data']}")
+            print(f"✅ Gerado: {home} vs {away}")
         except Exception as e: 
             continue
 
     return pd.DataFrame(previsoes)
 
 def main():
+    if not GITHUB_TOKEN:
+        print("Erro: GITHUB_TOKEN não encontrado. Verifique os secrets do repositório.")
+        return
+        
     auth = Auth.Token(GITHUB_TOKEN)
     g = Github(auth=auth)
     repo = g.get_repo(NOME_REPO)
@@ -181,42 +175,27 @@ def main():
         print(f"Erro ao ler CSV do GitHub: {e}")
         return
 
-    # 1. Tenta pegar os jogos futuros via API
     df_novos = obter_proxima_rodada()
     
-    # --- O TRUQUE PARA TESTAR O POWER BI HOJE ---
-    if df_novos.empty:
-        print("\n⚠️ Como não há jogos na ESPN, ativando MODO SIMULAÇÃO para gerar arquivo de teste...")
-        df_sorted = df_historico.sort_values(by=['Data', 'Mandante'])
+    if not df_novos.empty:
+        df_analise = gerar_analise(df_historico, df_novos)
         
-        # Pega a última rodada (9 jogos) do histórico e finge que é o futuro
-        df_novos = df_sorted.tail(9).copy()
-        df_novos['Gols_Mandante'] = np.nan
-        df_novos['Gols_Visitante'] = np.nan
-        
-        # Tira esses jogos do histórico de treino para o robô não "colar" na prova
-        df_historico = df_historico.drop(df_novos.index)
-        print(f"Simulando {len(df_novos)} jogos de teste...\n")
-    # --------------------------------------------
-
-    # 2. Gera a previsão
-    df_analise = gerar_analise(df_historico, df_novos)
-    
-    # 3. Salva
-    if not df_analise.empty:
-        csv_analise = df_analise.to_csv(index=False)
-        try:
+        if not df_analise.empty:
+            csv_analise = df_analise.to_csv(index=False)
             try:
-                contents = repo.get_contents(ARQUIVO_PREVISOES)
-                repo.update_file(contents.path, "Update Analise", csv_analise, contents.sha)
-                print("SUCESSO: analise_preditiva.csv Atualizado na Nuvem!")
-            except:
-                repo.create_file(ARQUIVO_PREVISOES, "Create Analise", csv_analise)
-                print("SUCESSO: analise_preditiva.csv Criado na Nuvem!")
-        except Exception as e:
-            print(f"Erro ao salvar no GitHub: {e}")
+                try:
+                    contents = repo.get_contents(ARQUIVO_PREVISOES)
+                    repo.update_file(contents.path, "Update Analise", csv_analise, contents.sha)
+                    print("SUCESSO: analise_preditiva.csv Atualizado na Nuvem!")
+                except:
+                    repo.create_file(ARQUIVO_PREVISOES, "Create Analise", csv_analise)
+                    print("SUCESSO: analise_preditiva.csv Criado na Nuvem!")
+            except Exception as e:
+                print(f"Erro ao salvar no GitHub: {e}")
+        else:
+            print("Aviso: Falha ao gerar tabela de previsões.")
     else:
-        print("Aviso: Falha ao gerar tabela de previsões.")
+        print("Aviso: Sem jogos futuros para prever hoje.")
 
 if __name__ == "__main__":
     main()
