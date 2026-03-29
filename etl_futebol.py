@@ -20,32 +20,39 @@ ARQUIVO_HIST_RECENTE = "historico_10j_times.csv"
 def atualizar_historico(df_historico_atual):
     print("--- 1. BUSCANDO RESULTADOS PASSADOS (FBREF) ---")
     
-    # URL da tabela completa da temporada atual da Bundesliga no FBref
+    # Cria um dicionário mental com os nomes OFICIAIS que já existem na sua base
+    times_oficiais = pd.concat([df_historico_atual['Mandante'], df_historico_atual['Visitante']]).dropna().unique().tolist()
+    
     url = "https://fbref.com/en/comps/20/schedule/Bundesliga-Scores-and-Fixtures"
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
     
     try:
         r = requests.get(url, headers=headers)
-        # O FBref esconde algumas tabelas em comentários HTML, essa função do Pandas é poderosa
         dfs = pd.read_html(StringIO(r.text), flavor='lxml')
         
         jogos_novos = []
         for df in dfs:
             if 'Home' in df.columns and 'Away' in df.columns and 'Score' in df.columns:
-                # Remove linhas de divisória/cabeçalho da tabela
                 df = df.dropna(subset=['Home', 'Away', 'Date'])
-                
-                # Filtra apenas jogos que já têm um placar preenchido (que já aconteceram)
                 df_encerrados = df[df['Score'].notna() & (df['Score'] != '')].copy()
                 
                 for _, row in df_encerrados.iterrows():
                     try:
                         data_jogo = str(row['Date'])
-                        mandante = str(row['Home'])
-                        visitante = str(row['Away'])
+                        mandante_fbref = str(row['Home'])
+                        visitante_fbref = str(row['Away'])
                         placar = str(row['Score'])
                         
-                        # O placar vem no formato "2–1" (pode usar um traço diferente, por isso a limpeza)
+                        # --- O TRADUTOR INTELIGENTE ENTRA AQUI ---
+                        # Compara o nome do site com os nomes da sua base e pega o mais parecido (acima de 45% de semelhança)
+                        match_m = difflib.get_close_matches(mandante_fbref, times_oficiais, n=1, cutoff=0.45)
+                        match_v = difflib.get_close_matches(visitante_fbref, times_oficiais, n=1, cutoff=0.45)
+                        
+                        # Se achou correspondência, usa o oficial. Se for um time 100% novo (subiu de divisão), mantém o nome novo.
+                        mandante_oficial = match_m[0] if match_m else mandante_fbref
+                        visitante_oficial = match_v[0] if match_v else visitante_fbref
+                        # -----------------------------------------
+                        
                         placar = placar.replace('–', '-').replace('—', '-')
                         partes = placar.split('-')
                         
@@ -55,22 +62,22 @@ def atualizar_historico(df_historico_atual):
                             
                             jogos_novos.append({
                                 'Data': data_jogo,
-                                'Mandante': mandante,
-                                'Visitante': visitante,
+                                'Mandante': mandante_oficial,
+                                'Visitante': visitante_oficial,
                                 'Liga': 'Bundesliga',
                                 'Gols_Mandante': gm,
                                 'Gols_Visitante': gv
                             })
                     except Exception as e:
-                        pass # Ignora linhas mal formatadas
+                        pass 
                 
-                break # Achou a tabela principal, pode parar o loop
+                break 
         
         df_novos = pd.DataFrame(jogos_novos)
         
         if not df_novos.empty:
             df_atualizado = pd.concat([df_historico_atual, df_novos], ignore_index=True)
-            # Remove duplicatas. O pulo do gato: mantém os dados do FBref (que são mais limpos) caso haja conflito.
+            # Ao remover duplicatas agora, ele vai sobrepor corretamente, pois os nomes estão alinhados
             df_atualizado = df_atualizado.drop_duplicates(subset=['Data', 'Mandante', 'Visitante'], keep='last')
             
             jogos_adicionados = len(df_atualizado) - len(df_historico_atual)
