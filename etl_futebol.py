@@ -13,6 +13,7 @@ GITHUB_TOKEN = os.getenv('GH_TOKEN')
 NOME_REPO = "marcioklipper/futebol-preditivo-v2"
 ARQUIVO_JOGOS = "historico_jogos.csv"
 ARQUIVO_PREVISOES = "analise_preditiva.csv"
+ARQUIVO_HIST_RECENTE = "historico_10j_times.csv" # <--- NOVO ARQUIVO
 
 def obter_proxima_rodada():
     print("--- 1. BUSCANDO PRÓXIMOS JOGOS (ESPN API 30 DIAS) ---")
@@ -61,12 +62,12 @@ def obter_proxima_rodada():
         return pd.DataFrame()
 
 def gerar_analise(df_treino, df_prever):
-    print("--- 2. CÉREBRO PREDITIVO (POISSON CALIBRADO + HISTÓRICO) ---")
+    print("--- 2. CÉREBRO PREDITIVO E EXTRATOR DE HISTÓRICO ---")
     
     df_treino = df_treino.dropna(subset=['Gols_Mandante', 'Gols_Visitante']).copy()
 
     if df_treino.empty or df_prever.empty:
-        return pd.DataFrame()
+        return pd.DataFrame(), pd.DataFrame()
 
     print(f"Treinando o modelo com {len(df_treino)} jogos passados válidos...")
 
@@ -90,7 +91,6 @@ def gerar_analise(df_treino, df_prever):
 
     stats = pd.merge(stats_casa, stats_fora, on='Time', how='outer').fillna(0)
     
-    # --- VARIÁVEL: CALIBRAÇÃO DOS ÚLTIMOS 10 JOGOS ---
     def calcular_fator_forma(time):
         ultimos_10 = df_treino[(df_treino['Mandante'] == time) | (df_treino['Visitante'] == time)].sort_values('Data', ascending=False).head(10)
         if ultimos_10.empty: return 1.0
@@ -100,31 +100,18 @@ def gerar_analise(df_treino, df_prever):
 
     stats['Fator_10_Jogos'] = stats['Time'].apply(calcular_fator_forma)
 
-    # --- NOVIDADE: EXTRATOR DE PLACARES ---
-    def obter_texto_ultimos_jogos(time):
-        # Pega os 10 jogos mais recentes do time
-        jogos = df_treino[(df_treino['Mandante'] == time) | (df_treino['Visitante'] == time)].sort_values('Data', ascending=False).head(10)
-        if jogos.empty: return "Sem histórico"
-        
-        lista_resultados = []
-        for _, jogo in jogos.iterrows():
-            # Converte os gols para número inteiro (ex: 2.0 vira 2) para ficar bonito no texto
-            gm = int(jogo['Gols_Mandante'])
-            gv = int(jogo['Gols_Visitante'])
-            lista_resultados.append(f"{jogo['Mandante']} {gm}x{gv} {jogo['Visitante']}")
-            
-        # Junta tudo separando por " | "
-        return " | ".join(lista_resultados)
-
     stats['Ataque_Casa'] = stats['Media_Feitos_Casa'] / m_liga_mand
     stats['Defesa_Casa'] = stats['Media_Sofridos_Casa'] / m_liga_visit
     stats['Ataque_Fora'] = stats['Media_Feitos_Fora'] / m_liga_visit
     stats['Defesa_Fora'] = stats['Media_Sofridos_Fora'] / m_liga_mand
 
     times_conhecidos = stats['Time'].unique().tolist()
+    
     previsoes = []
+    tabela_historico = [] # Lista para armazenar a tabela secundária
+    times_processados = set() # Para não extrair o histórico do mesmo time duas vezes
 
-    print("--- 3. CALCULANDO PROBABILIDADES E PLACARES ---")
+    print("--- 3. CALCULANDO PROBABILIDADES ---")
     for idx, row in df_prever.iterrows():
         try:
             home_original = str(row['Mandante']).strip()
@@ -142,26 +129,43 @@ def gerar_analise(df_treino, df_prever):
             if d_home.empty or d_away.empty: 
                 continue
 
-            # Força de Ataque e Defesa
+            # -------------------------------------------------------------
+            # NOVIDADE: GERADOR DA TABELA SECUNDÁRIA (HISTÓRICO)
+            # -------------------------------------------------------------
+            for time_foco in [home, away]:
+                if time_foco not in times_processados:
+                    jogos_time = df_treino[(df_treino['Mandante'] == time_foco) | (df_treino['Visitante'] == time_foco)].sort_values('Data', ascending=False).head(10)
+                    for _, jogo in jogos_time.iterrows():
+                        gm = int(jogo['Gols_Mandante'])
+                        gv = int(jogo['Gols_Visitante'])
+                        total_gols = gm + gv
+                        mando = 'Casa' if jogo['Mandante'] == time_foco else 'Fora'
+                        
+                        tabela_historico.append({
+                            'Time_Foco': time_foco, # Esta é a coluna que você vai relacionar no Power BI!
+                            'Data_Jogo': jogo['Data'],
+                            'Mando': mando,
+                            'Adversario': jogo['Visitante'] if mando == 'Casa' else jogo['Mandante'],
+                            'Placar': f"{gm} x {gv}",
+                            'Total_Gols': total_gols,
+                            'Bateu_Over_1_5': 'Sim' if total_gols > 1 else 'Não'
+                        })
+                    times_processados.add(time_foco)
+            # -------------------------------------------------------------
+
             lamb_home = d_home['Ataque_Casa'].values[0] * d_away['Defesa_Fora'].values[0] * m_liga_mand
             lamb_away = d_away['Ataque_Fora'].values[0] * d_home['Defesa_Casa'].values[0] * m_liga_visit
             
-            # Probabilidade Matemática (Poisson Puro)
             prob_under = (poisson.pmf(0, lamb_home)*poisson.pmf(0, lamb_away)) + \
                          (poisson.pmf(1, lamb_home)*poisson.pmf(0, lamb_away)) + \
                          (poisson.pmf(0, lamb_home)*poisson.pmf(1, lamb_away))
             prob_over_pura = (1 - prob_under) * 100
 
-            # Aplicação do Reajuste de Forma
             fator_h = d_home['Fator_10_Jogos'].values[0]
             fator_a = d_away['Fator_10_Jogos'].values[0]
             fator_combinado = (fator_h + fator_a) / 2
             prob_ajustada = prob_over_pura * fator_combinado
             prob_final = min(max(prob_ajustada, 5.0), 95.0) 
-
-            # Buscando os textos com os 10 últimos placares
-            texto_hist_home = obter_texto_ultimos_jogos(home)
-            texto_hist_away = obter_texto_ultimos_jogos(away)
 
             previsoes.append({
                 'Data': row['Data'],
@@ -173,19 +177,31 @@ def gerar_analise(df_treino, df_prever):
                 'Media_Gols_Esperada': round(lamb_home + lamb_away, 2),
                 'Prob_Poisson_Pura': round(prob_over_pura, 1),
                 'Fator_Forma_10j': round(fator_combinado, 2),
-                'Prob_Over_Final': round(prob_final, 1),
-                'Hist_10j_Mandante': texto_hist_home,
-                'Hist_10j_Visitante': texto_hist_away
+                'Prob_Over_Final': round(prob_final, 1)
             })
-            print(f"✅ Gerado c/ Histórico: {home} vs {away}")
+            print(f"✅ Gerado Previsão + Histórico: {home} vs {away}")
         except Exception as e: 
             continue
 
-    return pd.DataFrame(previsoes)
+    return pd.DataFrame(previsoes), pd.DataFrame(tabela_historico)
+
+def salvar_no_github(repo, nome_arquivo, df_dados, mensagem):
+    """Função auxiliar para salvar arquivos no GitHub limpo"""
+    csv_string = df_dados.to_csv(index=False)
+    try:
+        try:
+            contents = repo.get_contents(nome_arquivo)
+            repo.update_file(contents.path, f"Update {mensagem}", csv_string, contents.sha)
+            print(f"SUCESSO: {nome_arquivo} Atualizado!")
+        except:
+            repo.create_file(nome_arquivo, f"Create {mensagem}", csv_string)
+            print(f"SUCESSO: {nome_arquivo} Criado!")
+    except Exception as e:
+        print(f"Erro ao salvar {nome_arquivo}: {e}")
 
 def main():
     if not GITHUB_TOKEN:
-        print("Erro: GITHUB_TOKEN não encontrado. Verifique os secrets do repositório.")
+        print("Erro: GITHUB_TOKEN não encontrado.")
         return
         
     auth = Auth.Token(GITHUB_TOKEN)
@@ -204,22 +220,13 @@ def main():
     df_novos = obter_proxima_rodada()
     
     if not df_novos.empty:
-        df_analise = gerar_analise(df_historico, df_novos)
+        df_analise, df_hist_recente = gerar_analise(df_historico, df_novos)
         
         if not df_analise.empty:
-            csv_analise = df_analise.to_csv(index=False)
-            try:
-                try:
-                    contents = repo.get_contents(ARQUIVO_PREVISOES)
-                    repo.update_file(contents.path, "Update Analise", csv_analise, contents.sha)
-                    print("SUCESSO: analise_preditiva.csv Atualizado na Nuvem!")
-                except:
-                    repo.create_file(ARQUIVO_PREVISOES, "Create Analise", csv_analise)
-                    print("SUCESSO: analise_preditiva.csv Criado na Nuvem!")
-            except Exception as e:
-                print(f"Erro ao salvar no GitHub: {e}")
+            salvar_no_github(repo, ARQUIVO_PREVISOES, df_analise, "Previsoes")
+            salvar_no_github(repo, ARQUIVO_HIST_RECENTE, df_hist_recente, "Historico Detalhado")
         else:
-            print("Aviso: Falha ao gerar tabela de previsões.")
+            print("Aviso: Falha ao gerar tabelas.")
     else:
         print("Aviso: Sem jogos futuros para prever hoje.")
 
