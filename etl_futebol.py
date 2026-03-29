@@ -17,13 +17,11 @@ ARQUIVO_PREVISOES = "analise_preditiva.csv"
 def obter_proxima_rodada():
     print("--- 1. BUSCANDO PRÓXIMOS JOGOS (ESPN API 30 DIAS) ---")
     
-    # Criando a "Máquina do Tempo" para olhar 30 dias para frente
     hoje = datetime.now()
     futuro = hoje + timedelta(days=30)
     data_inicio = hoje.strftime('%Y%m%d')
     data_fim = futuro.strftime('%Y%m%d')
     
-    # A URL agora pede explicitamente os jogos desse período
     url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates={data_inicio}-{data_fim}"
     
     try:
@@ -35,7 +33,6 @@ def obter_proxima_rodada():
             comp = evento['competitions'][0]
             status = comp['status']['type']['state']
             
-            # Pega apenas os jogos que ainda vão acontecer ('pre')
             if status == 'pre':
                 data_jogo = evento['date'][:10]
                 times = comp['competitors']
@@ -52,7 +49,6 @@ def obter_proxima_rodada():
         
         df_futuros = pd.DataFrame(jogos)
         if not df_futuros.empty:
-            # Pega os próximos 9 jogos (1 rodada)
             df_futuros = df_futuros.head(9)
             print(f"Encontrados {len(df_futuros)} jogos agendados na API!")
             return df_futuros
@@ -65,9 +61,8 @@ def obter_proxima_rodada():
         return pd.DataFrame()
 
 def gerar_analise(df_treino, df_prever):
-    print("--- 2. CÉREBRO PREDITIVO (POISSON) ---")
+    print("--- 2. CÉREBRO PREDITIVO (POISSON CALIBRADO) ---")
     
-    # O .copy() aqui resolve o aviso chato do Pandas (SettingWithCopyWarning)
     df_treino = df_treino.dropna(subset=['Gols_Mandante', 'Gols_Visitante']).copy()
 
     if df_treino.empty or df_prever.empty:
@@ -94,17 +89,23 @@ def gerar_analise(df_treino, df_prever):
     ).reset_index().rename(columns={'Visitante': 'Time'})
 
     stats = pd.merge(stats_casa, stats_fora, on='Time', how='outer').fillna(0)
+    
+    # --- NOVA VARIÁVEL: CALIBRAÇÃO DOS ÚLTIMOS 10 JOGOS ---
+    def calcular_fator_forma(time):
+        ultimos_10 = df_treino[(df_treino['Mandante'] == time) | (df_treino['Visitante'] == time)].sort_values('Data', ascending=False).head(10)
+        if ultimos_10.empty: return 1.0
+        taxa_recente = ultimos_10['Over15'].mean()
+        taxa_historica = (stats[stats['Time'] == time]['Taxa_Over_Casa'].values[0] + stats[stats['Time'] == time]['Taxa_Over_Fora'].values[0]) / 2
+        
+        # Se a taxa histórica for 0, evita erro de divisão. Retorna o fator de ajuste.
+        return (taxa_recente / taxa_historica) if taxa_historica > 0 else 1.0
+
+    stats['Fator_10_Jogos'] = stats['Time'].apply(calcular_fator_forma)
+
     stats['Ataque_Casa'] = stats['Media_Feitos_Casa'] / m_liga_mand
     stats['Defesa_Casa'] = stats['Media_Sofridos_Casa'] / m_liga_visit
     stats['Ataque_Fora'] = stats['Media_Feitos_Fora'] / m_liga_visit
     stats['Defesa_Fora'] = stats['Media_Sofridos_Fora'] / m_liga_mand
-
-    def get_momento(time):
-        jogos = df_treino[(df_treino['Mandante'] == time) | (df_treino['Visitante'] == time)].sort_values('Data', ascending=False).head(5)
-        if len(jogos) == 0: return 0
-        return jogos['Over15'].mean()
-    
-    stats['Momento_Over'] = stats['Time'].apply(get_momento)
 
     times_conhecidos = stats['Time'].unique().tolist()
     previsoes = []
@@ -128,16 +129,25 @@ def gerar_analise(df_treino, df_prever):
                 print(f"❌ Ignorado (Sem histórico na base): {home} vs {away}")
                 continue
 
+            # Força de Ataque e Defesa
             lamb_home = d_home['Ataque_Casa'].values[0] * d_away['Defesa_Fora'].values[0] * m_liga_mand
             lamb_away = d_away['Ataque_Fora'].values[0] * d_home['Defesa_Casa'].values[0] * m_liga_visit
             
+            # Probabilidade Matemática (Poisson Puro)
             prob_under = (poisson.pmf(0, lamb_home)*poisson.pmf(0, lamb_away)) + \
                          (poisson.pmf(1, lamb_home)*poisson.pmf(0, lamb_away)) + \
                          (poisson.pmf(0, lamb_home)*poisson.pmf(1, lamb_away))
-            prob_over = 1 - prob_under
+            prob_over_pura = (1 - prob_under) * 100
 
-            hist_over = (d_home['Taxa_Over_Casa'].values[0] + d_away['Taxa_Over_Fora'].values[0]) / 2
-            momento = (d_home['Momento_Over'].values[0] + d_away['Momento_Over'].values[0]) / 2
+            # --- APLICAÇÃO DO REAJUSTE DE FORMA ---
+            fator_h = d_home['Fator_10_Jogos'].values[0]
+            fator_a = d_away['Fator_10_Jogos'].values[0]
+            fator_combinado = (fator_h + fator_a) / 2
+            
+            # Multiplica a probabilidade pura pelo momento dos times
+            prob_ajustada = prob_over_pura * fator_combinado
+            # Cria uma trava de segurança para não passar de 95% nem cair abaixo de 5%
+            prob_final = min(max(prob_ajustada, 5.0), 95.0) 
 
             previsoes.append({
                 'Data': row['Data'],
@@ -146,12 +156,12 @@ def gerar_analise(df_treino, df_prever):
                 'Visitante': away,
                 'xG_Mandante': round(lamb_home, 2),
                 'xG_Visitante': round(lamb_away, 2),
-                'Prob_Over_1_5': round(prob_over * 100, 1),
                 'Media_Gols_Esperada': round(lamb_home + lamb_away, 2),
-                'Historico_Over': round(hist_over * 100, 1),
-                'Momento_Recente': round(momento * 100, 1)
+                'Prob_Poisson_Pura': round(prob_over_pura, 1),
+                'Fator_Forma_10j': round(fator_combinado, 2),
+                'Prob_Over_Final': round(prob_final, 1)
             })
-            print(f"✅ Gerado: {home} vs {away}")
+            print(f"✅ Gerado: {home} vs {away} | Poisson: {round(prob_over_pura,1)}% -> Ajustado: {round(prob_final,1)}%")
         except Exception as e: 
             continue
 
