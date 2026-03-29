@@ -134,11 +134,12 @@ def gerar_analise(df_treino, df_prever):
     stats_fora = df_treino.groupby('Visitante').agg(Media_Feitos_Fora=('Gols_Visitante', 'mean'), Media_Sofridos_Fora=('Gols_Mandante', 'mean'), Taxa_Over_Fora=('Over15', 'mean')).reset_index().rename(columns={'Visitante': 'Time'})
     stats = pd.merge(stats_casa, stats_fora, on='Time', how='outer').fillna(0)
     
-    def calcular_fator_forma(time):
-        ultimos_10 = df_treino[(df_treino['Mandante'] == time) | (df_treino['Visitante'] == time)].sort_values('Data', ascending=False).head(10)
+    def calcular_fator_forma(time_oficial):
+        # Agora busca pelo nome OFICIAL da base, sem erro de digitação
+        ultimos_10 = df_treino[(df_treino['Mandante'] == time_oficial) | (df_treino['Visitante'] == time_oficial)].sort_values('Data', ascending=False).head(10)
         if ultimos_10.empty: return 1.0
         taxa_recente = ultimos_10['Over15'].mean()
-        taxa_historica = (stats[stats['Time'] == time]['Taxa_Over_Casa'].values[0] + stats[stats['Time'] == time]['Taxa_Over_Fora'].values[0]) / 2
+        taxa_historica = (stats[stats['Time'] == time_oficial]['Taxa_Over_Casa'].values[0] + stats[stats['Time'] == time_oficial]['Taxa_Over_Fora'].values[0]) / 2
         return (taxa_recente / taxa_historica) if taxa_historica > 0 else 1.0
 
     stats['Fator_10_Jogos'] = stats['Time'].apply(calcular_fator_forma)
@@ -158,9 +159,11 @@ def gerar_analise(df_treino, df_prever):
             home_original = str(row['Mandante']).strip()
             away_original = str(row['Visitante']).strip()
             
+            # Aqui a mágica: Ele pega o nome "sujo" da ESPN e encontra o "oficial" na sua base
             match_home = difflib.get_close_matches(home_original, times_conhecidos, n=1, cutoff=0.45)
             match_away = difflib.get_close_matches(away_original, times_conhecidos, n=1, cutoff=0.45)
             
+            # Daqui pra frente, ele usa apenas os nomes OFICIAIS (home e away)
             home = match_home[0] if match_home else home_original
             away = match_away[0] if match_away else away_original
 
@@ -168,8 +171,10 @@ def gerar_analise(df_treino, df_prever):
             d_away = stats[stats['Time'] == away]
             if d_home.empty or d_away.empty: continue
 
+            # --- EXTRAÇÃO DO HISTÓRICO USANDO NOME OFICIAL ---
             for time_foco in [home, away]:
                 if time_foco not in times_processados:
+                    # Busca os 10 jogos exatos da base usando o nome que existe lá dentro
                     jogos_time = df_treino[(df_treino['Mandante'] == time_foco) | (df_treino['Visitante'] == time_foco)].sort_values('Data', ascending=False).head(10)
                     for _, jogo in jogos_time.iterrows():
                         gm = int(jogo['Gols_Mandante'])
@@ -191,6 +196,8 @@ def gerar_analise(df_treino, df_prever):
             lamb_away = d_away['Ataque_Fora'].values[0] * d_home['Defesa_Casa'].values[0] * m_liga_visit
             prob_under = (poisson.pmf(0, lamb_home)*poisson.pmf(0, lamb_away)) + (poisson.pmf(1, lamb_home)*poisson.pmf(0, lamb_away)) + (poisson.pmf(0, lamb_home)*poisson.pmf(1, lamb_away))
             prob_over_pura = (1 - prob_under) * 100
+            
+            # Fator de forma já foi calculado lá em cima com os nomes oficiais
             fator_h = d_home['Fator_10_Jogos'].values[0]
             fator_a = d_away['Fator_10_Jogos'].values[0]
             fator_combinado = (fator_h + fator_a) / 2
@@ -204,7 +211,7 @@ def gerar_analise(df_treino, df_prever):
                 'Prob_Poisson_Pura': round(prob_over_pura, 1), 'Fator_Forma_10j': round(fator_combinado, 2),
                 'Prob_Over_Final': round(prob_final, 1)
             })
-            print(f"✅ Gerado Previsão + Histórico: {home} vs {away}")
+            print(f"✅ Gerado Previsão + Histórico Oficial: {home} vs {away}")
         except Exception as e: continue
     return pd.DataFrame(previsoes), pd.DataFrame(tabela_historico)
 
