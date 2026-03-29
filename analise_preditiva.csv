@@ -1,10 +1,10 @@
 Data,Liga,Mandante,Visitante,xG_Mandante,xG_Visitante,Media_Gols_Esperada,Prob_Poisson_Pura,Fator_Forma_10j,Prob_Over_Final
-2026-04-04,Bundesliga,Leverkusen,Wolfsburg,2.94,1.21,4.16,91.9,1.09,95.0
-2026-04-04,Bundesliga,M'gladbach,Heidenheim,1.94,1.17,3.11,81.7,1.05,86.1
-2026-04-04,Bundesliga,Hamburg,Augsburg,2.01,0.79,2.81,77.0,0.88,67.8
-2026-04-04,Bundesliga,Freiburg,Bayern Munich,1.02,3.53,4.55,94.1,1.0,94.1
-2026-04-04,Bundesliga,Hoffenheim,Mainz,3.23,1.3,4.53,94.0,0.97,91.1
-2026-04-04,Bundesliga,Werder Bremen,RB Leipzig,1.47,2.05,3.51,86.6,1.04,90.2
-2026-04-04,Bundesliga,Stuttgart,Dortmund,1.16,1.73,2.88,78.3,1.08,84.6
-2026-04-05,Bundesliga,Union Berlin,St Pauli,1.75,0.92,2.67,74.5,0.97,72.1
-2026-04-05,Bundesliga,Ein Frankfurt,FC Koln,2.05,1.32,3.37,85.0,1.04,88.1
+2026-04-04,Bundesliga,Bayer Leverkusen,VfL Wolfsburg,1.63,0.4,2.03,60.2,0.98,59.0
+2026-04-04,Bundesliga,Borussia Mönchengladbach,1. FC Heidenheim 1846,1.47,0.0,1.47,43.2,1.0,43.2
+2026-04-04,Bundesliga,Hamburg SV,FC Augsburg,0.87,0.53,1.4,40.8,0.98,40.0
+2026-04-04,Bundesliga,SC Freiburg,Bayern Munich,0.89,5.19,6.08,98.4,1.0,95.0
+2026-04-04,Bundesliga,TSG Hoffenheim,Mainz,0.59,1.01,1.6,47.6,1.02,48.5
+2026-04-04,Bundesliga,Werder Bremen,RB Leipzig,1.27,1.75,3.03,80.5,0.99,80.0
+2026-04-04,Bundesliga,VfB Stuttgart,Borussia Dortmund,1.63,0.0,1.63,48.6,1.0,48.6
+2026-04-05,Bundesliga,1. FC Union Berlin,St. Pauli,0.65,1.59,2.24,65.5,0.88,57.3
+2026-04-05,Bundesliga,Eintracht Frankfurt,FC Cologne,1.47,0.0,1.47,43.2,1.0,43.2
