@@ -61,7 +61,7 @@ def obter_proxima_rodada():
         return pd.DataFrame()
 
 def gerar_analise(df_treino, df_prever):
-    print("--- 2. CÉREBRO PREDITIVO (POISSON CALIBRADO) ---")
+    print("--- 2. CÉREBRO PREDITIVO (POISSON CALIBRADO + HISTÓRICO) ---")
     
     df_treino = df_treino.dropna(subset=['Gols_Mandante', 'Gols_Visitante']).copy()
 
@@ -90,17 +90,31 @@ def gerar_analise(df_treino, df_prever):
 
     stats = pd.merge(stats_casa, stats_fora, on='Time', how='outer').fillna(0)
     
-    # --- NOVA VARIÁVEL: CALIBRAÇÃO DOS ÚLTIMOS 10 JOGOS ---
+    # --- VARIÁVEL: CALIBRAÇÃO DOS ÚLTIMOS 10 JOGOS ---
     def calcular_fator_forma(time):
         ultimos_10 = df_treino[(df_treino['Mandante'] == time) | (df_treino['Visitante'] == time)].sort_values('Data', ascending=False).head(10)
         if ultimos_10.empty: return 1.0
         taxa_recente = ultimos_10['Over15'].mean()
         taxa_historica = (stats[stats['Time'] == time]['Taxa_Over_Casa'].values[0] + stats[stats['Time'] == time]['Taxa_Over_Fora'].values[0]) / 2
-        
-        # Se a taxa histórica for 0, evita erro de divisão. Retorna o fator de ajuste.
         return (taxa_recente / taxa_historica) if taxa_historica > 0 else 1.0
 
     stats['Fator_10_Jogos'] = stats['Time'].apply(calcular_fator_forma)
+
+    # --- NOVIDADE: EXTRATOR DE PLACARES ---
+    def obter_texto_ultimos_jogos(time):
+        # Pega os 10 jogos mais recentes do time
+        jogos = df_treino[(df_treino['Mandante'] == time) | (df_treino['Visitante'] == time)].sort_values('Data', ascending=False).head(10)
+        if jogos.empty: return "Sem histórico"
+        
+        lista_resultados = []
+        for _, jogo in jogos.iterrows():
+            # Converte os gols para número inteiro (ex: 2.0 vira 2) para ficar bonito no texto
+            gm = int(jogo['Gols_Mandante'])
+            gv = int(jogo['Gols_Visitante'])
+            lista_resultados.append(f"{jogo['Mandante']} {gm}x{gv} {jogo['Visitante']}")
+            
+        # Junta tudo separando por " | "
+        return " | ".join(lista_resultados)
 
     stats['Ataque_Casa'] = stats['Media_Feitos_Casa'] / m_liga_mand
     stats['Defesa_Casa'] = stats['Media_Sofridos_Casa'] / m_liga_visit
@@ -110,7 +124,7 @@ def gerar_analise(df_treino, df_prever):
     times_conhecidos = stats['Time'].unique().tolist()
     previsoes = []
 
-    print("--- 3. CALCULANDO PROBABILIDADES ---")
+    print("--- 3. CALCULANDO PROBABILIDADES E PLACARES ---")
     for idx, row in df_prever.iterrows():
         try:
             home_original = str(row['Mandante']).strip()
@@ -126,7 +140,6 @@ def gerar_analise(df_treino, df_prever):
             d_away = stats[stats['Time'] == away]
             
             if d_home.empty or d_away.empty: 
-                print(f"❌ Ignorado (Sem histórico na base): {home} vs {away}")
                 continue
 
             # Força de Ataque e Defesa
@@ -139,15 +152,16 @@ def gerar_analise(df_treino, df_prever):
                          (poisson.pmf(0, lamb_home)*poisson.pmf(1, lamb_away))
             prob_over_pura = (1 - prob_under) * 100
 
-            # --- APLICAÇÃO DO REAJUSTE DE FORMA ---
+            # Aplicação do Reajuste de Forma
             fator_h = d_home['Fator_10_Jogos'].values[0]
             fator_a = d_away['Fator_10_Jogos'].values[0]
             fator_combinado = (fator_h + fator_a) / 2
-            
-            # Multiplica a probabilidade pura pelo momento dos times
             prob_ajustada = prob_over_pura * fator_combinado
-            # Cria uma trava de segurança para não passar de 95% nem cair abaixo de 5%
             prob_final = min(max(prob_ajustada, 5.0), 95.0) 
+
+            # Buscando os textos com os 10 últimos placares
+            texto_hist_home = obter_texto_ultimos_jogos(home)
+            texto_hist_away = obter_texto_ultimos_jogos(away)
 
             previsoes.append({
                 'Data': row['Data'],
@@ -159,9 +173,11 @@ def gerar_analise(df_treino, df_prever):
                 'Media_Gols_Esperada': round(lamb_home + lamb_away, 2),
                 'Prob_Poisson_Pura': round(prob_over_pura, 1),
                 'Fator_Forma_10j': round(fator_combinado, 2),
-                'Prob_Over_Final': round(prob_final, 1)
+                'Prob_Over_Final': round(prob_final, 1),
+                'Hist_10j_Mandante': texto_hist_home,
+                'Hist_10j_Visitante': texto_hist_away
             })
-            print(f"✅ Gerado: {home} vs {away} | Poisson: {round(prob_over_pura,1)}% -> Ajustado: {round(prob_final,1)}%")
+            print(f"✅ Gerado c/ Histórico: {home} vs {away}")
         except Exception as e: 
             continue
 
