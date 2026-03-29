@@ -13,10 +13,72 @@ GITHUB_TOKEN = os.getenv('GH_TOKEN')
 NOME_REPO = "marcioklipper/futebol-preditivo-v2"
 ARQUIVO_JOGOS = "historico_jogos.csv"
 ARQUIVO_PREVISOES = "analise_preditiva.csv"
-ARQUIVO_HIST_RECENTE = "historico_10j_times.csv" # <--- NOVO ARQUIVO
+ARQUIVO_HIST_RECENTE = "historico_10j_times.csv"
+
+# --- 1. A NOVA FUNÇÃO QUE ALIMENTA A BASE DE DADOS ---
+def atualizar_historico(df_historico_atual):
+    print("--- 1. BUSCANDO RESULTADOS RECENTES PARA ATUALIZAR A BASE ---")
+    
+    # Olha para os últimos 30 dias para pegar os jogos que já aconteceram
+    hoje = datetime.now()
+    passado = hoje - timedelta(days=30)
+    data_inicio = passado.strftime('%Y%m%d')
+    data_fim = hoje.strftime('%Y%m%d')
+    
+    url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates={data_inicio}-{data_fim}"
+    
+    try:
+        r = requests.get(url, timeout=15)
+        dados = r.json()
+        
+        jogos_novos = []
+        for evento in dados.get('events', []):
+            comp = evento['competitions'][0]
+            status = comp['status']['type']['state']
+            
+            # Filtra APENAS jogos que já acabaram ('post')
+            if status == 'post':
+                data_jogo = evento['date'][:10]
+                times = comp['competitors']
+                
+                time_casa = next(t for t in times if t['homeAway'] == 'home')
+                time_fora = next(t for t in times if t['homeAway'] == 'away')
+                
+                mandante = time_casa['team']['displayName']
+                visitante = time_fora['team']['displayName']
+                gols_mandante = time_casa.get('score', 0)
+                gols_visitante = time_fora.get('score', 0)
+                
+                jogos_novos.append({
+                    'Data': data_jogo,
+                    'Mandante': mandante,
+                    'Visitante': visitante,
+                    'Liga': 'Bundesliga',
+                    'Gols_Mandante': int(gols_mandante),
+                    'Gols_Visitante': int(gols_visitante)
+                })
+        
+        df_novos = pd.DataFrame(jogos_novos)
+        
+        if not df_novos.empty:
+            # Junta o histórico velho com os jogos novos
+            df_atualizado = pd.concat([df_historico_atual, df_novos], ignore_index=True)
+            # Remove duplicatas caso o jogo já esteja na base (olhando para Data, Mandante e Visitante)
+            df_atualizado = df_atualizado.drop_duplicates(subset=['Data', 'Mandante', 'Visitante'], keep='last')
+            
+            jogos_adicionados = len(df_atualizado) - len(df_historico_atual)
+            print(f"Base atualizada! Foram adicionados {jogos_adicionados} jogos recentes.")
+            return df_atualizado
+        else:
+            print("Nenhum jogo recente encontrado para adicionar.")
+            return df_historico_atual
+            
+    except Exception as e:
+        print(f"Erro ao buscar resultados passados: {e}")
+        return df_historico_atual
 
 def obter_proxima_rodada():
-    print("--- 1. BUSCANDO PRÓXIMOS JOGOS (ESPN API 30 DIAS) ---")
+    print("--- 2. BUSCANDO PRÓXIMOS JOGOS (ESPN API 30 DIAS) ---")
     
     hoje = datetime.now()
     futuro = hoje + timedelta(days=30)
@@ -62,7 +124,7 @@ def obter_proxima_rodada():
         return pd.DataFrame()
 
 def gerar_analise(df_treino, df_prever):
-    print("--- 2. CÉREBRO PREDITIVO E EXTRATOR DE HISTÓRICO ---")
+    print("--- 3. CÉREBRO PREDITIVO E EXTRATOR DE HISTÓRICO ---")
     
     df_treino = df_treino.dropna(subset=['Gols_Mandante', 'Gols_Visitante']).copy()
 
@@ -108,10 +170,10 @@ def gerar_analise(df_treino, df_prever):
     times_conhecidos = stats['Time'].unique().tolist()
     
     previsoes = []
-    tabela_historico = [] # Lista para armazenar a tabela secundária
-    times_processados = set() # Para não extrair o histórico do mesmo time duas vezes
+    tabela_historico = []
+    times_processados = set()
 
-    print("--- 3. CALCULANDO PROBABILIDADES ---")
+    print("--- 4. CALCULANDO PROBABILIDADES ---")
     for idx, row in df_prever.iterrows():
         try:
             home_original = str(row['Mandante']).strip()
@@ -129,9 +191,6 @@ def gerar_analise(df_treino, df_prever):
             if d_home.empty or d_away.empty: 
                 continue
 
-            # -------------------------------------------------------------
-            # NOVIDADE: GERADOR DA TABELA SECUNDÁRIA (HISTÓRICO)
-            # -------------------------------------------------------------
             for time_foco in [home, away]:
                 if time_foco not in times_processados:
                     jogos_time = df_treino[(df_treino['Mandante'] == time_foco) | (df_treino['Visitante'] == time_foco)].sort_values('Data', ascending=False).head(10)
@@ -142,7 +201,7 @@ def gerar_analise(df_treino, df_prever):
                         mando = 'Casa' if jogo['Mandante'] == time_foco else 'Fora'
                         
                         tabela_historico.append({
-                            'Time_Foco': time_foco, # Esta é a coluna que você vai relacionar no Power BI!
+                            'Time_Foco': time_foco,
                             'Data_Jogo': jogo['Data'],
                             'Mando': mando,
                             'Adversario': jogo['Visitante'] if mando == 'Casa' else jogo['Mandante'],
@@ -151,7 +210,6 @@ def gerar_analise(df_treino, df_prever):
                             'Bateu_Over_1_5': 'Sim' if total_gols > 1 else 'Não'
                         })
                     times_processados.add(time_foco)
-            # -------------------------------------------------------------
 
             lamb_home = d_home['Ataque_Casa'].values[0] * d_away['Defesa_Fora'].values[0] * m_liga_mand
             lamb_away = d_away['Ataque_Fora'].values[0] * d_home['Defesa_Casa'].values[0] * m_liga_visit
@@ -186,7 +244,6 @@ def gerar_analise(df_treino, df_prever):
     return pd.DataFrame(previsoes), pd.DataFrame(tabela_historico)
 
 def salvar_no_github(repo, nome_arquivo, df_dados, mensagem):
-    """Função auxiliar para salvar arquivos no GitHub limpo"""
     csv_string = df_dados.to_csv(index=False)
     try:
         try:
@@ -211,16 +268,24 @@ def main():
     print("--- LENDO HISTÓRICO ---")
     try:
         conteudo = repo.get_contents(ARQUIVO_JOGOS)
-        df_historico = pd.read_csv(StringIO(conteudo.decoded_content.decode('utf-8')))
+        df_historico_base = pd.read_csv(StringIO(conteudo.decoded_content.decode('utf-8')))
         print("Base carregada com sucesso!")
     except Exception as e:
         print(f"Erro ao ler CSV do GitHub: {e}")
         return
 
+    # Passo 1: Atualiza a base de dados com os jogos de Jan/Fev/Mar
+    df_historico_atualizado = atualizar_historico(df_historico_base)
+    
+    # Salva a base atualizada de volta no GitHub para não perder os dados
+    if len(df_historico_atualizado) > len(df_historico_base):
+        salvar_no_github(repo, ARQUIVO_JOGOS, df_historico_atualizado, "Historico de Jogos Realizados")
+
+    # Passo 2 e 3: Busca os do futuro e prevê
     df_novos = obter_proxima_rodada()
     
     if not df_novos.empty:
-        df_analise, df_hist_recente = gerar_analise(df_historico, df_novos)
+        df_analise, df_hist_recente = gerar_analise(df_historico_atualizado, df_novos)
         
         if not df_analise.empty:
             salvar_no_github(repo, ARQUIVO_PREVISOES, df_analise, "Previsoes")
