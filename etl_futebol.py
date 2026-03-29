@@ -27,7 +27,7 @@ def atualizar_historico(df_historico_atual):
     try:
         r = requests.get(url, headers=headers)
         # O FBref esconde algumas tabelas em comentários HTML, essa função do Pandas é poderosa
-        dfs = pd.read_html(StringIO(r.text))
+        dfs = pd.read_html(StringIO(r.text), flavor='lxml')
         
         jogos_novos = []
         for df in dfs:
