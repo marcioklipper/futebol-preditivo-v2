@@ -7,6 +7,7 @@ import requests
 from scipy.stats import poisson
 import difflib
 from datetime import datetime, timedelta
+import html5lib
 
 # --- CONFIGURAÇÕES ---
 GITHUB_TOKEN = os.getenv('GH_TOKEN')
@@ -15,71 +16,76 @@ ARQUIVO_JOGOS = "historico_jogos.csv"
 ARQUIVO_PREVISOES = "analise_preditiva.csv"
 ARQUIVO_HIST_RECENTE = "historico_10j_times.csv"
 
-# --- 1. A NOVA FUNÇÃO QUE ALIMENTA A BASE DE DADOS ---
+# --- 1. ATUALIZADOR INFALÍVEL (FBREF) ---
 def atualizar_historico(df_historico_atual):
-    print("--- 1. BUSCANDO RESULTADOS RECENTES PARA ATUALIZAR A BASE ---")
+    print("--- 1. BUSCANDO RESULTADOS PASSADOS (FBREF) ---")
     
-    # Olha para os últimos 30 dias para pegar os jogos que já aconteceram
-    hoje = datetime.now()
-    passado = hoje - timedelta(days=30)
-    data_inicio = passado.strftime('%Y%m%d')
-    data_fim = hoje.strftime('%Y%m%d')
-    
-    url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates={data_inicio}-{data_fim}"
+    # URL da tabela completa da temporada atual da Bundesliga no FBref
+    url = "https://fbref.com/en/comps/20/schedule/Bundesliga-Scores-and-Fixtures"
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
     
     try:
-        r = requests.get(url, timeout=15)
-        dados = r.json()
+        r = requests.get(url, headers=headers)
+        # O FBref esconde algumas tabelas em comentários HTML, essa função do Pandas é poderosa
+        dfs = pd.read_html(StringIO(r.text))
         
         jogos_novos = []
-        for evento in dados.get('events', []):
-            comp = evento['competitions'][0]
-            status = comp['status']['type']['state']
-            
-            # Filtra APENAS jogos que já acabaram ('post')
-            if status == 'post':
-                data_jogo = evento['date'][:10]
-                times = comp['competitors']
+        for df in dfs:
+            if 'Home' in df.columns and 'Away' in df.columns and 'Score' in df.columns:
+                # Remove linhas de divisória/cabeçalho da tabela
+                df = df.dropna(subset=['Home', 'Away', 'Date'])
                 
-                time_casa = next(t for t in times if t['homeAway'] == 'home')
-                time_fora = next(t for t in times if t['homeAway'] == 'away')
+                # Filtra apenas jogos que já têm um placar preenchido (que já aconteceram)
+                df_encerrados = df[df['Score'].notna() & (df['Score'] != '')].copy()
                 
-                mandante = time_casa['team']['displayName']
-                visitante = time_fora['team']['displayName']
-                gols_mandante = time_casa.get('score', 0)
-                gols_visitante = time_fora.get('score', 0)
+                for _, row in df_encerrados.iterrows():
+                    try:
+                        data_jogo = str(row['Date'])
+                        mandante = str(row['Home'])
+                        visitante = str(row['Away'])
+                        placar = str(row['Score'])
+                        
+                        # O placar vem no formato "2–1" (pode usar um traço diferente, por isso a limpeza)
+                        placar = placar.replace('–', '-').replace('—', '-')
+                        partes = placar.split('-')
+                        
+                        if len(partes) == 2:
+                            gm = int(partes[0].strip())
+                            gv = int(partes[1].strip())
+                            
+                            jogos_novos.append({
+                                'Data': data_jogo,
+                                'Mandante': mandante,
+                                'Visitante': visitante,
+                                'Liga': 'Bundesliga',
+                                'Gols_Mandante': gm,
+                                'Gols_Visitante': gv
+                            })
+                    except Exception as e:
+                        pass # Ignora linhas mal formatadas
                 
-                jogos_novos.append({
-                    'Data': data_jogo,
-                    'Mandante': mandante,
-                    'Visitante': visitante,
-                    'Liga': 'Bundesliga',
-                    'Gols_Mandante': int(gols_mandante),
-                    'Gols_Visitante': int(gols_visitante)
-                })
+                break # Achou a tabela principal, pode parar o loop
         
         df_novos = pd.DataFrame(jogos_novos)
         
         if not df_novos.empty:
-            # Junta o histórico velho com os jogos novos
             df_atualizado = pd.concat([df_historico_atual, df_novos], ignore_index=True)
-            # Remove duplicatas caso o jogo já esteja na base (olhando para Data, Mandante e Visitante)
+            # Remove duplicatas. O pulo do gato: mantém os dados do FBref (que são mais limpos) caso haja conflito.
             df_atualizado = df_atualizado.drop_duplicates(subset=['Data', 'Mandante', 'Visitante'], keep='last')
             
             jogos_adicionados = len(df_atualizado) - len(df_historico_atual)
-            print(f"Base atualizada! Foram adicionados {jogos_adicionados} jogos recentes.")
+            print(f"Base atualizada com sucesso pelo FBref! Foram adicionados/corrigidos {jogos_adicionados} jogos.")
             return df_atualizado
         else:
-            print("Nenhum jogo recente encontrado para adicionar.")
+            print("Nenhum jogo novo encontrado para adicionar.")
             return df_historico_atual
             
     except Exception as e:
-        print(f"Erro ao buscar resultados passados: {e}")
+        print(f"Erro ao buscar resultados passados no FBref: {e}")
         return df_historico_atual
 
 def obter_proxima_rodada():
     print("--- 2. BUSCANDO PRÓXIMOS JOGOS (ESPN API 30 DIAS) ---")
-    
     hoje = datetime.now()
     futuro = hoje + timedelta(days=30)
     data_inicio = hoje.strftime('%Y%m%d')
@@ -90,25 +96,16 @@ def obter_proxima_rodada():
     try:
         r = requests.get(url, timeout=15)
         dados = r.json()
-        
         jogos = []
         for evento in dados.get('events', []):
             comp = evento['competitions'][0]
             status = comp['status']['type']['state']
-            
             if status == 'pre':
                 data_jogo = evento['date'][:10]
                 times = comp['competitors']
-                
                 mandante = next(t['team']['displayName'] for t in times if t['homeAway'] == 'home')
                 visitante = next(t['team']['displayName'] for t in times if t['homeAway'] == 'away')
-                
-                jogos.append({
-                    'Data': data_jogo,
-                    'Mandante': mandante,
-                    'Visitante': visitante,
-                    'Liga': 'Bundesliga'
-                })
+                jogos.append({'Data': data_jogo, 'Mandante': mandante, 'Visitante': visitante, 'Liga': 'Bundesliga'})
         
         df_futuros = pd.DataFrame(jogos)
         if not df_futuros.empty:
@@ -118,39 +115,23 @@ def obter_proxima_rodada():
         else:
             print("Aviso: A API não retornou jogos para os próximos 30 dias.")
             return pd.DataFrame()
-            
     except Exception as e:
         print(f"Erro ao conectar na API da ESPN: {e}")
         return pd.DataFrame()
 
 def gerar_analise(df_treino, df_prever):
     print("--- 3. CÉREBRO PREDITIVO E EXTRATOR DE HISTÓRICO ---")
-    
     df_treino = df_treino.dropna(subset=['Gols_Mandante', 'Gols_Visitante']).copy()
-
-    if df_treino.empty or df_prever.empty:
-        return pd.DataFrame(), pd.DataFrame()
-
+    if df_treino.empty or df_prever.empty: return pd.DataFrame(), pd.DataFrame()
     print(f"Treinando o modelo com {len(df_treino)} jogos passados válidos...")
 
     df_treino['Total_Gols'] = df_treino['Gols_Mandante'] + df_treino['Gols_Visitante']
     df_treino['Over15'] = np.where(df_treino['Total_Gols'] > 1.5, 1, 0)
-
     m_liga_mand = df_treino['Gols_Mandante'].mean()
     m_liga_visit = df_treino['Gols_Visitante'].mean()
 
-    stats_casa = df_treino.groupby('Mandante').agg(
-        Media_Feitos_Casa=('Gols_Mandante', 'mean'),
-        Media_Sofridos_Casa=('Gols_Visitante', 'mean'),
-        Taxa_Over_Casa=('Over15', 'mean')
-    ).reset_index().rename(columns={'Mandante': 'Time'})
-
-    stats_fora = df_treino.groupby('Visitante').agg(
-        Media_Feitos_Fora=('Gols_Visitante', 'mean'),
-        Media_Sofridos_Fora=('Gols_Mandante', 'mean'),
-        Taxa_Over_Fora=('Over15', 'mean')
-    ).reset_index().rename(columns={'Visitante': 'Time'})
-
+    stats_casa = df_treino.groupby('Mandante').agg(Media_Feitos_Casa=('Gols_Mandante', 'mean'), Media_Sofridos_Casa=('Gols_Visitante', 'mean'), Taxa_Over_Casa=('Over15', 'mean')).reset_index().rename(columns={'Mandante': 'Time'})
+    stats_fora = df_treino.groupby('Visitante').agg(Media_Feitos_Fora=('Gols_Visitante', 'mean'), Media_Sofridos_Fora=('Gols_Mandante', 'mean'), Taxa_Over_Fora=('Over15', 'mean')).reset_index().rename(columns={'Visitante': 'Time'})
     stats = pd.merge(stats_casa, stats_fora, on='Time', how='outer').fillna(0)
     
     def calcular_fator_forma(time):
@@ -161,14 +142,12 @@ def gerar_analise(df_treino, df_prever):
         return (taxa_recente / taxa_historica) if taxa_historica > 0 else 1.0
 
     stats['Fator_10_Jogos'] = stats['Time'].apply(calcular_fator_forma)
-
     stats['Ataque_Casa'] = stats['Media_Feitos_Casa'] / m_liga_mand
     stats['Defesa_Casa'] = stats['Media_Sofridos_Casa'] / m_liga_visit
     stats['Ataque_Fora'] = stats['Media_Feitos_Fora'] / m_liga_visit
     stats['Defesa_Fora'] = stats['Media_Sofridos_Fora'] / m_liga_mand
 
     times_conhecidos = stats['Time'].unique().tolist()
-    
     previsoes = []
     tabela_historico = []
     times_processados = set()
@@ -187,9 +166,7 @@ def gerar_analise(df_treino, df_prever):
 
             d_home = stats[stats['Time'] == home]
             d_away = stats[stats['Time'] == away]
-            
-            if d_home.empty or d_away.empty: 
-                continue
+            if d_home.empty or d_away.empty: continue
 
             for time_foco in [home, away]:
                 if time_foco not in times_processados:
@@ -199,7 +176,6 @@ def gerar_analise(df_treino, df_prever):
                         gv = int(jogo['Gols_Visitante'])
                         total_gols = gm + gv
                         mando = 'Casa' if jogo['Mandante'] == time_foco else 'Fora'
-                        
                         tabela_historico.append({
                             'Time_Foco': time_foco,
                             'Data_Jogo': jogo['Data'],
@@ -213,12 +189,8 @@ def gerar_analise(df_treino, df_prever):
 
             lamb_home = d_home['Ataque_Casa'].values[0] * d_away['Defesa_Fora'].values[0] * m_liga_mand
             lamb_away = d_away['Ataque_Fora'].values[0] * d_home['Defesa_Casa'].values[0] * m_liga_visit
-            
-            prob_under = (poisson.pmf(0, lamb_home)*poisson.pmf(0, lamb_away)) + \
-                         (poisson.pmf(1, lamb_home)*poisson.pmf(0, lamb_away)) + \
-                         (poisson.pmf(0, lamb_home)*poisson.pmf(1, lamb_away))
+            prob_under = (poisson.pmf(0, lamb_home)*poisson.pmf(0, lamb_away)) + (poisson.pmf(1, lamb_home)*poisson.pmf(0, lamb_away)) + (poisson.pmf(0, lamb_home)*poisson.pmf(1, lamb_away))
             prob_over_pura = (1 - prob_under) * 100
-
             fator_h = d_home['Fator_10_Jogos'].values[0]
             fator_a = d_away['Fator_10_Jogos'].values[0]
             fator_combinado = (fator_h + fator_a) / 2
@@ -226,21 +198,14 @@ def gerar_analise(df_treino, df_prever):
             prob_final = min(max(prob_ajustada, 5.0), 95.0) 
 
             previsoes.append({
-                'Data': row['Data'],
-                'Liga': row['Liga'],
-                'Mandante': home,
-                'Visitante': away,
-                'xG_Mandante': round(lamb_home, 2),
-                'xG_Visitante': round(lamb_away, 2),
+                'Data': row['Data'], 'Liga': row['Liga'], 'Mandante': home, 'Visitante': away,
+                'xG_Mandante': round(lamb_home, 2), 'xG_Visitante': round(lamb_away, 2),
                 'Media_Gols_Esperada': round(lamb_home + lamb_away, 2),
-                'Prob_Poisson_Pura': round(prob_over_pura, 1),
-                'Fator_Forma_10j': round(fator_combinado, 2),
+                'Prob_Poisson_Pura': round(prob_over_pura, 1), 'Fator_Forma_10j': round(fator_combinado, 2),
                 'Prob_Over_Final': round(prob_final, 1)
             })
             print(f"✅ Gerado Previsão + Histórico: {home} vs {away}")
-        except Exception as e: 
-            continue
-
+        except Exception as e: continue
     return pd.DataFrame(previsoes), pd.DataFrame(tabela_historico)
 
 def salvar_no_github(repo, nome_arquivo, df_dados, mensagem):
@@ -253,14 +218,10 @@ def salvar_no_github(repo, nome_arquivo, df_dados, mensagem):
         except:
             repo.create_file(nome_arquivo, f"Create {mensagem}", csv_string)
             print(f"SUCESSO: {nome_arquivo} Criado!")
-    except Exception as e:
-        print(f"Erro ao salvar {nome_arquivo}: {e}")
+    except Exception as e: print(f"Erro ao salvar {nome_arquivo}: {e}")
 
 def main():
-    if not GITHUB_TOKEN:
-        print("Erro: GITHUB_TOKEN não encontrado.")
-        return
-        
+    if not GITHUB_TOKEN: return
     auth = Auth.Token(GITHUB_TOKEN)
     g = Github(auth=auth)
     repo = g.get_repo(NOME_REPO)
@@ -270,30 +231,22 @@ def main():
         conteudo = repo.get_contents(ARQUIVO_JOGOS)
         df_historico_base = pd.read_csv(StringIO(conteudo.decoded_content.decode('utf-8')))
         print("Base carregada com sucesso!")
-    except Exception as e:
-        print(f"Erro ao ler CSV do GitHub: {e}")
-        return
+    except Exception as e: return
 
-    # Passo 1: Atualiza a base de dados com os jogos de Jan/Fev/Mar
     df_historico_atualizado = atualizar_historico(df_historico_base)
     
-    # Salva a base atualizada de volta no GitHub para não perder os dados
     if len(df_historico_atualizado) > len(df_historico_base):
         salvar_no_github(repo, ARQUIVO_JOGOS, df_historico_atualizado, "Historico de Jogos Realizados")
 
-    # Passo 2 e 3: Busca os do futuro e prevê
     df_novos = obter_proxima_rodada()
     
     if not df_novos.empty:
         df_analise, df_hist_recente = gerar_analise(df_historico_atualizado, df_novos)
-        
         if not df_analise.empty:
             salvar_no_github(repo, ARQUIVO_PREVISOES, df_analise, "Previsoes")
             salvar_no_github(repo, ARQUIVO_HIST_RECENTE, df_hist_recente, "Historico Detalhado")
-        else:
-            print("Aviso: Falha ao gerar tabelas.")
-    else:
-        print("Aviso: Sem jogos futuros para prever hoje.")
+        else: print("Aviso: Falha ao gerar tabelas.")
+    else: print("Aviso: Sem jogos futuros para prever hoje.")
 
 if __name__ == "__main__":
     main()
