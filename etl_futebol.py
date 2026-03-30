@@ -16,36 +16,44 @@ ARQUIVO_JOGOS = "historico_jogos.csv"
 ARQUIVO_PREVISOES = "analise_preditiva.csv"
 ARQUIVO_HIST_RECENTE = "historico_10j_times.csv"
 
+# --- DICIONÁRIO GLOBAL DE PADRONIZAÇÃO ---
+MAPA_TIMES = {
+    "Leverkusen": "Bayer Leverkusen",
+    "Bayer 04 Leverkusen": "Bayer Leverkusen",
+    "M'Gladbach": "Borussia Monchengladbach",
+    "Mönchengladbach": "Borussia Monchengladbach",
+    "Ein Frankfurt": "Eintracht Frankfurt",
+    "Stuttgart": "VfB Stuttgart",
+    "Wolfsburg": "VfL Wolfsburg",
+    "Bochum": "VfL Bochum",
+    "Heidenheim": "FC Heidenheim",
+    "1. FC Heidenheim 1846": "FC Heidenheim",
+    "Darmstadt 98": "SV Darmstadt 98",
+    "Köln": "FC Cologne",
+    "1. FC Köln": "FC Cologne",
+    "Bayern Munich": "Bayern Munich",
+    "Dortmund": "Borussia Dortmund",
+    "RB Leipzig": "RB Leipzig",
+    "Freiburg": "SC Freiburg",
+    "Hoffenheim": "TSG Hoffenheim",
+    "Werder Bremen": "Werder Bremen",
+    "Augsburg": "FC Augsburg",
+    "Union Berlin": "Union Berlin",
+    "Mainz 05": "FSV Mainz 05",
+    "1. FSV Mainz 05": "FSV Mainz 05"
+}
+
+def padronizar_base(df):
+    """Passa o pente fino corrigindo todos os nomes antigos do CSV para o padrão novo"""
+    df['Mandante'] = df['Mandante'].replace(MAPA_TIMES)
+    df['Visitante'] = df['Visitante'].replace(MAPA_TIMES)
+    return df
+
 # --- 1. ATUALIZADOR INFALÍVEL (FBREF) ---
 def atualizar_historico(df_historico_atual):
     print("--- 1. BUSCANDO RESULTADOS PASSADOS (FBREF) ---")
     
-    # Nomes oficiais que já existem na sua base
     times_oficiais = pd.concat([df_historico_atual['Mandante'], df_historico_atual['Visitante']]).dropna().unique().tolist()
-    
-    # --- O DICIONÁRIO DE EXCEÇÕES (A SALVAÇÃO DOS BURACOS) ---
-    mapa_times = {
-        "Leverkusen": "Bayer Leverkusen",
-        "Bayer 04 Leverkusen": "Bayer Leverkusen",
-        "M'Gladbach": "Borussia Monchengladbach",
-        "Mönchengladbach": "Borussia Monchengladbach",
-        "Ein Frankfurt": "Eintracht Frankfurt",
-        "Stuttgart": "VfB Stuttgart",
-        "Wolfsburg": "VfL Wolfsburg",
-        "Bochum": "VfL Bochum",
-        "Heidenheim": "FC Heidenheim",
-        "Darmstadt 98": "SV Darmstadt 98",
-        "Köln": "FC Cologne", # Ajuste para "FC Koln" se for assim na sua base
-        "Bayern Munich": "Bayern Munich",
-        "Dortmund": "Borussia Dortmund",
-        "RB Leipzig": "RB Leipzig",
-        "Freiburg": "SC Freiburg",
-        "Hoffenheim": "TSG Hoffenheim",
-        "Werder Bremen": "Werder Bremen",
-        "Augsburg": "FC Augsburg",
-        "Union Berlin": "Union Berlin",
-        "Mainz 05": "FSV Mainz 05"
-    }
     
     url = "https://fbref.com/en/comps/20/schedule/Bundesliga-Scores-and-Fixtures"
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
@@ -67,11 +75,9 @@ def atualizar_historico(df_historico_atual):
                         visitante_fbref = str(row['Away'])
                         placar = str(row['Score'])
                         
-                        # PASSO 1: Tradução Manual (Blindada)
-                        mandante_oficial = mapa_times.get(mandante_fbref, mandante_fbref)
-                        visitante_oficial = mapa_times.get(visitante_fbref, visitante_fbref)
+                        mandante_oficial = MAPA_TIMES.get(mandante_fbref, mandante_fbref)
+                        visitante_oficial = MAPA_TIMES.get(visitante_fbref, visitante_fbref)
                         
-                        # PASSO 2: Tradução Automática (Backup)
                         if mandante_oficial not in times_oficiais:
                             match_m = difflib.get_close_matches(mandante_oficial, times_oficiais, n=1, cutoff=0.45)
                             if match_m: mandante_oficial = match_m[0]
@@ -104,7 +110,6 @@ def atualizar_historico(df_historico_atual):
         
         if not df_novos.empty:
             df_atualizado = pd.concat([df_historico_atual, df_novos], ignore_index=True)
-            # Remove duplicatas mantendo a versão mais nova (do FBref se houver conflito de data igual)
             df_atualizado = df_atualizado.drop_duplicates(subset=['Data', 'Mandante', 'Visitante'], keep='last')
             
             jogos_adicionados = len(df_atualizado) - len(df_historico_atual)
@@ -157,8 +162,6 @@ def gerar_analise(df_treino, df_prever):
     print("--- 3. CÉREBRO PREDITIVO E EXTRATOR DE HISTÓRICO ---")
     df_treino = df_treino.dropna(subset=['Gols_Mandante', 'Gols_Visitante']).copy()
     
-    # --- A MÁGICA DA PADRONIZAÇÃO DE DATAS ---
-    # Garante que 17/01/2026 e 2026-03-07 fiquem no mesmo formato cronológico para o sort_values funcionar
     df_treino['Data'] = pd.to_datetime(df_treino['Data'], format='mixed', dayfirst=True).dt.strftime('%Y-%m-%d')
     
     if df_treino.empty or df_prever.empty: return pd.DataFrame(), pd.DataFrame()
@@ -197,7 +200,6 @@ def gerar_analise(df_treino, df_prever):
             home_original = str(row['Mandante']).strip()
             away_original = str(row['Visitante']).strip()
             
-            # Traduz os nomes da ESPN para a sua Base
             match_home = difflib.get_close_matches(home_original, times_conhecidos, n=1, cutoff=0.45)
             match_away = difflib.get_close_matches(away_original, times_conhecidos, n=1, cutoff=0.45)
             
@@ -208,7 +210,6 @@ def gerar_analise(df_treino, df_prever):
             d_away = stats[stats['Time'] == away]
             if d_home.empty or d_away.empty: continue
 
-            # --- EXTRAÇÃO DOS 10 JOGOS OFICIAIS ---
             for time_foco in [home, away]:
                 if time_foco not in times_processados:
                     jogos_time = df_treino[(df_treino['Mandante'] == time_foco) | (df_treino['Visitante'] == time_foco)].sort_values('Data', ascending=False).head(10)
@@ -250,7 +251,6 @@ def gerar_analise(df_treino, df_prever):
         except Exception as e: continue
     return pd.DataFrame(previsoes), pd.DataFrame(tabela_historico)
 
-# --- SISTEMA DE SALVAMENTO ANTI-ERRO 409 ---
 def salvar_no_github(repo, nome_arquivo, df_dados, mensagem):
     csv_string = df_dados.to_csv(index=False)
     try:
@@ -270,7 +270,6 @@ def salvar_no_github(repo, nome_arquivo, df_dados, mensagem):
     except Exception as e: 
         print(f"Erro Crítico ao salvar {nome_arquivo}: {e}")
 
-# --- MESTRE DE ORQUESTRAÇÃO ---
 def main():
     if not GITHUB_TOKEN:
         print("Erro Crítico: GITHUB_TOKEN não configurado no Secrets do repositório.")
@@ -285,25 +284,27 @@ def main():
         conteudo = repo.get_contents(ARQUIVO_JOGOS)
         df_historico_base = pd.read_csv(StringIO(conteudo.decoded_content.decode('utf-8')))
         print("Base principal carregada com sucesso!")
+        
+        # --- A GRANDE CORREÇÃO: Limpa o passado para bater com o presente ---
+        df_historico_base = padronizar_base(df_historico_base)
+        
     except Exception as e: 
         print(f"Falha ao ler o histórico base. Abortando. Erro: {e}")
         return
 
-    # Passo 1: Busca o passado
     df_historico_atualizado = atualizar_historico(df_historico_base)
     
-    if len(df_historico_atualizado) > len(df_historico_base):
-        salvar_no_github(repo, ARQUIVO_JOGOS, df_historico_atualizado, "Historico de Jogos Realizados")
+    # Salva a base corrigida e atualizada de volta na nuvem
+    if len(df_historico_atualizado) > len(df_historico_base) or not df_historico_base.equals(df_historico_atualizado):
+        salvar_no_github(repo, ARQUIVO_JOGOS, df_historico_atualizado, "Historico de Jogos Realizados (Nomes Padronizados)")
 
-    # Passo 2: Busca o futuro
     df_novos = obter_proxima_rodada()
     
-    # Passo 3: Gera as tabelas e salva na nuvem
     if not df_novos.empty:
         df_analise, df_hist_recente = gerar_analise(df_historico_atualizado, df_novos)
         if not df_analise.empty:
             salvar_no_github(repo, ARQUIVO_PREVISOES, df_analise, "Previsoes")
-            salvar_no_github(repo, ARQUIVO_HIST_RECENTE, df_hist_recente, "Historico Detalhado")
+            salvar_no_github(repo, ARQUIVO_HIST_RECENTE, df_hist_recente, "Historico Detalhado 10 Jogos")
         else: print("Aviso: Falha matemática ao gerar as tabelas de previsão.")
     else: print("Aviso: Sem jogos mapeados no futuro para prever hoje.")
 
