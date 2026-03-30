@@ -59,11 +59,13 @@ def limpar_datas_e_nomes(df):
     
     return df
 
-# --- 1. ATUALIZADOR INFALÍVEL (FBREF) ---
 def atualizar_historico(df_historico_atual):
     print("--- 1. BUSCANDO RESULTADOS NO FBREF ---")
     url = "https://fbref.com/en/comps/20/schedule/Bundesliga-Scores-and-Fixtures"
     headers = {'User-Agent': 'Mozilla/5.0'}
+    
+    # Pega a data de hoje no formato do banco de dados para a trava temporal
+    hoje_str = datetime.now().strftime('%Y-%m-%d')
     
     try:
         r = requests.get(url, headers=headers)
@@ -72,29 +74,59 @@ def atualizar_historico(df_historico_atual):
         
         for df in dfs:
             if 'Home' in df.columns and 'Score' in df.columns:
-                df = df.dropna(subset=['Home', 'Away', 'Score'])
+                df = df.dropna(subset=['Home', 'Away', 'Score', 'Date'])
+                
                 for _, row in df.iterrows():
-                    placar = str(row['Score']).replace('–', '-').split('-')
-                    if len(placar) == 2:
-                        df_fbref = pd.concat([df_fbref, pd.DataFrame([{
-                            'Data': str(row['Date']),
-                            'Mandante': str(row['Home']),
-                            'Visitante': str(row['Away']),
-                            'Liga': 'Bundesliga',
-                            'Gols_Mandante': int(placar[0].strip()),
-                            'Gols_Visitante': int(placar[1].strip())
-                        }])])
+                    try:
+                        data_jogo_bruta = str(row['Date'])
+                        # Converte a data do site para um formato comparável
+                        data_jogo_formatada = pd.to_datetime(data_jogo_bruta).strftime('%Y-%m-%d')
+                        
+                        # --- A TRAVA TEMPORAL (O ESCUDO CONTRA O FUTURO) ---
+                        # Se o jogo for de amanhã em diante, pula imediatamente!
+                        if data_jogo_formatada > hoje_str:
+                            continue
+                            
+                        placar_str = str(row['Score']).strip()
+                        # Segunda trava de segurança: Garante que tem um número real no placar
+                        if not placar_str or placar_str == 'nan' or '-' not in placar_str.replace('–', '-'):
+                            continue
+                            
+                        placar = placar_str.replace('–', '-').split('-')
+                        
+                        if len(placar) == 2:
+                            gm_str = ''.join(filter(str.isdigit, placar[0]))
+                            gv_str = ''.join(filter(str.isdigit, placar[1]))
+                            
+                            if gm_str and gv_str: # Só adiciona se sobrou número no placar
+                                df_fbref = pd.concat([df_fbref, pd.DataFrame([{
+                                    'Data': data_jogo_formatada,
+                                    'Mandante': str(row['Home']),
+                                    'Visitante': str(row['Away']),
+                                    'Liga': 'Bundesliga',
+                                    'Gols_Mandante': int(gm_str),
+                                    'Gols_Visitante': int(gv_str)
+                                }])])
+                    except Exception as e:
+                        pass # Ignora erros em linhas específicas e segue
                 break
 
-        # LIMPEZA CRUCIAL: Limpa as duas bases ANTES de juntar
-        df_fbref = limpar_datas_e_nomes(df_fbref)
+        # Limpeza Crucial e Remoção de Duplicatas
+        if not df_fbref.empty:
+            df_fbref = limpar_datas_e_nomes(df_fbref)
+            
         df_historico_atual = limpar_datas_e_nomes(df_historico_atual)
         
-        # Junta tudo e remove as duplicatas com precisão cirúrgica
-        df_final = pd.concat([df_historico_atual, df_fbref], ignore_index=True)
+        # O segredo aqui: Ao concatenar, o histórico atual fica por último
+        # Se houver conflito, o robô mantém a versão que já estava limpa na sua base
+        df_final = pd.concat([df_fbref, df_historico_atual], ignore_index=True)
         df_final = df_final.drop_duplicates(subset=['Data', 'Mandante', 'Visitante'], keep='last')
         
-        print(f"Base atualizada com sucesso! Total de {len(df_final)} jogos únicos.")
+        # --- A GRANDE FAXINA (REMOVE O LIXO DO FUTURO QUE JÁ ENTROU NA SUA BASE) ---
+        # Como as datas falsas já entraram no seu CSV nas rodadas anteriores, nós precisamos removê-las!
+        df_final = df_final[df_final['Data'] <= hoje_str]
+        
+        print(f"Base atualizada com sucesso! Total de {len(df_final)} jogos únicos reais.")
         return df_final
         
     except Exception as e:
