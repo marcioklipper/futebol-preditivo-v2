@@ -5,6 +5,7 @@ from github import Github, Auth
 from io import StringIO
 import requests
 from scipy.stats import poisson
+import difflib
 from datetime import datetime, timedelta
 
 # --- CONFIGURAÇÕES ---
@@ -47,25 +48,33 @@ MAPA_TIMES = {
 }
 
 def limpar_datas_e_nomes(df):
-    """Padroniza datas e nomes ANTES de qualquer cálculo para evitar duplicatas invisíveis"""
+    """Padroniza nomes ANTES de qualquer cálculo para evitar duplicatas invisíveis"""
     if df.empty: return df
-    
-    # 1. Força a data a virar um objeto de tempo real (Ano-Mês-Dia)
-    df['Data'] = pd.to_datetime(df['Data'], format='mixed', dayfirst=True).dt.strftime('%Y-%m-%d')
-    
-    # 2. Traduz os nomes dos times para o padrão exato da base
     df['Mandante'] = df['Mandante'].replace(MAPA_TIMES)
     df['Visitante'] = df['Visitante'].replace(MAPA_TIMES)
-    
     return df
 
+def faxina_temporal(df):
+    """A GUILHOTINA: Converte tudo para data real, corta o futuro e devolve como texto limpo"""
+    if df.empty: return df
+    
+    # Converte para objeto de tempo (entende tanto 17/01/2026 quanto 2026-01-17)
+    df['Data_Temp'] = pd.to_datetime(df['Data'], format='mixed', dayfirst=True)
+    
+    # Corta fora qualquer linha onde a Data seja MAIOR que hoje
+    hoje = pd.to_datetime(datetime.now().strftime('%Y-%m-%d'))
+    df = df[df['Data_Temp'] <= hoje].copy()
+    
+    # Converte de volta para texto padrão (YYYY-MM-DD) e apaga a coluna temporária
+    df['Data'] = df['Data_Temp'].dt.strftime('%Y-%m-%d')
+    df = df.drop(columns=['Data_Temp'])
+    return df
+
+# --- 1. ATUALIZADOR INFALÍVEL (FBREF) ---
 def atualizar_historico(df_historico_atual):
     print("--- 1. BUSCANDO RESULTADOS NO FBREF ---")
     url = "https://fbref.com/en/comps/20/schedule/Bundesliga-Scores-and-Fixtures"
     headers = {'User-Agent': 'Mozilla/5.0'}
-    
-    # Pega a data de hoje no formato do banco de dados para a trava temporal
-    hoje_str = datetime.now().strftime('%Y-%m-%d')
     
     try:
         r = requests.get(url, headers=headers)
@@ -79,16 +88,9 @@ def atualizar_historico(df_historico_atual):
                 for _, row in df.iterrows():
                     try:
                         data_jogo_bruta = str(row['Date'])
-                        # Converte a data do site para um formato comparável
-                        data_jogo_formatada = pd.to_datetime(data_jogo_bruta).strftime('%Y-%m-%d')
-                        
-                        # --- A TRAVA TEMPORAL (O ESCUDO CONTRA O FUTURO) ---
-                        # Se o jogo for de amanhã em diante, pula imediatamente!
-                        if data_jogo_formatada > hoje_str:
-                            continue
-                            
                         placar_str = str(row['Score']).strip()
-                        # Segunda trava de segurança: Garante que tem um número real no placar
+                        
+                        # Trava primária: ignora se não tiver um traço no placar
                         if not placar_str or placar_str == 'nan' or '-' not in placar_str.replace('–', '-'):
                             continue
                             
@@ -98,9 +100,9 @@ def atualizar_historico(df_historico_atual):
                             gm_str = ''.join(filter(str.isdigit, placar[0]))
                             gv_str = ''.join(filter(str.isdigit, placar[1]))
                             
-                            if gm_str and gv_str: # Só adiciona se sobrou número no placar
+                            if gm_str and gv_str: 
                                 df_fbref = pd.concat([df_fbref, pd.DataFrame([{
-                                    'Data': data_jogo_formatada,
+                                    'Data': data_jogo_bruta,
                                     'Mandante': str(row['Home']),
                                     'Visitante': str(row['Away']),
                                     'Liga': 'Bundesliga',
@@ -108,25 +110,25 @@ def atualizar_historico(df_historico_atual):
                                     'Gols_Visitante': int(gv_str)
                                 }])])
                     except Exception as e:
-                        pass # Ignora erros em linhas específicas e segue
+                        pass
                 break
 
-        # Limpeza Crucial e Remoção de Duplicatas
+        # Limpeza Inicial de Nomes
         if not df_fbref.empty:
             df_fbref = limpar_datas_e_nomes(df_fbref)
             
         df_historico_atual = limpar_datas_e_nomes(df_historico_atual)
         
-        # O segredo aqui: Ao concatenar, o histórico atual fica por último
-        # Se houver conflito, o robô mantém a versão que já estava limpa na sua base
+        # Junta o passado com o presente
         df_final = pd.concat([df_fbref, df_historico_atual], ignore_index=True)
+        
+        # --- A FAXINA TEMPORAL (O Exterminador do Futuro) ---
+        df_final = faxina_temporal(df_final)
+        
+        # Remove duplicatas (agora que as datas estão no mesmo formato universal)
         df_final = df_final.drop_duplicates(subset=['Data', 'Mandante', 'Visitante'], keep='last')
         
-        # --- A GRANDE FAXINA (REMOVE O LIXO DO FUTURO QUE JÁ ENTROU NA SUA BASE) ---
-        # Como as datas falsas já entraram no seu CSV nas rodadas anteriores, nós precisamos removê-las!
-        df_final = df_final[df_final['Data'] <= hoje_str]
-        
-        print(f"Base atualizada com sucesso! Total de {len(df_final)} jogos únicos reais.")
+        print(f"Base atualizada com sucesso! Total de {len(df_final)} jogos reais confirmados.")
         return df_final
         
     except Exception as e:
@@ -159,6 +161,7 @@ def obter_proxima_rodada():
         df_futuros = pd.DataFrame(jogos)
         if not df_futuros.empty:
             df_futuros = limpar_datas_e_nomes(df_futuros)
+            df_futuros = faxina_temporal(df_futuros) # Formata a data bonitinho
             df_futuros = df_futuros.head(9)
             print(f"Encontrados {len(df_futuros)} próximos jogos!")
             return df_futuros
@@ -210,7 +213,6 @@ def gerar_analise(df_treino, df_prever):
             d_away = stats[stats['Time'] == away]
             if d_home.empty or d_away.empty: continue
 
-            # --- EXTRAÇÃO DOS 10 JOGOS OFICIAIS (Agora sem duplicatas) ---
             for time_foco in [home, away]:
                 if time_foco not in times_processados:
                     jogos_time = df_treino[(df_treino['Mandante'] == time_foco) | (df_treino['Visitante'] == time_foco)].sort_values('Data', ascending=False).head(10)
@@ -253,23 +255,19 @@ def gerar_analise(df_treino, df_prever):
         
     return pd.DataFrame(previsoes), pd.DataFrame(tabela_historico)
 
-# --- SISTEMA DE SALVAMENTO À PROVA DE FALHAS (CORREÇÃO DO ERRO 404) ---
 def salvar_no_github(repo, nome_arquivo, df_dados, mensagem):
     csv_string = df_dados.to_csv(index=False)
     try:
-        # Tenta pegar o arquivo se ele já existir na nuvem
         contents = repo.get_contents(nome_arquivo)
         repo.update_file(contents.path, f"Update {mensagem}", csv_string, contents.sha)
         print(f"SUCESSO: {nome_arquivo} Atualizado!")
     except Exception as e:
-        # Se falhar (ex: erro 404 Not Found porque você apagou), ele CRIA um novo automaticamente
         try:
             repo.create_file(nome_arquivo, f"Create {mensagem}", csv_string)
             print(f"SUCESSO: {nome_arquivo} Criado pela primeira vez!")
         except Exception as e_create:
             print(f"Erro Crítico ao criar {nome_arquivo}: {e_create}")
 
-# --- MESTRE DE ORQUESTRAÇÃO ---
 def main():
     if not GITHUB_TOKEN:
         print("Erro Crítico: GITHUB_TOKEN não configurado no Secrets do repositório.")
@@ -288,16 +286,12 @@ def main():
         print(f"Falha ao ler o histórico base. Abortando. Erro: {e}")
         return
 
-    # Passo 1: Busca o passado (Já limpando datas duplicadas)
     df_historico_atualizado = atualizar_historico(df_historico_base)
     
-    # Salva a base corrigida de volta na nuvem
-    salvar_no_github(repo, ARQUIVO_JOGOS, df_historico_atualizado, "Historico Padronizado")
+    salvar_no_github(repo, ARQUIVO_JOGOS, df_historico_atualizado, "Historico Exterminador do Futuro")
 
-    # Passo 2: Busca o futuro
     df_novos = obter_proxima_rodada()
     
-    # Passo 3: Gera as tabelas e salva na nuvem
     if not df_novos.empty:
         df_analise, df_hist_recente = gerar_analise(df_historico_atualizado, df_novos)
         
