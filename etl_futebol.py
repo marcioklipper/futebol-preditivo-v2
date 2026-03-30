@@ -20,6 +20,7 @@ ARQUIVO_HIST_RECENTE = "historico_10j_times.csv"
 def atualizar_historico(df_historico_atual):
     print("--- 1. BUSCANDO RESULTADOS PASSADOS (FBREF) ---")
     
+    # Cria um dicionário mental com os nomes OFICIAIS que já existem na sua base
     times_oficiais = pd.concat([df_historico_atual['Mandante'], df_historico_atual['Visitante']]).dropna().unique().tolist()
     
     url = "https://fbref.com/en/comps/20/schedule/Bundesliga-Scores-and-Fixtures"
@@ -42,6 +43,7 @@ def atualizar_historico(df_historico_atual):
                         visitante_fbref = str(row['Away'])
                         placar = str(row['Score'])
                         
+                        # Tradutor de times do FBref para o padrão da sua base
                         match_m = difflib.get_close_matches(mandante_fbref, times_oficiais, n=1, cutoff=0.45)
                         match_v = difflib.get_close_matches(visitante_fbref, times_oficiais, n=1, cutoff=0.45)
                         
@@ -72,6 +74,7 @@ def atualizar_historico(df_historico_atual):
         
         if not df_novos.empty:
             df_atualizado = pd.concat([df_historico_atual, df_novos], ignore_index=True)
+            # Remove duplicatas alinhando pelo nome traduzido
             df_atualizado = df_atualizado.drop_duplicates(subset=['Data', 'Mandante', 'Visitante'], keep='last')
             
             jogos_adicionados = len(df_atualizado) - len(df_historico_atual)
@@ -123,6 +126,11 @@ def obter_proxima_rodada():
 def gerar_analise(df_treino, df_prever):
     print("--- 3. CÉREBRO PREDITIVO E EXTRATOR DE HISTÓRICO ---")
     df_treino = df_treino.dropna(subset=['Gols_Mandante', 'Gols_Visitante']).copy()
+    
+    # --- A MÁGICA DA PADRONIZAÇÃO DE DATAS ---
+    # Alinha as datas (ex: 17/01/2026 e 2026-03-07) para o formato universal para cálculo perfeito dos 10 últimos
+    df_treino['Data'] = pd.to_datetime(df_treino['Data'], format='mixed', dayfirst=True).dt.strftime('%Y-%m-%d')
+    
     if df_treino.empty or df_prever.empty: return pd.DataFrame(), pd.DataFrame()
     print(f"Treinando o modelo com {len(df_treino)} jogos passados válidos...")
 
@@ -159,6 +167,7 @@ def gerar_analise(df_treino, df_prever):
             home_original = str(row['Mandante']).strip()
             away_original = str(row['Visitante']).strip()
             
+            # Traduz os nomes da ESPN para a sua Base
             match_home = difflib.get_close_matches(home_original, times_conhecidos, n=1, cutoff=0.45)
             match_away = difflib.get_close_matches(away_original, times_conhecidos, n=1, cutoff=0.45)
             
@@ -169,6 +178,7 @@ def gerar_analise(df_treino, df_prever):
             d_away = stats[stats['Time'] == away]
             if d_home.empty or d_away.empty: continue
 
+            # --- EXTRAÇÃO DOS 10 JOGOS OFICIAIS ---
             for time_foco in [home, away]:
                 if time_foco not in times_processados:
                     jogos_time = df_treino[(df_treino['Mandante'] == time_foco) | (df_treino['Visitante'] == time_foco)].sort_values('Data', ascending=False).head(10)
@@ -210,7 +220,7 @@ def gerar_analise(df_treino, df_prever):
         except Exception as e: continue
     return pd.DataFrame(previsoes), pd.DataFrame(tabela_historico)
 
-# --- AQUI ESTÁ A CORREÇÃO ANTI-ERRO 409 ---
+# --- SISTEMA DE SALVAMENTO ANTI-ERRO 409 ---
 def salvar_no_github(repo, nome_arquivo, df_dados, mensagem):
     csv_string = df_dados.to_csv(index=False)
     try:
@@ -223,15 +233,19 @@ def salvar_no_github(repo, nome_arquivo, df_dados, mensagem):
                  repo.create_file(nome_arquivo, f"Create {mensagem}", csv_string)
                  print(f"SUCESSO: {nome_arquivo} Criado!")
             else:
-                 print(f"Erro de Conflito (409) ao atualizar {nome_arquivo}. Tentando novamente... : {e_update}")
+                 print(f"Aviso de Conflito ao atualizar {nome_arquivo}. Tentando sobrescrever... : {e_update}")
                  contents_retry = repo.get_contents(nome_arquivo)
                  repo.update_file(contents_retry.path, f"Retry Update {mensagem}", csv_string, contents_retry.sha)
                  print(f"SUCESSO (Retry): {nome_arquivo} Atualizado!")
     except Exception as e: 
         print(f"Erro Crítico ao salvar {nome_arquivo}: {e}")
 
+# --- MESTRE DE ORQUESTRAÇÃO ---
 def main():
-    if not GITHUB_TOKEN: return
+    if not GITHUB_TOKEN:
+        print("Erro Crítico: GITHUB_TOKEN não configurado no Secrets do repositório.")
+        return
+        
     auth = Auth.Token(GITHUB_TOKEN)
     g = Github(auth=auth)
     repo = g.get_repo(NOME_REPO)
@@ -240,23 +254,28 @@ def main():
     try:
         conteudo = repo.get_contents(ARQUIVO_JOGOS)
         df_historico_base = pd.read_csv(StringIO(conteudo.decoded_content.decode('utf-8')))
-        print("Base carregada com sucesso!")
-    except Exception as e: return
+        print("Base principal carregada com sucesso!")
+    except Exception as e: 
+        print(f"Falha ao ler o histórico base. Abortando. Erro: {e}")
+        return
 
+    # Passo 1: Busca o passado
     df_historico_atualizado = atualizar_historico(df_historico_base)
     
     if len(df_historico_atualizado) > len(df_historico_base):
         salvar_no_github(repo, ARQUIVO_JOGOS, df_historico_atualizado, "Historico de Jogos Realizados")
 
+    # Passo 2: Busca o futuro
     df_novos = obter_proxima_rodada()
     
+    # Passo 3: Gera as tabelas e salva na nuvem
     if not df_novos.empty:
         df_analise, df_hist_recente = gerar_analise(df_historico_atualizado, df_novos)
         if not df_analise.empty:
             salvar_no_github(repo, ARQUIVO_PREVISOES, df_analise, "Previsoes")
             salvar_no_github(repo, ARQUIVO_HIST_RECENTE, df_hist_recente, "Historico Detalhado")
-        else: print("Aviso: Falha ao gerar tabelas.")
-    else: print("Aviso: Sem jogos futuros para prever hoje.")
+        else: print("Aviso: Falha matemática ao gerar as tabelas de previsão.")
+    else: print("Aviso: Sem jogos mapeados no futuro para prever hoje.")
 
 if __name__ == "__main__":
     main()
