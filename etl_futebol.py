@@ -20,8 +20,32 @@ ARQUIVO_HIST_RECENTE = "historico_10j_times.csv"
 def atualizar_historico(df_historico_atual):
     print("--- 1. BUSCANDO RESULTADOS PASSADOS (FBREF) ---")
     
-    # Cria um dicionário mental com os nomes OFICIAIS que já existem na sua base
+    # Nomes oficiais que já existem na sua base
     times_oficiais = pd.concat([df_historico_atual['Mandante'], df_historico_atual['Visitante']]).dropna().unique().tolist()
+    
+    # --- O DICIONÁRIO DE EXCEÇÕES (A SALVAÇÃO DOS BURACOS) ---
+    mapa_times = {
+        "Leverkusen": "Bayer Leverkusen",
+        "Bayer 04 Leverkusen": "Bayer Leverkusen",
+        "M'Gladbach": "Borussia Monchengladbach",
+        "Mönchengladbach": "Borussia Monchengladbach",
+        "Ein Frankfurt": "Eintracht Frankfurt",
+        "Stuttgart": "VfB Stuttgart",
+        "Wolfsburg": "VfL Wolfsburg",
+        "Bochum": "VfL Bochum",
+        "Heidenheim": "FC Heidenheim",
+        "Darmstadt 98": "SV Darmstadt 98",
+        "Köln": "FC Cologne", # Ajuste para "FC Koln" se for assim na sua base
+        "Bayern Munich": "Bayern Munich",
+        "Dortmund": "Borussia Dortmund",
+        "RB Leipzig": "RB Leipzig",
+        "Freiburg": "SC Freiburg",
+        "Hoffenheim": "TSG Hoffenheim",
+        "Werder Bremen": "Werder Bremen",
+        "Augsburg": "FC Augsburg",
+        "Union Berlin": "Union Berlin",
+        "Mainz 05": "FSV Mainz 05"
+    }
     
     url = "https://fbref.com/en/comps/20/schedule/Bundesliga-Scores-and-Fixtures"
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
@@ -43,12 +67,18 @@ def atualizar_historico(df_historico_atual):
                         visitante_fbref = str(row['Away'])
                         placar = str(row['Score'])
                         
-                        # Tradutor de times do FBref para o padrão da sua base
-                        match_m = difflib.get_close_matches(mandante_fbref, times_oficiais, n=1, cutoff=0.45)
-                        match_v = difflib.get_close_matches(visitante_fbref, times_oficiais, n=1, cutoff=0.45)
+                        # PASSO 1: Tradução Manual (Blindada)
+                        mandante_oficial = mapa_times.get(mandante_fbref, mandante_fbref)
+                        visitante_oficial = mapa_times.get(visitante_fbref, visitante_fbref)
                         
-                        mandante_oficial = match_m[0] if match_m else mandante_fbref
-                        visitante_oficial = match_v[0] if match_v else visitante_fbref
+                        # PASSO 2: Tradução Automática (Backup)
+                        if mandante_oficial not in times_oficiais:
+                            match_m = difflib.get_close_matches(mandante_oficial, times_oficiais, n=1, cutoff=0.45)
+                            if match_m: mandante_oficial = match_m[0]
+                                
+                        if visitante_oficial not in times_oficiais:
+                            match_v = difflib.get_close_matches(visitante_oficial, times_oficiais, n=1, cutoff=0.45)
+                            if match_v: visitante_oficial = match_v[0]
                         
                         placar = placar.replace('–', '-').replace('—', '-')
                         partes = placar.split('-')
@@ -74,7 +104,7 @@ def atualizar_historico(df_historico_atual):
         
         if not df_novos.empty:
             df_atualizado = pd.concat([df_historico_atual, df_novos], ignore_index=True)
-            # Remove duplicatas alinhando pelo nome traduzido
+            # Remove duplicatas mantendo a versão mais nova (do FBref se houver conflito de data igual)
             df_atualizado = df_atualizado.drop_duplicates(subset=['Data', 'Mandante', 'Visitante'], keep='last')
             
             jogos_adicionados = len(df_atualizado) - len(df_historico_atual)
@@ -128,7 +158,7 @@ def gerar_analise(df_treino, df_prever):
     df_treino = df_treino.dropna(subset=['Gols_Mandante', 'Gols_Visitante']).copy()
     
     # --- A MÁGICA DA PADRONIZAÇÃO DE DATAS ---
-    # Alinha as datas (ex: 17/01/2026 e 2026-03-07) para o formato universal para cálculo perfeito dos 10 últimos
+    # Garante que 17/01/2026 e 2026-03-07 fiquem no mesmo formato cronológico para o sort_values funcionar
     df_treino['Data'] = pd.to_datetime(df_treino['Data'], format='mixed', dayfirst=True).dt.strftime('%Y-%m-%d')
     
     if df_treino.empty or df_prever.empty: return pd.DataFrame(), pd.DataFrame()
