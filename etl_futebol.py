@@ -20,7 +20,6 @@ ARQUIVO_HIST_RECENTE = "historico_10j_times.csv"
 def atualizar_historico(df_historico_atual):
     print("--- 1. BUSCANDO RESULTADOS PASSADOS (FBREF) ---")
     
-    # Cria um dicionário mental com os nomes OFICIAIS que já existem na sua base
     times_oficiais = pd.concat([df_historico_atual['Mandante'], df_historico_atual['Visitante']]).dropna().unique().tolist()
     
     url = "https://fbref.com/en/comps/20/schedule/Bundesliga-Scores-and-Fixtures"
@@ -43,15 +42,11 @@ def atualizar_historico(df_historico_atual):
                         visitante_fbref = str(row['Away'])
                         placar = str(row['Score'])
                         
-                        # --- O TRADUTOR INTELIGENTE ENTRA AQUI ---
-                        # Compara o nome do site com os nomes da sua base e pega o mais parecido (acima de 45% de semelhança)
                         match_m = difflib.get_close_matches(mandante_fbref, times_oficiais, n=1, cutoff=0.45)
                         match_v = difflib.get_close_matches(visitante_fbref, times_oficiais, n=1, cutoff=0.45)
                         
-                        # Se achou correspondência, usa o oficial. Se for um time 100% novo (subiu de divisão), mantém o nome novo.
                         mandante_oficial = match_m[0] if match_m else mandante_fbref
                         visitante_oficial = match_v[0] if match_v else visitante_fbref
-                        # -----------------------------------------
                         
                         placar = placar.replace('–', '-').replace('—', '-')
                         partes = placar.split('-')
@@ -77,7 +72,6 @@ def atualizar_historico(df_historico_atual):
         
         if not df_novos.empty:
             df_atualizado = pd.concat([df_historico_atual, df_novos], ignore_index=True)
-            # Ao remover duplicatas agora, ele vai sobrepor corretamente, pois os nomes estão alinhados
             df_atualizado = df_atualizado.drop_duplicates(subset=['Data', 'Mandante', 'Visitante'], keep='last')
             
             jogos_adicionados = len(df_atualizado) - len(df_historico_atual)
@@ -142,7 +136,6 @@ def gerar_analise(df_treino, df_prever):
     stats = pd.merge(stats_casa, stats_fora, on='Time', how='outer').fillna(0)
     
     def calcular_fator_forma(time_oficial):
-        # Agora busca pelo nome OFICIAL da base, sem erro de digitação
         ultimos_10 = df_treino[(df_treino['Mandante'] == time_oficial) | (df_treino['Visitante'] == time_oficial)].sort_values('Data', ascending=False).head(10)
         if ultimos_10.empty: return 1.0
         taxa_recente = ultimos_10['Over15'].mean()
@@ -166,11 +159,9 @@ def gerar_analise(df_treino, df_prever):
             home_original = str(row['Mandante']).strip()
             away_original = str(row['Visitante']).strip()
             
-            # Aqui a mágica: Ele pega o nome "sujo" da ESPN e encontra o "oficial" na sua base
             match_home = difflib.get_close_matches(home_original, times_conhecidos, n=1, cutoff=0.45)
             match_away = difflib.get_close_matches(away_original, times_conhecidos, n=1, cutoff=0.45)
             
-            # Daqui pra frente, ele usa apenas os nomes OFICIAIS (home e away)
             home = match_home[0] if match_home else home_original
             away = match_away[0] if match_away else away_original
 
@@ -178,10 +169,8 @@ def gerar_analise(df_treino, df_prever):
             d_away = stats[stats['Time'] == away]
             if d_home.empty or d_away.empty: continue
 
-            # --- EXTRAÇÃO DO HISTÓRICO USANDO NOME OFICIAL ---
             for time_foco in [home, away]:
                 if time_foco not in times_processados:
-                    # Busca os 10 jogos exatos da base usando o nome que existe lá dentro
                     jogos_time = df_treino[(df_treino['Mandante'] == time_foco) | (df_treino['Visitante'] == time_foco)].sort_values('Data', ascending=False).head(10)
                     for _, jogo in jogos_time.iterrows():
                         gm = int(jogo['Gols_Mandante'])
@@ -204,7 +193,6 @@ def gerar_analise(df_treino, df_prever):
             prob_under = (poisson.pmf(0, lamb_home)*poisson.pmf(0, lamb_away)) + (poisson.pmf(1, lamb_home)*poisson.pmf(0, lamb_away)) + (poisson.pmf(0, lamb_home)*poisson.pmf(1, lamb_away))
             prob_over_pura = (1 - prob_under) * 100
             
-            # Fator de forma já foi calculado lá em cima com os nomes oficiais
             fator_h = d_home['Fator_10_Jogos'].values[0]
             fator_a = d_away['Fator_10_Jogos'].values[0]
             fator_combinado = (fator_h + fator_a) / 2
@@ -222,6 +210,7 @@ def gerar_analise(df_treino, df_prever):
         except Exception as e: continue
     return pd.DataFrame(previsoes), pd.DataFrame(tabela_historico)
 
+# --- AQUI ESTÁ A CORREÇÃO ANTI-ERRO 409 ---
 def salvar_no_github(repo, nome_arquivo, df_dados, mensagem):
     csv_string = df_dados.to_csv(index=False)
     try:
@@ -229,10 +218,17 @@ def salvar_no_github(repo, nome_arquivo, df_dados, mensagem):
             contents = repo.get_contents(nome_arquivo)
             repo.update_file(contents.path, f"Update {mensagem}", csv_string, contents.sha)
             print(f"SUCESSO: {nome_arquivo} Atualizado!")
-        except:
-            repo.create_file(nome_arquivo, f"Create {mensagem}", csv_string)
-            print(f"SUCESSO: {nome_arquivo} Criado!")
-    except Exception as e: print(f"Erro ao salvar {nome_arquivo}: {e}")
+        except Exception as e_update:
+            if "404" in str(e_update):
+                 repo.create_file(nome_arquivo, f"Create {mensagem}", csv_string)
+                 print(f"SUCESSO: {nome_arquivo} Criado!")
+            else:
+                 print(f"Erro de Conflito (409) ao atualizar {nome_arquivo}. Tentando novamente... : {e_update}")
+                 contents_retry = repo.get_contents(nome_arquivo)
+                 repo.update_file(contents_retry.path, f"Retry Update {mensagem}", csv_string, contents_retry.sha)
+                 print(f"SUCESSO (Retry): {nome_arquivo} Atualizado!")
+    except Exception as e: 
+        print(f"Erro Crítico ao salvar {nome_arquivo}: {e}")
 
 def main():
     if not GITHUB_TOKEN: return
