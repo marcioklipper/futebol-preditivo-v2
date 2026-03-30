@@ -1,10 +1,10 @@
 Data,Liga,Mandante,Visitante,xG_Mandante,xG_Visitante,Media_Gols_Esperada,Prob_Poisson_Pura,Fator_Forma_10j,Prob_Over_Final
-2026-04-04,Bundesliga,Bayer Leverkusen,VfL Wolfsburg,1.64,0.4,2.03,60.3,0.98,59.1
-2026-04-04,Bundesliga,Borussia Mönchengladbach,1. FC Heidenheim 1846,1.47,0.0,1.47,43.3,1.0,43.3
-2026-04-04,Bundesliga,Hamburg SV,FC Augsburg,0.87,0.53,1.4,40.9,0.98,40.0
-2026-04-04,Bundesliga,SC Freiburg,Bayern Munich,0.89,5.19,6.09,98.4,1.0,95.0
-2026-04-04,Bundesliga,TSG Hoffenheim,Mainz,0.59,1.01,1.6,47.7,1.02,48.5
+2026-04-04,Bundesliga,Bayer Leverkusen,VfL Wolfsburg,2.75,1.04,3.79,89.1,0.99,88.3
+2026-04-04,Bundesliga,Borussia Mönchengladbach,FC Heidenheim,2.05,0.0,2.05,60.8,1.0,60.5
+2026-04-04,Bundesliga,Hamburg SV,FC Augsburg,0.92,0.95,1.87,55.7,0.96,53.8
+2026-04-04,Bundesliga,SC Freiburg,Bayern Munich,1.13,3.64,4.77,95.1,1.02,95.0
+2026-04-04,Bundesliga,TSG Hoffenheim,Mainz,2.38,1.29,3.66,88.0,0.95,83.5
 2026-04-04,Bundesliga,Werder Bremen,RB Leipzig,1.28,1.75,3.03,80.5,0.99,80.1
-2026-04-04,Bundesliga,VfB Stuttgart,Borussia Dortmund,1.64,0.0,1.64,48.6,1.0,48.6
+2026-04-04,Bundesliga,VfB Stuttgart,Borussia Dortmund,1.28,1.43,2.71,75.4,1.07,80.3
 2026-04-05,Bundesliga,1. FC Union Berlin,St. Pauli,0.65,1.59,2.24,65.5,0.88,57.3
-2026-04-05,Bundesliga,Eintracht Frankfurt,FC Cologne,1.47,0.0,1.47,43.3,1.0,43.3
+2026-04-05,Bundesliga,Eintracht Frankfurt,FC Cologne,1.77,0.48,2.24,65.6,0.93,61.2
