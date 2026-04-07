@@ -58,7 +58,7 @@ def faxina_temporal(df):
     """A GUILHOTINA: Converte tudo para data real, corta o futuro e devolve como texto limpo"""
     if df.empty: return df
     
-    # Converte para objeto de tempo (entende tanto 17/01/2026 quanto 2026-01-17)
+    # Converte para objeto de tempo
     df['Data_Temp'] = pd.to_datetime(df['Data'], format='mixed', dayfirst=True)
     
     # Corta fora qualquer linha onde a Data seja MAIOR que hoje
@@ -74,11 +74,29 @@ def faxina_temporal(df):
 def atualizar_historico(df_historico_atual):
     print("--- 1. BUSCANDO RESULTADOS NO FBREF ---")
     url = "https://fbref.com/en/comps/20/schedule/Bundesliga-Scores-and-Fixtures"
-    headers = {'User-Agent': 'Mozilla/5.0'}
+    
+    # Cabeçalhos disfarçados para evitar bloqueio do Cloudflare
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Referer': 'https://google.com'
+    }
     
     try:
-        r = requests.get(url, headers=headers)
-        dfs = pd.read_html(StringIO(r.text), flavor='lxml')
+        r = requests.get(url, headers=headers, timeout=15)
+        
+        if r.status_code != 200:
+            print(f"⚠️ Aviso: FBref bloqueou acesso (HTTP {r.status_code}). Usando base local.")
+            return df_historico_atual
+            
+        try:
+            dfs = pd.read_html(StringIO(r.text), flavor='lxml')
+        except ValueError as e:
+            if "No tables found" in str(e):
+                print("⚠️ Aviso: FBref exigiu verificação humana (CAPTCHA). Usando base local.")
+                return df_historico_atual
+            raise e
+            
         df_fbref = pd.DataFrame()
         
         for df in dfs:
@@ -90,7 +108,6 @@ def atualizar_historico(df_historico_atual):
                         data_jogo_bruta = str(row['Date'])
                         placar_str = str(row['Score']).strip()
                         
-                        # Trava primária: ignora se não tiver um traço no placar
                         if not placar_str or placar_str == 'nan' or '-' not in placar_str.replace('–', '-'):
                             continue
                             
@@ -122,10 +139,10 @@ def atualizar_historico(df_historico_atual):
         # Junta o passado com o presente
         df_final = pd.concat([df_fbref, df_historico_atual], ignore_index=True)
         
-        # --- A FAXINA TEMPORAL (O Exterminador do Futuro) ---
+        # A FAXINA TEMPORAL (O Exterminador do Futuro)
         df_final = faxina_temporal(df_final)
         
-        # Remove duplicatas (agora que as datas estão no mesmo formato universal)
+        # Remove duplicatas
         df_final = df_final.drop_duplicates(subset=['Data', 'Mandante', 'Visitante'], keep='last')
         
         print(f"Base atualizada com sucesso! Total de {len(df_final)} jogos reais confirmados.")
@@ -161,7 +178,7 @@ def obter_proxima_rodada():
         df_futuros = pd.DataFrame(jogos)
         if not df_futuros.empty:
             df_futuros = limpar_datas_e_nomes(df_futuros)
-            df_futuros = faxina_temporal(df_futuros) # Formata a data bonitinho
+            df_futuros = faxina_temporal(df_futuros)
             df_futuros = df_futuros.head(9)
             print(f"Encontrados {len(df_futuros)} próximos jogos!")
             return df_futuros
@@ -175,6 +192,10 @@ def gerar_analise(df_treino, df_prever):
     if df_treino.empty or df_prever.empty: return pd.DataFrame(), pd.DataFrame()
 
     df_treino = df_treino.dropna(subset=['Gols_Mandante', 'Gols_Visitante']).copy()
+    
+    # --- A CORREÇÃO MATEMÁTICA: Força formato de data antes de treinar ---
+    df_treino['Data'] = pd.to_datetime(df_treino['Data'], format='mixed', dayfirst=True).dt.strftime('%Y-%m-%d')
+    
     print(f"Treinando o modelo com {len(df_treino)} jogos...")
 
     df_treino['Total_Gols'] = df_treino['Gols_Mandante'] + df_treino['Gols_Visitante']
